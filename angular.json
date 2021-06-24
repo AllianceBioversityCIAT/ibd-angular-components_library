@@ -123,6 +123,46 @@
           }
         }
       }
+    },
+    "ibd-angular-components": {
+      "projectType": "library",
+      "root": "projects/ibd-angular-components",
+      "sourceRoot": "projects/ibd-angular-components/src",
+      "prefix": "ibdc",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ibd-angular-components/tsconfig.lib.json",
+            "project": "projects/ibd-angular-components/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ibd-angular-components/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ibd-angular-components/src/test.ts",
+            "tsConfig": "projects/ibd-angular-components/tsconfig.spec.json",
+            "karmaConfig": "projects/ibd-angular-components/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ibd-angular-components/tsconfig.lib.json",
+              "projects/ibd-angular-components/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "ibd-angular-library"
 }
