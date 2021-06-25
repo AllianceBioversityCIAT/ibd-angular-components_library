@@ -11,7 +11,11 @@
     <br><hr><br>
     <ibdc-input></ibdc-input>
     <br><hr><br>
-    <ibdc-link-list></ibdc-link-list>
+    <ibdc-link-list [options]="{
+        inputTitle:'Title',
+        description:'description',
+        savedList: linkTest
+    }"></ibdc-link-list>
     <br><hr><br>
     <ibdc-save-button [options]="{
         angularServiceVariable: this._testService.readOnly
