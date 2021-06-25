@@ -7,6 +7,7 @@ import { UploadFilesComponent } from './form-elements/upload-files/upload-files.
 import { LinkListComponent } from './form-elements/link-list/link-list.component';
 import { InputComponent } from './form-elements/input/input.component';
 import { SimpleTextComponent } from './form-elements/simple-text/simple-text.component';
+import { SaveButtonComponent } from './components/save-button/save-button.component';
 
 
 
@@ -15,7 +16,7 @@ const componentsList = [
   SelectComponent
 ];
 @NgModule({
-  declarations: [...componentsList, TextareaComponent, SelectMultipleComponent, UploadFilesComponent, LinkListComponent, InputComponent, SimpleTextComponent],
+  declarations: [...componentsList, TextareaComponent, SelectMultipleComponent, UploadFilesComponent, LinkListComponent, InputComponent, SimpleTextComponent, SaveButtonComponent],
   exports: [...componentsList],
   imports: []
   
