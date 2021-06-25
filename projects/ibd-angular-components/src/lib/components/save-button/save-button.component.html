@@ -1,1 +1,3 @@
-<button mat-raised-button color="primary">Primary</button>
+<button *ngIf="!this.options.angularServiceVariable" (click)="onclick()" type="submit" color="accent" [disabled]="options.disabled || options.underConstruction == true" mat-raised-button class="save-button">
+    Save <mat-icon class="save_icon" aria-hidden="false" aria-label="save icon">{{!options.underConstruction?'save':'construction'}}</mat-icon>
+</button>
