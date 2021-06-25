@@ -9,6 +9,7 @@ import { InputComponent } from './form-elements/input/input.component';
 import { SimpleTextComponent } from './form-elements/simple-text/simple-text.component';
 import { SaveButtonComponent } from './components/save-button/save-button.component';
 import { MaterialModule } from './angular_material_module/material.module';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -26,7 +27,7 @@ const componentsList = [
 @NgModule({
   declarations: [...componentsList],
   exports: [...componentsList],
-  imports: [MaterialModule]
+  imports: [CommonModule,MaterialModule]
   
 })
 export class IbdAngularComponentsModule { }
