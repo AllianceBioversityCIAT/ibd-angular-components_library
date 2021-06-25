@@ -13,10 +13,17 @@ import { SaveButtonComponent } from './components/save-button/save-button.compon
 
 const componentsList = [
   IbdAngularComponentsComponent,
-  SelectComponent
+  SelectComponent, 
+  TextareaComponent, 
+  SelectMultipleComponent, 
+  UploadFilesComponent, 
+  LinkListComponent, 
+  InputComponent, 
+  SimpleTextComponent, 
+  SaveButtonComponent
 ];
 @NgModule({
-  declarations: [...componentsList, TextareaComponent, SelectMultipleComponent, UploadFilesComponent, LinkListComponent, InputComponent, SimpleTextComponent, SaveButtonComponent],
+  declarations: [...componentsList],
   exports: [...componentsList],
   imports: []
   
