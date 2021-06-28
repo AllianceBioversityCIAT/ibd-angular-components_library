@@ -10,17 +10,23 @@ import { IbdAngularComponentsModule } from '../../projects/ibd-angular-component
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MenuComponent } from './shared/components/menu/menu.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { MaterialModule } from './angular_material_module/material.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MenuComponent,
+    FooterComponent
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     BrowserModule,
     AppRoutingModule,
     IbdAngularComponentsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

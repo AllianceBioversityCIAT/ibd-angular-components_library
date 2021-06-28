@@ -1,5 +1,7 @@
 # ibd-angular-components_library
 
+ng g m pages/form-elements/textarea --routing && ng g c pages/form-elements/textarea         
+
 # Instalation
 
 - ng add @angular/material

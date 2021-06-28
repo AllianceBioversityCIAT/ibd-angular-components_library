@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TestService } from './services/test.service';
+import { TestService } from './shared/services/test.service';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +8,4 @@ import { TestService } from './services/test.service';
 })
 export class AppComponent {
   title = 'ibd-angular-library';
-  linkTest =[
-    {
-      link:'asas',
-      description:'asas'
-    }
-  ]
-  constructor( 
-    public _testService: TestService
-  ){
-  }
 }

@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build-lib": "ng build ibd-angular-components",
-    "build-pack": "cd dist/ibd-angular-components && npm pack"
+    "build-pack": "ng build ibd-angular-components  && cd dist/ibd-angular-components && npm pack"
   },
   "private": true,
   "dependencies": {
