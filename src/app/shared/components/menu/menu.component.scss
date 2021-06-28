@@ -1,0 +1,53 @@
+.logo_container{
+    // background-color: green;
+    height: 250px;
+}
+
+.search{
+    border-top: 1px solid rgb(224, 224, 224);
+    border-bottom: 1px solid rgb(224, 224, 224);
+    height: 50px;
+}
+
+.lib-title{
+    font-size: 2em;
+    font-weight: 500;
+    color: grey;
+}
+
+
+.item_list .item, .sub_item_list .sub_item{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    height: 40px;
+    cursor: pointer;
+    transition: all ease .5s;
+    &:hover{
+        transition: all ease .5s;
+    }
+}
+
+.item_list{
+    .item{
+        font-size: .9em;
+        color: rgb(53, 53, 53);
+        font-weight: 500;
+        padding-left: 10px;
+        &:hover{
+            background-color: rgb(233, 233, 233);
+        }
+    }
+}
+
+
+.sub_item_list{
+    .sub_item{
+        font-size: .9em;
+        color: rgb(95, 95, 95);
+        padding-left: 30px;
+        &:hover{
+            background-color: rgb(233, 233, 233);
+        }
+    }
+}
