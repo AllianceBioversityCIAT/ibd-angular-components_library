@@ -12,11 +12,11 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$ibd-angular-library-primary: mat-palette($mat-indigo);
-$ibd-angular-library-accent: mat-palette($mat-pink, A200, A100, A400);
+$ibd-angular-library-primary: mat-palette($mat-blue-gray, 800);
+$ibd-angular-library-accent: mat-palette($mat-green, 600);
 
 // The warn palette is optional (defaults to red).
-$ibd-angular-library-warn: mat-palette($mat-red);
+$ibd-angular-library-warn: mat-palette($mat-red, 700);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
@@ -37,3 +37,13 @@ $ibd-angular-library-theme: mat-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.primary_color{
+  color: mat-color( $ibd-angular-library-primary) !important;
+}
+
+.secondary_color{
+  color: #087b83 !important;
+}
+
