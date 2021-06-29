@@ -1,13 +1,42 @@
+body{
+    overflow: hidden;
+}
 .local-container{
     display: flex;
+    overflow: hidden;
+    max-height: calc(100% - 20px);
     .left-menu{
         width: 350px;
         border-right: 1px solid rgb(224, 224, 224);
         height: 100vh;
+        // max-height: 90vh;
+        overflow-y: scroll;
     }
     .rigth-router-outlet{
         width: 100%;
         padding:50px;
+        height: 100%;
+        max-height: 90vh;
+        overflow-y: scroll;
     }
 }
 
+/* width */
+.left-menu::-webkit-scrollbar,.rigth-router-outlet::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  .left-menu::-webkit-scrollbar-track,.rigth-router-outlet::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  .left-menu::-webkit-scrollbar-thumb,.rigth-router-outlet::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  .left-menu::-webkit-scrollbar-thumb:hover,.rigth-router-outlet::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
