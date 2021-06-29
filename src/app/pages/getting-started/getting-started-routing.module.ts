@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SimpleTextComponent } from './simple-text.component';
+import { GettingStartedComponent } from './getting-started.component';
 
 const routes: Routes = [
   {
     path:'',
-    component:SimpleTextComponent
+    component:GettingStartedComponent
   }
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class SimpleTextRoutingModule { }
+export class GettingStartedRoutingModule { }

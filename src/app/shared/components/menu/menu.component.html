@@ -6,13 +6,6 @@
 
 </div>
 
-
-<mat-tree>
-  <mat-tree-node> parent node </mat-tree-node>
-  <mat-tree-node> -- child node1 </mat-tree-node>
-  <mat-tree-node> -- child node2 </mat-tree-node>
-</mat-tree>
-
 <span *ngFor="let section of _dataControl.menuSections">
 
   <!-- <mat-selection-list  #sections [multiple]="false">
@@ -22,14 +15,14 @@
 </mat-selection-list> -->
 
   <div class="item_list">
-    <div class="item">
+    <div class="item" [routerLink]="section.route">
       {{section.name}}
     </div>
   </div>
 
 
   <div class="sub_item_list" *ngIf="section.children">
-    <div class="sub_item" *ngFor="let child of section.children">
+    <div class="sub_item" *ngFor="let child of section.children" [routerLink]="child.route">
       {{child.name}}
     </div>
   </div>

@@ -9,21 +9,26 @@ export class DataControlService {
   menuSections = [
     {
       name:'About',
+      route:'about'
     },
     {
       name:'Getting Started',
+      route:'getting-started'
     },
     {
       name:'Components',
       children:[
         {
-          name:'save button'
+          name:'save button',
+          route:'save-button'
         },
         {
-          name:'Select'
+          name:'TextArea',
+          route:'textarea'
         },
         {
-          name:'TextArea'
+          name:'All',
+          route:'all'
         }
       ]
     }
