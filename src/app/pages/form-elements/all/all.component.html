@@ -11,15 +11,17 @@
     <br><hr><br>
     <ibdc-input></ibdc-input>
     <br><hr><br>
-    <ibdc-link-list [options]="{
-        inputTitle:'Title',
-        description:'description',
-        savedList: linkTest
-    }"></ibdc-link-list>
+    <div style="width: 50%;">
+        <ibdc-link-list [options]="{
+            inputTitle:'Title',
+            description:'description',
+            savedList: linkTest
+        }"></ibdc-link-list>
+    </div>
     <br><hr><br>
     <ibdc-save-button [options]="{
-        angularServiceVariable: this._testService.readOnly
-    }"></ibdc-save-button>
+        readOnlyVariable: this._testService.readOnly
+    }" (click)="hello()"></ibdc-save-button >
     <br><br><br>
     <button (click)="this._testService.readOnly=!this._testService.readOnly">Change read only</button>
 </div>

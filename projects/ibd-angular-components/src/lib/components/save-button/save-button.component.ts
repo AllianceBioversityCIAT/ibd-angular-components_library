@@ -12,7 +12,9 @@ export class SaveButtonComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
+    if (this.options.readOnlyVariable === undefined) {
+      this.options.readOnlyVariable = false;
+    }
   }
 
   onclick(){
