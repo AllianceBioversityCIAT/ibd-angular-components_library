@@ -29,7 +29,7 @@
         <div *ngSwitchDefault>
             <mat-form-field class="general-information-full-width">
                 <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
-                <p *ngIf="options.description" class="description_field">{{options.description}}</p>
+                <p *ngIf="options.description" class="description_field" style="margin-bottom: 8px;">{{options.description}}</p>
                 <textarea  type="text" [formControl]="textareaInput" matInput required (ngModelChange)="setValue()" cdkTextareaAutosize></textarea>
                 <mat-hint align="start" *ngIf="options.maxWords"><strong>Max {{options.maxWords}} words</strong> </mat-hint>
                 <mat-hint align="end" *ngIf="options.maxWords"><strong><span [style.color]="words <= options.maxWords?'':'red'">{{words}}</span> / {{options.maxWords}}</strong></mat-hint>
