@@ -12,6 +12,7 @@ import { MaterialModule } from './angular_material_module/material.module';
 import { CommonModule } from '@angular/common';
 import { NgxEditorModule } from 'ngx-editor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SelectFilterPipe } from './pipes/select-filter.pipe';
 
 
 
@@ -29,7 +30,7 @@ const componentsList = [
 
 ];
 @NgModule({
-  declarations: [...componentsList],
+  declarations: [...componentsList, SelectFilterPipe],
   exports: [...componentsList],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [

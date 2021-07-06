@@ -1,10 +1,22 @@
 <div class="container">
-    <!-- <ibdc-select></ibdc-select>
+    <ibdc-select
+    [options]="
+            {
+             required:true,
+             inputTitle:'Primary CGIAR Action Area',
+             form:exampleForm,
+             formControlId:'action_area_id',
+             description:'Indicate to which CGIAR Action Area this initiative is contributing to',
+             selectList:this.selectList,
+             selectItemName:'name',
+             selectItemId:'id'
+            }"
+    ></ibdc-select>
     <br><hr><br>
-    <ibdc-select-multiple></ibdc-select-multiple>
+    <!-- <ibdc-select-multiple></ibdc-select-multiple>
     <br><hr><br>
-    <ibdc-simple-text></ibdc-simple-text> -->
-    <br><hr><br>
+    <ibdc-simple-text></ibdc-simple-text>
+    <br><hr><br> -->
     <div style="width: 30%;">
         <ibdc-textarea [options]="{
             readOnlyVariable: this._testService.readOnly,

@@ -3,7 +3,7 @@ import { Observable } from "rxjs";
 
 export interface selectOptions{
     required?:boolean;
-    readonly?:boolean;
+    readOnlyVariable?:boolean
     inputTitle:string;
     description?:string;
     form:FormGroup;
