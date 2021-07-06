@@ -50,5 +50,5 @@
         readOnlyVariable: this._testService.readOnly
     }" (click)="hello()"></ibdc-save-button >
     <br><br><br>
-    <button (click)="this._testService.readOnly=!this._testService.readOnly">Change read only</button>
+    <button  mat-raised-button class="read_only_button" (click)="this._testService.readOnly=!this._testService.readOnly" color="primary">Change read only</button>
 </div>

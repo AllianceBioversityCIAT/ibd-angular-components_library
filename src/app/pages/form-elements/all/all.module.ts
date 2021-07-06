@@ -5,6 +5,7 @@ import { AllRoutingModule } from './all-routing.module';
 import { AllComponent } from './all.component';
 import { IbdAngularComponentsModule } from '../../../../../projects/ibd-angular-components/src/lib/ibd-angular-components.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from 'src/app/angular_material_module/material.module';
 
 
 @NgModule({
@@ -13,7 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     AllRoutingModule,
-    IbdAngularComponentsModule,FormsModule,ReactiveFormsModule
+    IbdAngularComponentsModule,FormsModule,ReactiveFormsModule,MaterialModule
   ]
 })
 export class AllModule { }
