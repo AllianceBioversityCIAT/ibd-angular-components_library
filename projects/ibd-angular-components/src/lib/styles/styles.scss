@@ -3,3 +3,18 @@
     align-items: center;
     justify-content: center;
 }
+
+.input_title{
+    margin: 0px;
+    margin-bottom: 5px;
+}
+
+.description_field{
+    color: #666666;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+mat-form-field{
+    width: 100%;
+}

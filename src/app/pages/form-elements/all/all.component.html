@@ -1,15 +1,42 @@
 <div class="container">
-    <ibdc-select></ibdc-select>
+    <!-- <ibdc-select></ibdc-select>
     <br><hr><br>
     <ibdc-select-multiple></ibdc-select-multiple>
     <br><hr><br>
-    <ibdc-simple-text></ibdc-simple-text>
+    <ibdc-simple-text></ibdc-simple-text> -->
     <br><hr><br>
-    <ibdc-textarea></ibdc-textarea>
-    <br><hr><br>
+    <div style="width: 30%;">
+        <ibdc-textarea [options]="{
+            readOnlyVariable: false,
+            form:exampleForm,formControlName:'text',
+            inputTitle:'Title',
+            description:'description'
+        }"></ibdc-textarea>
+    </div>
+    <br>
+    <div style="width: 30%;">
+        <ibdc-textarea [options]="{
+            readOnlyVariable: false,
+            form:exampleForm,formControlName:'text',
+            inputTitle:'Title',
+            description:'description',
+            maxWords: 100
+        }"></ibdc-textarea>
+    </div>
+    <br>
+    <div style="width: 30%;">
+        <ibdc-textarea [options]="{
+            readOnlyVariable: false,
+            form:exampleForm,formControlName:'text',
+            inputTitle:'Title',
+            description:'description',
+            editText: true
+        }"></ibdc-textarea>
+    </div>
+    <!-- <br><hr><br>
     <ibdc-upload-files></ibdc-upload-files>
     <br><hr><br>
-    <ibdc-input></ibdc-input>
+    <ibdc-input></ibdc-input> -->
     <br><hr><br>
     <div style="width: 50%;">
         <ibdc-link-list [options]="{

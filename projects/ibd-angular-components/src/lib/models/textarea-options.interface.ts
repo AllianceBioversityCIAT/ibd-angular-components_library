@@ -2,7 +2,7 @@ import { FormGroup } from "@angular/forms";
 
 export interface textareaOptions{
     required?:boolean
-    readonly?:boolean
+    readOnlyVariable?:boolean
     inputTitle:string
     description?:string
     form:FormGroup;

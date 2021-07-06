@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { SelectComponent } from './form-elements/select/select.component';
 import { IbdAngularComponentsComponent } from './ibd-angular-components.component';
 import { TextareaComponent } from './form-elements/textarea/textarea.component';
@@ -10,6 +10,9 @@ import { SimpleTextComponent } from './form-elements/simple-text/simple-text.com
 import { SaveButtonComponent } from './components/save-button/save-button.component';
 import { MaterialModule } from './angular_material_module/material.module';
 import { CommonModule } from '@angular/common';
+import { NgxEditorModule } from 'ngx-editor';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -22,12 +25,20 @@ const componentsList = [
   LinkListComponent, 
   InputComponent, 
   SimpleTextComponent, 
-  SaveButtonComponent
+  SaveButtonComponent,
+
 ];
 @NgModule({
   declarations: [...componentsList],
   exports: [...componentsList],
-  imports: [CommonModule,MaterialModule]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [
+    CommonModule,
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxEditorModule
+  ]
   
 })
 export class IbdAngularComponentsModule { }

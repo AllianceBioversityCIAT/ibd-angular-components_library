@@ -42,13 +42,19 @@ html, body { height: 100%; }
 // body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
-.primary_color{
+.ibdc_primary_color{
   color: mat-color( $ibd-angular-library-primary) !important;
 }
 
-.secondary_color{
+.ibdc_secondary_color{
   color: #087b83 !important;
 }
+
+.ibdc_asterisk{
+  color: #ff0000;
+}
+
+
 
 
 

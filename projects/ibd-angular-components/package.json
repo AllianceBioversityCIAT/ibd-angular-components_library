@@ -6,6 +6,7 @@
     "@angular/core": "^10.0.14"
   },
   "dependencies": {
-    "tslib": "^2.0.0"
+    "tslib": "^2.0.0",
+    "ngx-editor": "^8.1.1"
   }
 }
