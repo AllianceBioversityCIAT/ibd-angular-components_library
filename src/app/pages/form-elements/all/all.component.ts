@@ -35,6 +35,7 @@ export class AllComponent implements OnInit {
   ) {
     this.exampleForm = new FormGroup({
       text: new FormControl('Hello world', Validators.required),
+      select: new FormControl(null, Validators.required),
     });
    }
 

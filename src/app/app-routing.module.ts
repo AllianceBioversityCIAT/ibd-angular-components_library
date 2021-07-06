@@ -27,6 +27,10 @@ const routes: Routes = [
   {
     path:'simple-text',
     loadChildren: () => import('./pages/form-elements/simple-text/simple-text.module').then((m) => m.SimpleTextModule),
+  },
+  {
+    path:'select',
+    loadChildren: () => import('./pages/form-elements/select/select.module').then((m) => m.SelectModule),
   }
 ];
 

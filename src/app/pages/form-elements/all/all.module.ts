@@ -6,6 +6,7 @@ import { AllComponent } from './all.component';
 import { IbdAngularComponentsModule } from '../../../../../projects/ibd-angular-components/src/lib/ibd-angular-components.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/angular_material_module/material.module';
+import { SelectModule } from '../select/select.module';
 
 
 @NgModule({
@@ -14,7 +15,11 @@ import { MaterialModule } from 'src/app/angular_material_module/material.module'
   imports: [
     CommonModule,
     AllRoutingModule,
-    IbdAngularComponentsModule,FormsModule,ReactiveFormsModule,MaterialModule
+    IbdAngularComponentsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialModule,
+    SelectModule
   ]
 })
 export class AllModule { }

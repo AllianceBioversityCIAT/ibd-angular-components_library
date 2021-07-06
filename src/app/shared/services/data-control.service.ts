@@ -19,6 +19,10 @@ export class DataControlService {
       name:'Components',
       children:[
         {
+          name:'All',
+          route:'all'
+        },
+        {
           name:'save button',
           route:'save-button'
         },
@@ -27,9 +31,10 @@ export class DataControlService {
           route:'textarea'
         },
         {
-          name:'All',
-          route:'all'
-        }
+          name:'Select',
+          route:'select'
+        },
+
       ]
     }
   ]
