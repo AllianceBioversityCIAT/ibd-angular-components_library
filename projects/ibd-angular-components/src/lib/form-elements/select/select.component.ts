@@ -83,8 +83,10 @@ export class SelectComponent implements OnInit {
   consumeService() {
     if (this.options.service && !this.options.selectList) {
       this.options.service.serviceTS[this.options.service.functionName]('todo').subscribe((res) => {
-        // console.log('%cBuscando: '+this.searchText,'background: #222; color: #84c3fd');
-        this.selectList = res.response[this.options.service.objectName];
+        console.log('%cBuscando: '+this.searchText,'background: #222; color: #84c3fd');
+        // console.log(this.options);
+        this.selectList = this.options.service.objectName?res[this.options.service.objectName]:res;
+        console.log(this.selectList);
         // console.log('%c'+this.options.service.functionName,'background: #222; color: #ffff00');
         // console.log(this.selectList);
         if (this.selectList.length < 4) {

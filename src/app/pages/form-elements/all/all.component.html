@@ -26,12 +26,40 @@
                  form:exampleForm,
                  formControlId:'select',
                  description:'Description',
-                 selectList:this.selectList,
                  selectItemName:'name',
-                 selectItemId:'id'
+                 selectItemId:'id',
+                 service:{
+                    serviceTS:this._requestService,
+                    functionName:'getUsersExample',
+                    frontendSearchAttribute:'name'
+                }
                 }"
         ></ibdc-select>
     </div>
+
+    <div style="width: 30%;">
+        <ibdc-select
+        [options]="
+                {
+                 readOnlyVariable:this._testService.readOnly,
+                 required:true,
+                 inputTitle:'Title 2',
+                 form:exampleForm,
+                 formControlId:'select',
+                 description:'Description',
+                 selectItemName:'name',
+                 selectItemId:'id',
+                 service:{
+                    serviceTS:this._requestService,
+                    functionName:'getUsersInSubObjectExample',
+                    objectName:'users',
+                    frontendSearchAttribute:'name'
+                }
+                }"
+        ></ibdc-select>
+    </div>
+
+
     <br><hr><br>
     <!-- <ibdc-select-multiple></ibdc-select-multiple>
     <br><hr><br>

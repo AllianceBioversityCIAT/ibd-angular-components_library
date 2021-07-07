@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TestService } from '../../../shared/services/test.service';
+import { RequestService } from '../../../shared/services/request.service';
 
 @Component({
   selector: 'app-all',
@@ -30,8 +31,10 @@ export class AllComponent implements OnInit {
       id:3
     }
   ]
+  usersExample = [];
   constructor(
-    public _testService: TestService
+    public _testService: TestService,
+    public _requestService:RequestService
   ) {
     this.exampleForm = new FormGroup({
       text: new FormControl('Hello world', Validators.required),
@@ -40,6 +43,11 @@ export class AllComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this._requestService.getUsersInSubObjectExample().subscribe(resp=>{
+      // console.log(resp);
+      // console.log(resp.users);
+      // // this.usersExample = resp;
+    })
   }
 
   hello(){
