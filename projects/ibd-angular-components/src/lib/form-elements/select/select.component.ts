@@ -44,9 +44,9 @@ export class SelectComponent implements OnInit {
   }
 
   findAndChangeFieldSelectorName(useService){
-    console.log(useService);
+    // console.log(useService);
     this.fieldSelector.name = this.options.form.value[this.options.formControlName];
-    console.log(this.options.form.value[this.options.formControlId]);
+    // console.log(this.options.form.value[this.options.formControlId]);
     if (useService) {
     // this.fieldSelector.name = this.selectList.find(resp =>resp[this.options.selectItemId].toString() == this.options.form.value[this.options.formControlId])[this.options.selectItemName];
 
@@ -113,11 +113,12 @@ export class SelectComponent implements OnInit {
     if (this.options.service && !this.options.selectList) {
 
       this.options.service.serviceTS[this.options.service.functionName]('todo').subscribe((res) => {
-          
+          console.log(res);
         // console.log('%cBuscando: '+this.searchText,'background: #222; color: #84c3fd');
         // console.log(this.options);
         this.selectList = this.options.service.objectName?res[this.options.service.objectName]:res;
         callback(true);
+        console.log(this.selectList);
         // console.log(this.selectList);
         // console.log('%c'+this.options.service.functionName,'background: #222; color: #ffff00');
         // console.log(this.selectList);
