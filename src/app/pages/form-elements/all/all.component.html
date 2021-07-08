@@ -37,18 +37,21 @@
         ></ibdc-select>
     </div>
 
+   
+
     <div style="width: 30%;">
         <ibdc-select
         [options]="
                 {
                  readOnlyVariable:this._testService.readOnly,
                  required:true,
-                 inputTitle:'Title 2',
+                 inputTitle:'Title 2 selectWithValue',
                  form:exampleForm,
-                 formControlId:'select',
+                 formControlId:'selectWithValue',
                  description:'Description',
                  selectItemName:'name',
                  selectItemId:'id',
+                 toDisableList:this.toDisableList,
                  service:{
                     serviceTS:this._requestService,
                     functionName:'getUsersInSubObjectExample',

@@ -1,31 +1,33 @@
-
 <span [ngSwitch]="this.options.readOnlyVariable">
     <div *ngSwitchCase="true">
         <br>
-        <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span class="ibdc_asterisk">* </span></p>
+        <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span
+                class="ibdc_asterisk">* </span></p>
         <p class="description_field">{{getSelectResult()||'Not available'}}</p>
     </div>
-    
+
     <div *ngSwitchDefault>
-    
+
         <mat-form-field appearance="standard" class="general-information-full-width" *ngIf="!options.service">
             <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span class="ibdc_asterisk">* </span></p>
-            <p *ngIf="options.description" class="description_field"><i>{{options.description}}</i>
-            </p>
-            <mat-select [formControl]="selectInput" (selectionChange)="setValue($event)" >
-                <mat-option *ngFor="let item of options.selectList" [disabled]="disableOption(item)"  [value]="item[options.selectItemId]">{{item[options.selectItemName]}}
+            <br>
+            <p *ngIf="options.description" class="description_field"><i>{{options.description}}</i></p>
+            <br>
+            <mat-select [formControl]="selectInput" (selectionChange)="setValue($event)">
+                <mat-option *ngFor="let item of options.selectList" [disabled]="disableOption(item)"
+                    [value]="item[options.selectItemId]">{{item[options.selectItemName]}}
                 </mat-option>
             </mat-select>
         </mat-form-field>
-    
+
+        <!-- <h1 style="color: blue;" *ngIf="options.service">-------</h1>
         <mat-form-field floatLabel="false" *ngIf="options.service" cdkFocusInitial>
             <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
             <p *ngIf="options.description" class="description_field"><i>{{options.description}}</i></p>
-            <input type="text" aria-label="Number" placeholder="Write to search" matInput [matAutocomplete]="auto" [(ngModel)]="searchText" (ngModelChange)="options.service.frontendSearchAttribute ? writtenInSearchField() : consumeService($event)" [disabled]="removeFocus">
+            <input type="text" aria-label="Number" placeholder="Write to search" matInput [matAutocomplete]="auto" [(ngModel)]="searchText" (ngModelChange)="options.service.frontendSearchAttribute ? writtenInSearchField() : consumeService()" [disabled]="removeFocus">
             <mat-label [hidden]="true"></mat-label>
             <mat-autocomplete #auto="matAutocomplete">
                 <cdk-virtual-scroll-viewport class="autocomplete-test-viewport"  itemSize="25" [ngStyle]="{'height': height}">
-                
               <mat-option class="autocomplete-item"  *cdkVirtualFor="let option of options.service.frontendSearchAttribute?(selectList | selectFilter:searchText:options.service.frontendSearchAttribute):selectList" [value]="option.name" (click)="removeFocusSelect();addOption(option)" [disabled]="disableOption(option)">
                 <mat-icon aria-hidden="false" color="primary" aria-label="Example home icon">{{disableOption(option)?'radio_button_checked':'radio_button_unchecked'}}</mat-icon> {{option[options.selectItemName]}}
               </mat-option>
@@ -34,8 +36,44 @@
               </mat-option>
             </cdk-virtual-scroll-viewport>
             </mat-autocomplete>
-        </mat-form-field>
-    
+        </mat-form-field> -->
+
+        <!-- 
+        <div class="big_button_outside" [style.display]="fieldSelector.class =='show_field_selector'?'block':'none'" (click)="toggle_field_selector_class()">
+
+        </div> -->
+        <div class="manual_select" *ngIf="options.service">
+            <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span
+                    class="ibdc_asterisk">* </span></p>
+            <p *ngIf="options.description" class="description_field"><i>{{options.description}}</i>
+            </p>
+            <div class="custom_select_field" (click)="toggle_field_selector_class()">
+                <div class="custom_select_field_value">{{fieldSelector.name}}</div>
+                <mat-icon>arrow_drop_down</mat-icon>
+            </div>
+            <div class="field_selector {{fieldSelector.class}}">
+
+                <button mat-icon-button class="field_selector_close_button" (click)="toggle_field_selector_class()">
+                    <mat-icon>close</mat-icon>
+                </button>
+                <div class="field_selector_search">
+                    <input type="text" [(ngModel)]="searchText"
+                        (ngModelChange)="options.service.frontendSearchAttribute ? writtenInSearchField() : consumeService()">
+                </div>
+                <div class="field_selector_list">
+                    <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+                        <div class="select_option" [style.pointerEvents]="disableOption(option)?'none':'all'"
+                            *cdkVirtualFor="let option of options.service.frontendSearchAttribute?(selectList | selectFilter:searchText:options.service.frontendSearchAttribute):selectList"
+                            (click)="toggle_field_selector_class();onSelectOption(option)">
+                            <mat-icon *ngIf="options.toDisableList" aria-hidden="false" color="primary">
+                                {{disableOption(option)?'radio_button_checked':'radio_button_unchecked'}}</mat-icon>
+                            <span [style.marginLeft.px]="options.toDisableList?25:0" [style.color]="disableOption(option)?'#8f8f8f':'unset'">{{option[options.selectItemName]}}</span>
+                        </div>
+                    </cdk-virtual-scroll-viewport>
+                </div>
+            </div>
+        </div>
+        <br>
+
     </div>
-    </span>
-    
+</span>

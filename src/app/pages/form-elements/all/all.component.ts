@@ -17,6 +17,21 @@ export class AllComponent implements OnInit {
     }
   ]
 
+  toDisableList=[
+    {
+      name:"test 1",
+      id:1
+    },
+    {
+      name:"test 2",
+      id:2
+    },
+    {
+      name:"test 3",
+      id:3
+    }
+  ]
+
   selectList=[
     {
       name:"test 1",
@@ -38,15 +53,14 @@ export class AllComponent implements OnInit {
   ) {
     this.exampleForm = new FormGroup({
       text: new FormControl('Hello world', Validators.required),
-      select: new FormControl(null, Validators.required),
+      select: new FormControl(1, Validators.required),
+      selectWithValue: new FormControl('7', Validators.required),
     });
    }
 
   ngOnInit(): void {
-    this._requestService.getUsersInSubObjectExample().subscribe(resp=>{
+    this.exampleForm.valueChanges.subscribe(resp=>{
       // console.log(resp);
-      // console.log(resp.users);
-      // // this.usersExample = resp;
     })
   }
 

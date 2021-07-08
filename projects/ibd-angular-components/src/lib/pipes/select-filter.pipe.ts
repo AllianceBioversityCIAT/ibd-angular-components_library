@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class SelectFilterPipe implements PipeTransform {
 
   transform(list:any,word:string,attributeName:string): any {
-    console.log("transform");
     const array = [];
     if (word == '' || !attributeName ) {
       return list;
