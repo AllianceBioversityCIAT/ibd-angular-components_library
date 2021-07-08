@@ -1,0 +1,23 @@
+<div [ngSwitch]="this.options.readOnlyVariable">
+    <br>
+
+    <div *ngSwitchCase="true">
+        <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span class="ibdc_asterisk">* </span></p>
+        <p class="description_field">{{options.form.value[options.formControlName]||'Not available'}}</p>
+        <br>
+    </div>
+
+    <div *ngSwitchDefault>
+        <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span class="ibdc_asterisk">* </span></p>
+        <div class="tepo_cont">
+            <div class="tepo_text">
+                <div class="secondary_flag_top ibdc_bg_secondary_color"></div>
+                <p>{{options.text}}</p>
+                <div class="tepo_checkbox">
+                    <mat-checkbox><div class="secondary_flag ibdc_bg_secondary_color"></div>Confirm</mat-checkbox>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

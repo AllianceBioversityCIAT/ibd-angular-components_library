@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 import { NgxEditorModule } from 'ngx-editor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectFilterPipe } from './pipes/select-filter.pipe';
+import { TermsOrPoliciesComponent } from './form-elements/terms-or-policies/terms-or-policies.component';
 
 
 
@@ -27,6 +28,7 @@ const componentsList = [
   InputComponent, 
   SimpleTextComponent, 
   SaveButtonComponent,
+  TermsOrPoliciesComponent
 
 ];
 @NgModule({
