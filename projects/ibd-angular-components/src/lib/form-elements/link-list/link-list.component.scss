@@ -10,23 +10,24 @@
     max-height: 500px;
     overflow-y: scroll !important;
     overflow-x: hidden;
+    background-color: rgb(233, 233, 233);
     .custom-card{
         position: relative;
         @include mat-elevation(3);
-        background-color: #ececec;
+        background-color: #f8f8f8;
         // // height: 40px;
         width: 100%;
         border-radius: 10px;
         overflow: hidden;
         border: none;
-        margin-bottom: 7px;
+        margin-bottom: 10px;
         // padding: 20px 30px;
         display: flex;
         
         .blue_flag{
             background-color: #014d66 ;
             width: 13px;
-            height: 90px;
+            height: auto;
         }
         .inputs_container{
             width: 100%;
@@ -104,7 +105,10 @@
     border: none;
     background-color: transparent;
     outline: none;
-    border-bottom: 1px solid #aaaaaa;
+    border: 1px solid #cacaca;
+    border-radius: 15px;
+    padding-left: 10px;
+    color: rgb(107, 107, 107);
     margin-left: 3px;
     width: calc(100% - 160px);
 }
