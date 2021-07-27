@@ -12,19 +12,28 @@ interface LinkList {
 export class LinkListComponent implements OnInit {
 
   @Input() options:LinkListOptions;
-  linkList: LinkList[] = []
+
   constructor() { }
 
   ngOnInit(): void {
-    this.joinSavedListAndLocalList();
   }
-
-  joinSavedListAndLocalList(){
-    this.linkList = Object.assign(this.options.savedList)
+  
+  removeLink(index,object,itemLink:HTMLElement){
+    itemLink.classList.remove('animate__animated', 'animate__fadeInRight', 'animate__faster');
+    itemLink.classList.add('animate__animated', 'animate__bounceOutLeft');
+    itemLink.addEventListener('animationend', () => {
+      this.options.savedList.list.splice(index,1);
+      console.log(object);
+    });
   }
 
   addLink(){
-    this.linkList.push({link:'',description:''});
+    // let item={};
+    let item = new Object();
+    item[this.options.savedList.attributeDescription] = "";
+    item[this.options.savedList.attributeLink] = "";
+    this.options.savedList.list.push(item);
+    console.log(this.options.savedList.list);
   }
 
 }

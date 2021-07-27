@@ -4,7 +4,11 @@ export interface LinkListOptions{
     // readonly?:boolean;
     inputTitle:string;
     description?:string;
-    savedList:[]
+    savedList:{
+        list:any;
+        attributeDescription:string;
+        attributeLink:string;
+    }
     // form:FormGroup;
     // formControlName:string;
     // formControlId:string;
