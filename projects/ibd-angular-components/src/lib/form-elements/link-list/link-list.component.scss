@@ -12,6 +12,8 @@
     overflow-x: hidden;
     background-color: rgb(233, 233, 233);
     .custom-card{
+        max-height: 120px;
+        transition: ease all .3s;
         position: relative;
         @include mat-elevation(3);
         background-color: #f8f8f8;

@@ -13,13 +13,13 @@
                     <p class="readonly_text_title"><strong class="ibdc_secondary_color">Citation: </strong><span
                             class="ibdc_asterisk">* </span></p>
 
-                    <input [value]="item[options.savedList.attributeDescription]" [(ngModel)]="item[options.savedList.attributeDescription]" class="custom_input" type="text">
+                    <input (ngModelChange)="addAttributeEdited(i)" [value]="item[options.savedList.attributeDescription]" [(ngModel)]="item[options.savedList.attributeDescription]" class="custom_input" type="text">
                 </div>
 
                 <div class="input_container" style="margin-top: 8px;">
                     <p class="readonly_text_title" style="width: 65px;"><strong class="ibdc_secondary_color">Link:
                         </strong><span class="ibdc_asterisk">* </span></p>
-                    <input [value]="item[options.savedList.attributeLink]" [(ngModel)]="item[options.savedList.attributeLink]"  class="custom_input" type="text" #myInput>
+                    <input (ngModelChange)="addAttributeEdited(i)" [value]="item[options.savedList.attributeLink]" [(ngModel)]="item[options.savedList.attributeLink]"  class="custom_input" type="text" #myInput>
                 </div>
             </div>
             <div class="delete_button center_flex">
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="open_link_button center_flex">
-                <a [href]="myInput.value" target="_blank">
+                <a routerLink="" (click)="goToLink(myInput.value)">
                     <mat-icon>open_in_new</mat-icon>
                 </a>
             </div>

@@ -22,9 +22,26 @@ export class LinkListComponent implements OnInit {
     itemLink.classList.remove('animate__animated', 'animate__fadeInRight', 'animate__faster');
     itemLink.classList.add('animate__animated', 'animate__bounceOutLeft');
     itemLink.addEventListener('animationend', () => {
-      this.options.savedList.list.splice(index,1);
-      console.log(object);
+      itemLink.style.maxHeight = '0px';
+      if (object.citationId) {
+        object.edited = true;
+        object.active = false;
+        setTimeout(() => {
+          itemLink.style.display = 'none';
+        }, 300);
+      }else{
+        setTimeout(() => {
+          this.options.savedList.list.splice(index,1);
+        }, 300);
+     
+      }
+      
+      console.log(this.options.savedList.list);
     });
+  }
+
+  addAttributeEdited(index){
+    this.options.savedList.list[index].edited = true;
   }
 
   addLink(){
@@ -34,6 +51,10 @@ export class LinkListComponent implements OnInit {
     item[this.options.savedList.attributeLink] = "";
     this.options.savedList.list.push(item);
     console.log(this.options.savedList.list);
+  }
+
+  goToLink(url: string){
+    window.open("//"+url, "_blank");
   }
 
 }
