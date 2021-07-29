@@ -12,6 +12,7 @@
         <div [ngSwitch]="options.editText">
 
         <div *ngSwitchCase="true">
+            <!-- <p-editor  [style]="{'height':'320px'}"></p-editor> -->
             <div class="editText">
                 <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
                 <p *ngIf="options.description" class="description_field">{{options.description}}</p>
@@ -19,18 +20,18 @@
                 <ngx-editor [editor]="editor"  [formControl]="textareaInput" (ngModelChange)="setValue()"></ngx-editor>
             <mat-form-field class="general-information-full-width mat-form-field-aux">
                 <textarea  type="text"  matInput required [hidden]="true" [hidden]="true" style="position: absolute;"></textarea>
-                <mat-hint align="start" *ngIf="options.maxWords"><strong>Max {{options.maxWords}} words</strong> </mat-hint>
-                <mat-hint align="end" *ngIf="options.maxWords"><strong><span [style.color]="words <= options.maxWords?'':'red'">{{words}}</span> / {{options.maxWords}}</strong></mat-hint>
             </mat-form-field>
             </div>
             <br>
         </div>
 
         <div *ngSwitchDefault>
-            <mat-form-field class="general-information-full-width">
-                <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
-                <p *ngIf="options.description" class="description_field" style="margin-bottom: 8px;">{{options.description}}</p>
-                <textarea  type="text" [formControl]="textareaInput" matInput required (ngModelChange)="setValue()" cdkTextareaAutosize></textarea>
+            <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
+            <p *ngIf="options.description" class="description_field" style="margin-bottom: 8px;">{{options.description}}</p>
+            <textarea [formControl]="textareaInput" (ngModelChange)="setValue()" class="prime_textarea" [rows]="3" [cols]="30" pInputTextarea autoResize="autoResize"></textarea>
+            <ibdc-word-counter [form]="this.options.form" [formControlNameInput]="this.options.formControlName" [maxWords]="this.options.maxWords"></ibdc-word-counter>
+            <!-- <mat-form-field class="general-information-full-width">
+                <textarea [hidden]="true"  type="text" [formControl]="textareaInput" matInput required (ngModelChange)="setValue()" cdkTextareaAutosize></textarea>
                 <mat-hint align="start" *ngIf="options.maxWords"><strong>Max {{options.maxWords}} words</strong> </mat-hint>
                 <mat-hint align="end" *ngIf="options.maxWords"><strong><span [style.color]="words <= options.maxWords?'':'red'">{{words}}</span> / {{options.maxWords}}</strong></mat-hint>
                 
@@ -45,7 +46,7 @@
                     The <strong>{{options.inputTitle}}</strong> is required
                 </mat-error>
                
-            </mat-form-field>
+            </mat-form-field> -->
         </div>
         
         </div>

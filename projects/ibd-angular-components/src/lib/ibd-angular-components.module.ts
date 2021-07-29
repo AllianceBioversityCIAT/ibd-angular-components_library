@@ -14,6 +14,11 @@ import { NgxEditorModule } from 'ngx-editor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectFilterPipe } from './pipes/select-filter.pipe';
 import { TermsOrPoliciesComponent } from './form-elements/terms-or-policies/terms-or-policies.component';
+//primeNg
+import {InputTextareaModule} from 'primeng/inputtextarea';
+import {EditorModule} from 'primeng/editor';
+//
+import { WordCounterComponent } from './components/word-counter/word-counter.component';
 
 
 
@@ -31,8 +36,13 @@ const componentsList = [
   TermsOrPoliciesComponent
 
 ];
+
+const primeNgModulesList = [
+  InputTextareaModule,
+  // EditorModule
+];
 @NgModule({
-  declarations: [...componentsList, SelectFilterPipe],
+  declarations: [...componentsList, SelectFilterPipe, WordCounterComponent],
   exports: [...componentsList],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
@@ -40,7 +50,8 @@ const componentsList = [
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxEditorModule
+    NgxEditorModule,
+    ...primeNgModulesList
   ]
   
 })
