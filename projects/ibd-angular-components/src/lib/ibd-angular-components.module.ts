@@ -39,7 +39,7 @@ const componentsList = [
 
 const primeNgModulesList = [
   InputTextareaModule,
-  // EditorModule
+  EditorModule
 ];
 @NgModule({
   declarations: [...componentsList, SelectFilterPipe, WordCounterComponent],

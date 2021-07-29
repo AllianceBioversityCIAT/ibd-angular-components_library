@@ -17,7 +17,6 @@ export class TextareaComponent implements OnInit {
     let options={
       plugins:[]
     };
-    this.editor = new Editor(options);
     this.textareaInput = new FormControl(this.options.form.value[this.options.formControlName]?this.options.form.value[this.options.formControlName]:'', [
       Validators.required,
       // this.options.maxWords ? this.maxWordsValidator(): Validators.required
@@ -31,16 +30,9 @@ export class TextareaComponent implements OnInit {
     this.options.form.controls[this.options.formControlName].setValue(this.textareaInput.value);
   }
 
-  
 
-
-  editor: Editor;
-  toolbar: Toolbar = [
-    ['bold', 'italic','underline'],
-    ['link'],
-  ];
   ngOnDestroy(): void {
-    this.editor.destroy();
+   
   }
 
 }
