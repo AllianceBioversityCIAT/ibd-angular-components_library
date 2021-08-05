@@ -127,14 +127,16 @@
     margin-right: 10px;
 }
 .readonly_link{
-    margin-right: 10px;
-    cursor: pointer;
-    color: rgb(90, 143, 240);
-    text-decoration-line: underline;
-    transition: all ease .3s;
-    &:hover{
+    .rl{
+        margin-right: 10px;
+        cursor: pointer;
+        color: rgb(90, 143, 240);
+        text-decoration-line: underline;
         transition: all ease .3s;
-        color: rgb(68, 123, 226);
+        &:hover{
+            transition: all ease .3s;
+            color: rgb(68, 123, 226);
+        }
     }
 }
 
