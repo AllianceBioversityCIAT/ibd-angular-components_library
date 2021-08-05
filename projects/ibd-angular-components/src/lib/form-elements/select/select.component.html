@@ -8,6 +8,8 @@
 
     <div *ngSwitchDefault>
 
+        <p-dropdown [options]="options.selectList"  [optionLabel]="options.selectItemName" [optionValue]="options.selectItemId"></p-dropdown>
+
         <mat-form-field appearance="standard" class="general-information-full-width" *ngIf="!options.service">
             <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span class="ibdc_asterisk">* </span></p>
             <br>
@@ -20,28 +22,7 @@
             </mat-select>
         </mat-form-field>
 
-        <!-- <h1 style="color: blue;" *ngIf="options.service">-------</h1>
-        <mat-form-field floatLabel="false" *ngIf="options.service" cdkFocusInitial>
-            <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
-            <p *ngIf="options.description" class="description_field"><i>{{options.description}}</i></p>
-            <input type="text" aria-label="Number" placeholder="Write to search" matInput [matAutocomplete]="auto" [(ngModel)]="searchText" (ngModelChange)="options.service.frontendSearchAttribute ? writtenInSearchField() : consumeService()" [disabled]="removeFocus">
-            <mat-label [hidden]="true"></mat-label>
-            <mat-autocomplete #auto="matAutocomplete">
-                <cdk-virtual-scroll-viewport class="autocomplete-test-viewport"  itemSize="25" [ngStyle]="{'height': height}">
-              <mat-option class="autocomplete-item"  *cdkVirtualFor="let option of options.service.frontendSearchAttribute?(selectList | selectFilter:searchText:options.service.frontendSearchAttribute):selectList" [value]="option.name" (click)="removeFocusSelect();addOption(option)" [disabled]="disableOption(option)">
-                <mat-icon aria-hidden="false" color="primary" aria-label="Example home icon">{{disableOption(option)?'radio_button_checked':'radio_button_unchecked'}}</mat-icon> {{option[options.selectItemName]}}
-              </mat-option>
-              <mat-option *ngIf="selectList.length == 0" [value]=""  [disabled]="false">
-              <span class="color_message" *ngIf="searchText">No matches found...</span> <span class="color_message" *ngIf="!searchText ">Write something to filter</span> <mat-icon style="margin-left: 10px; position: relative; top: -2px;" class="color_message">{{searchText?'search_off':'keyboard'}}</mat-icon> 
-              </mat-option>
-            </cdk-virtual-scroll-viewport>
-            </mat-autocomplete>
-        </mat-form-field> -->
 
-        <!-- 
-        <div class="big_button_outside" [style.display]="fieldSelector.class =='show_field_selector'?'block':'none'" (click)="toggle_field_selector_class()">
-
-        </div> -->
         <div class="manual_select" *ngIf="options.service">
             <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span
                     class="ibdc_asterisk">* </span></p>

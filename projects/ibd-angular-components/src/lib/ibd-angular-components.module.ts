@@ -17,6 +17,7 @@ import { TermsOrPoliciesComponent } from './form-elements/terms-or-policies/term
 //primeNg
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {EditorModule} from 'primeng/editor';
+import {DropdownModule} from 'primeng/dropdown';
 //
 import { WordCounterComponent } from './components/word-counter/word-counter.component';
 
@@ -39,7 +40,8 @@ const componentsList = [
 
 const primeNgModulesList = [
   InputTextareaModule,
-  EditorModule
+  EditorModule,
+  DropdownModule
 ];
 @NgModule({
   declarations: [...componentsList, SelectFilterPipe, WordCounterComponent],
