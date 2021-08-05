@@ -1,7 +1,7 @@
 
 export interface LinkListOptions{
     // required?:boolean;
-    // readonly?:boolean;
+    readOnlyVariable?:boolean
     inputTitle:string;
     description?:string;
     savedList:{
