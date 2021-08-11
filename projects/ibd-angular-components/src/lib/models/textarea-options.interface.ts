@@ -9,4 +9,5 @@ export interface textareaOptions{
     formControlName:string;
     maxWords?:number;
     editText?:boolean;
+    initialParagraphs?:number;
 }
