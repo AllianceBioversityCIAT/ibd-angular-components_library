@@ -8,7 +8,7 @@
 
     <div *ngSwitchDefault>
 
-        <p-dropdown [options]="options.selectList"  [optionLabel]="options.selectItemName" [optionValue]="options.selectItemId"></p-dropdown>
+        <!-- <p-dropdown [options]="options.selectList"  [optionLabel]="options.selectItemName" [optionValue]="options.selectItemId"></p-dropdown> -->
 
         <mat-form-field appearance="standard" class="general-information-full-width" *ngIf="!options.service">
             <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span class="ibdc_asterisk">* </span></p>
@@ -34,7 +34,7 @@
             </div>
             <div class="field_selector {{fieldSelector.class}}">
 
-                <button mat-icon-button class="field_selector_close_button" (click)="toggle_field_selector_class()">
+                <button type="button" mat-icon-button class="field_selector_close_button" (click)="toggle_field_selector_class()">
                     <mat-icon>close</mat-icon>
                 </button>
                 <div class="field_selector_search">

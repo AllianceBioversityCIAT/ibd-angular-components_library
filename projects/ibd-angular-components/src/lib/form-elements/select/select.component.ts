@@ -48,7 +48,7 @@ export class SelectComponent implements OnInit {
     this.fieldSelector.name = this.options.form.value[this.options.formControlName];
     // console.log(this.options.form.value[this.options.formControlId]);
     if (useService) {
-    // this.fieldSelector.name = this.selectList.find(resp =>resp[this.options.selectItemId].toString() == this.options.form.value[this.options.formControlId])[this.options.selectItemName];
+    this.fieldSelector.name = this.selectList.find(resp =>resp[this.options.selectItemId].toString() == this.options.form.value[this.options.formControlId])[this.options.selectItemName];
 
     }else{
       // this.fieldSelector.name = this.options.selectList.find((resp:any) => resp[this.options.selectItemId].toString() == this.options.form.value[this.options.formControlId])[this.options.selectItemName];
