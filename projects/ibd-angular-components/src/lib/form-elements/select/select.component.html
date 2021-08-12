@@ -10,7 +10,7 @@
 
         <!-- <p-dropdown [options]="options.selectList"  [optionLabel]="options.selectItemName" [optionValue]="options.selectItemId"></p-dropdown> -->
 
-        <mat-form-field appearance="standard" class="general-information-full-width" *ngIf="!options.service">
+        <!-- <mat-form-field appearance="standard" class="general-information-full-width" *ngIf="!options.service">
             <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span class="ibdc_asterisk">* </span></p>
             <br>
             <p *ngIf="options.description" class="description_field"><i>{{options.description}}</i></p>
@@ -20,10 +20,10 @@
                     [value]="item[options.selectItemId]">{{item[options.selectItemName]}}
                 </mat-option>
             </mat-select>
-        </mat-form-field>
+        </mat-form-field> -->
 
 
-        <div class="manual_select" *ngIf="options.service">
+        <div class="manual_select">
             <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span
                     class="ibdc_asterisk">* </span></p>
             <p *ngIf="options.description" class="description_field"><i>{{options.description}}</i>
@@ -39,12 +39,12 @@
                 </button>
                 <div class="field_selector_search">
                     <input type="text" [(ngModel)]="searchText"
-                        (ngModelChange)="options.service.frontendSearchAttribute ? writtenInSearchField() : consumeService()">
+                        (ngModelChange)="options.frontendSearchAttribute ? writtenInSearchField() : consumeService()">
                 </div>
                 <div class="field_selector_list">
                     <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
                         <div class="select_option" [style.pointerEvents]="disableOption(option)?'none':'all'"
-                            *cdkVirtualFor="let option of options.service.frontendSearchAttribute?(selectList | selectFilter:searchText:options.service.frontendSearchAttribute):selectList"
+                            *cdkVirtualFor="let option of options.frontendSearchAttribute?(selectList | selectFilter:searchText:options.frontendSearchAttribute):selectList"
                             (click)="toggle_field_selector_class();onSelectOption(option)">
                             <mat-icon *ngIf="options.toDisableList" aria-hidden="false" color="primary">
                                 {{disableOption(option)?'radio_button_checked':'radio_button_unchecked'}}</mat-icon>

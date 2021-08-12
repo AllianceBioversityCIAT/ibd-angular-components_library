@@ -17,8 +17,8 @@ export interface selectOptions{
     // attributeNameToSearch:string;
     // serviceFunction:string;
     initialSearchText:string;
+    frontendSearchAttribute:string
     service:{
-        frontendSearchAttribute:string
         serviceTS:any;
         functionName:string;
         objectName:string;
