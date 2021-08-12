@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, ValidatorFn, Validators } from '@angular/forms';
-import { Editor, Toolbar } from 'ngx-editor';
 
 import { textareaOptions } from '../../models/textarea-options.interface';
 @Component({

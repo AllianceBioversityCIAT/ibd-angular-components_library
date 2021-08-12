@@ -10,7 +10,6 @@ import { SimpleTextComponent } from './form-elements/simple-text/simple-text.com
 import { SaveButtonComponent } from './components/save-button/save-button.component';
 import { MaterialModule } from './angular_material_module/material.module';
 import { CommonModule } from '@angular/common';
-import { NgxEditorModule } from 'ngx-editor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectFilterPipe } from './pipes/select-filter.pipe';
 import { TermsOrPoliciesComponent } from './form-elements/terms-or-policies/terms-or-policies.component';
@@ -52,7 +51,6 @@ const primeNgModulesList = [
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxEditorModule,
     ...primeNgModulesList
   ]
   
