@@ -36,9 +36,6 @@ export class SelectComponent implements OnInit {
       Validators.required,
     ]);
      this.setValue(null);
-     if(this.options.readOnlyVariable){
-       this.getSelectResult();
-     }
   }
 
   findAndChangeFieldSelectorName(){
@@ -68,19 +65,9 @@ export class SelectComponent implements OnInit {
     }
   }
 
-  getSelectResult(){
-    for (const item of this.options.selectList) {
-      if (item[this.options.selectItemId] == this.selectInput.value) {
-        return item[this.options.selectItemName];
-      }
-
-    }
-  }
-
-
   // height:string;
 
-  consumeService(callback?) {
+  consumeService() {
     if (this.options.service && !this.options.selectList) {
 
       this.options.service.serviceTS[this.options.service.functionName]('todo').subscribe((res) => {

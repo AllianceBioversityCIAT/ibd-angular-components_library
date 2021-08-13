@@ -1,9 +1,9 @@
 <span [ngSwitch]="this.options.readOnlyVariable">
     <div *ngSwitchCase="true">
-        <br>
         <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span
                 class="ibdc_asterisk">* </span></p>
-        <p class="description_field">{{getSelectResult()||'Not available'}}</p>
+        <p class="description_field">{{this.fieldSelector.name||'Not available'}}</p>
+        <br>
     </div>
 
     <div *ngSwitchDefault>
