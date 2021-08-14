@@ -18,7 +18,7 @@ export interface multipleChoiceOptions{
         frontendSearchAttribute:string
         serviceTS:any;
         functionName:string;
-        objectName:string;
+        objectName:[];
     }
     
     

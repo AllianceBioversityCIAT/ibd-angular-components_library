@@ -1,21 +1,22 @@
-import { FormGroup } from "@angular/forms";
-import { Observable } from "rxjs";
-
-export interface selectOptions{
+export interface SelectMultipleOptions{
     required?:boolean;
     readOnlyVariable?:boolean
     inputTitle:string;
     description?:string;
-    form:FormGroup;
-    formControlName:string;
-    formControlId:string;
-    maxWords:number;
-    selectList:[];
+    // form:FormGroup;
+    chipName:string;
+    // maxWords:number;
+    savedList:{
+        list:any[];
+        itemId:string|number;
+    };
+    selectList:any[];
     selectItemName:string;
     selectItemId:string|number;
+    
     toDisableList:[];
-    // attributeNameToSearch:string;
-    // serviceFunction:string;
+    showChips:boolean;
+    attributeNameToSearch:string;
     initialSearchText:string;
     frontendSearchAttribute:string
     service:{
@@ -23,4 +24,6 @@ export interface selectOptions{
         functionName:string;
         objectName:[];
     }
+    
+    
 }
