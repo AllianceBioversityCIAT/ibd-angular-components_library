@@ -10,6 +10,7 @@ import { InputOptions } from '../../models/input-options.interface';
 export class InputComponent implements OnInit {
   @Input() options:InputOptions;
   textInput:FormControl;
+  numericField=0;
   constructor() { }
 
   ngOnInit(): void {
@@ -28,6 +29,11 @@ export class InputComponent implements OnInit {
   setValue(){
     this.options.form.controls[this.options.formControlName].setValue(this.textInput.value);
     console.log('cambiando');
+  }
+
+  setValueWithNumber(){
+    this.options.form.controls[this.options.formControlName].setValue(this.numericField);
+    console.log('ngmodel number');
   }
 
 }
