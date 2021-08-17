@@ -1,1 +1,33 @@
-<p>input works!</p>
+<div [ngSwitch]="this.options.readOnlyVariable">
+
+
+    <div *ngSwitchCase="true">
+        <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span class="ibdc_asterisk">* </span></p>
+        <p class="description_field">{{options.form.value[options.formControlName]||'Not available'}}</p>
+        <br>
+    </div>
+
+    <div *ngSwitchDefault>
+
+        <!-- <div [ngSwitch]="options.type">
+
+        <div *ngSwitchCase="'text'">
+            <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
+            <p *ngIf="options.description" class="description_field">{{options.description}}</p>
+            <input type="text" pInputText />
+        </div> -->
+
+        <!-- <div *ngSwitchDefault> -->
+            <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
+            <p *ngIf="options.description" class="description_field">{{options.description}}</p>
+            <input (change)="setValue()" [formControl]="textInput" [type]="this.options.type" pInputText />
+        <!-- </div> -->
+        
+        <!-- </div> -->
+    </div>
+
+</div>
+
+
+
+

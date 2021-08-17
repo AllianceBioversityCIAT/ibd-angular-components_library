@@ -1,6 +1,7 @@
 import { FormGroup } from "@angular/forms";
 
-export interface inputOptions{
+export interface InputOptions{
+    readOnlyVariable?:boolean
     required?:boolean
     readonly?:boolean
     inputTitle:string
@@ -8,4 +9,5 @@ export interface inputOptions{
     form:FormGroup;
     formControlName:string;
     maxWords?:number;
+    type:string;
 }
