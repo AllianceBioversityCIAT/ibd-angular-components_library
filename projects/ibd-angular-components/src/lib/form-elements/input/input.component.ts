@@ -21,7 +21,7 @@ export class InputComponent implements OnInit {
       Validators.required,
       // this.options.maxWords ? this.maxWordsValidator(): Validators.required
     ]);
-    this.numericField = this.options.form.value[this.options.formControlName]?this.options.form.value[this.options.formControlName]:0
+    this.numericField = this.options.form.value[this.options.formControlName]?this.options.form.value[this.options.formControlName]:0;
      this.setValue();
   }
 
