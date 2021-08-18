@@ -9,6 +9,27 @@
     }
 }
 
+.selector_container{
+    display: flex;
+    width: 100%;
+    .manual_select{
+        width: 50%;
+    }
+    .items_list{
+        padding: 0px 10px;
+        width: 50%;
+        max-width: 50%;
+        overflow-x: scroll;
+        display: flex;
+        flex-direction: column;
+        max-height: 100px;
+        flex-wrap: wrap;
+        .item{
+            flex: 1 1 160px;
+        }
+    }
+}
+
 .manual_select{
     position: relative;
 }
@@ -143,25 +164,25 @@
 
 
     /* width */
-    .example-viewport::-webkit-scrollbar {
+    .example-viewport::-webkit-scrollbar,.items_list::-webkit-scrollbar {
         width: 10px;
         border-radius: 30px;
       }
       
       /* Track */
-      .example-viewport::-webkit-scrollbar-track {
+      .example-viewport::-webkit-scrollbar-track,.items_list::-webkit-scrollbar-track {
         background: #f1f1f1; 
         border-radius: 30px;
       }
        
       /* Handle */
-      .example-viewport::-webkit-scrollbar-thumb {
+      .example-viewport::-webkit-scrollbar-thumb,.items_list::-webkit-scrollbar-thumb {
         background: #025c7a; 
         border-radius: 30px;
       }
       
       /* Handle on hover */
-      .example-viewport::-webkit-scrollbar-thumb:hover {
+      .example-viewport::-webkit-scrollbar-thumb:hover,.items_list::-webkit-scrollbar-thumb:hover {
         background: #014d66; 
         border-radius: 30px;
       }

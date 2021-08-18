@@ -55,9 +55,9 @@ export class SelectMultipleComponent implements OnInit {
     // console.log(this.options.savedList.list);
     this.options.savedList.list.map(savedItem=>{
       // console.log(savedItem);
-      let itemFinded = this.selectList.find(originalItem=>originalItem[this.options.selectItemId] == savedItem[this.options.savedList.itemId]);
-      itemFinded.selected = true
-      console.log(itemFinded);
+      let itemFinded = this.selectList.find(originalItem=>originalItem[this.options.selectItemId] == savedItem[this.options.savedList.selectItemId]);
+      itemFinded?itemFinded.selected = true:null;
+      // console.log(itemFinded);
     });
   }
 
@@ -71,20 +71,15 @@ export class SelectMultipleComponent implements OnInit {
   }
 
   onSelectOption(option:any){
+    let itemFinded = this.options.savedList.list.find((savedItem:any)=>savedItem[this.options.savedList.selectItemId] == option[this.options.selectItemId]);
+    let itemFindedIndex = this.options.savedList.list.findIndex((savedItem:any)=>savedItem[this.options.savedList.selectItemId] == option[this.options.selectItemId]);
     option.selected =  !option.selected;
-    let itemFinded = this.options.savedList.list.find((savedItem:any)=>savedItem[this.options.savedList.itemId] == option[this.options.selectItemId])
-    if (itemFinded) {
-      console.log('%cFinded','background: #222; color: #ffff00');
-      console.log(itemFinded);
-      // poner active 0 si el item tiene id de la bd
-      //eliminar del array si el item no tiene id de la bd
-    }else{
-      this.options.savedList.list.push(option)
+    let itemFindedActions = ()=>{
+      itemFinded[this.options.savedList.idToSave]?itemFinded.active = option.selected:null;
+      !option.selected && !itemFinded[this.options.savedList.idToSave]?this.options.savedList.list.splice(itemFindedIndex, 1):null;
     }
-
-    // console.log(option[this.options.selectItemName]+' - '+option[this.options.selectItemId]);
-    // this.selectInput.setValue(data[this.options.formControlName]);
-    // this.fieldSelector.name = option[this.options.selectItemName];
+    itemFinded?itemFindedActions():this.options.savedList.list.push(option);
+    console.log(this.options.savedList.list);
   }
 
 }

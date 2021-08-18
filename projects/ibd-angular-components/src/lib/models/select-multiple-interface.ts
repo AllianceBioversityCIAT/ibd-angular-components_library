@@ -8,7 +8,8 @@ export interface SelectMultipleOptions{
     // maxWords:number;
     savedList:{
         list:any[];
-        itemId:string|number;
+        selectItemId:string|number;
+        idToSave:string|number;
     };
     selectList:any[];
     selectItemName:string;
