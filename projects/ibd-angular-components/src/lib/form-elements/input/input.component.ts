@@ -21,19 +21,19 @@ export class InputComponent implements OnInit {
       Validators.required,
       // this.options.maxWords ? this.maxWordsValidator(): Validators.required
     ]);
-
+    this.numericField = this.options.form.value[this.options.formControlName]?this.options.form.value[this.options.formControlName]:0
      this.setValue();
   }
 
 
   setValue(){
     this.options.form.controls[this.options.formControlName].setValue(this.textInput.value);
-    console.log('cambiando');
+    // console.log('cambiando');
   }
 
   setValueWithNumber(){
     this.options.form.controls[this.options.formControlName].setValue(this.numericField);
-    console.log('ngmodel number');
+    // console.log('ngmodel number');
   }
 
 }
