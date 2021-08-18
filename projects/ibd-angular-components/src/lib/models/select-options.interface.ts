@@ -21,6 +21,6 @@ export interface selectOptions{
     service:{
         serviceTS:any;
         functionName:string;
-        objectName:string;
+        objectName:[];
     }
 }

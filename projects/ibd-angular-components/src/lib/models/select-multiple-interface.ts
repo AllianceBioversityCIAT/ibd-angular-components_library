@@ -1,24 +1,29 @@
-export interface multipleChoiceOptions{
+export interface SelectMultipleOptions{
     required?:boolean;
-    readonly?:boolean;
+    readOnlyVariable?:boolean
     inputTitle:string;
     description?:string;
     // form:FormGroup;
     chipName:string;
     // maxWords:number;
+    savedList:{
+        list:any[];
+        selectItemId:string|number;
+        idToSave:string|number;
+    };
     selectList:any[];
-    selectedList:any[];
     selectItemName:string;
     selectItemId:string|number;
-    selectedItemId:string|number;
+    
     toDisableList:[];
     showChips:boolean;
     attributeNameToSearch:string;
+    initialSearchText:string;
+    frontendSearchAttribute:string
     service:{
-        frontendSearchAttribute:string
         serviceTS:any;
         functionName:string;
-        objectName:string;
+        objectName:[];
     }
     
     

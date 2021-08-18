@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { MatSelectChange } from '@angular/material/select';
 import { selectOptions } from '../../models/select-options.interface';
-
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'ibdc-select',
@@ -71,7 +71,9 @@ export class SelectComponent implements OnInit {
     if (this.options.service && !this.options.selectList) {
 
       this.options.service.serviceTS[this.options.service.functionName]('todo').subscribe((res) => {
-        this.selectList = this.options.service.objectName?res[this.options.service.objectName]:res;
+        this.selectList = res;
+        // each key and sub keys to find the list
+        if (this.options.service.objectName) this.options.service.objectName.map((objectName)=>this.selectList = this.selectList[objectName]);
         this.findAndChangeFieldSelectorName()
         // if (this.selectList.length < 4) {
         //   this.height = (this.selectList.length * 50) + 'px';
