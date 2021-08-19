@@ -11,6 +11,7 @@ export interface SelectMultipleOptions{
         selectItemId:string|number;
         selectItemName:string;
         idToSave:string|number;
+        labelName:string;
     };
     selectList:any[];
     selectItemName:string;

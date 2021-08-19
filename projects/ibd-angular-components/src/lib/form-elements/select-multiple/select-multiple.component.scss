@@ -8,14 +8,28 @@
         outline: none;  
     }
 }
+.header_list{
+    display: flex;
+    justify-content: space-between;
+}
 
 .selector_container{
     // display: flex;
     width: 100%;
     .manual_select{
         width: 100%;
+        box-shadow: 0 3px 6px #96969629, 0 3px 6px #96969629;
+        padding: 10px;
+        border-radius: 7px;
+    }
+    .items_list_with_text{
+        margin-top: 20px;
+        box-shadow: 0 3px 6px #96969629, 0 3px 6px #96969629;
+        padding: 10px;
+        border-radius: 7px;
     }
     .items_list{
+        
         padding: 0px 10px;
         width: 100%;
         // max-width: 10%;

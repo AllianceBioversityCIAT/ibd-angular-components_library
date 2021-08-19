@@ -2,7 +2,13 @@
     <div *ngSwitchCase="true">
         <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span
                 class="ibdc_asterisk">* </span></p>
-        <p class="description_field">{{this.fieldSelector.name||'Not available'}}</p>
+        <p class="description_field" *ngIf="!this.options.savedList.list.length">Not available</p>
+        <div class="items_list" *ngIf="this.options.savedList.list.length">
+            <div class="item" *ngFor="let item of this.options.savedList.list">
+                <p *ngIf="item.active !== false">{{item[this.options.savedList.selectItemName]}}</p>
+            </div>
+        </div>
+
         <br>
     </div>
 
@@ -14,7 +20,7 @@
                 <p *ngIf="options.description" class="description_field"><i>{{options.description}}</i>
                 </p>
                 <div class="custom_select_field" (click)="toggle_field_selector_class()">
-                    <div class="custom_select_field_value">{{fieldSelector.name}}</div>
+                    <div class="custom_select_field_value">Select options...</div>
                     <mat-icon>arrow_drop_down</mat-icon>
                 </div>
                 <div class="field_selector {{fieldSelector.class}}">
@@ -38,9 +44,16 @@
                     </div>
                 </div>
             </div>
-            <div class="items_list">
-                <div class="item" *ngFor="let item of this.options.savedList.list">
-                    <p *ngIf="item.active !== false">{{item[this.options.savedList.selectItemName]}}</p>
+            <div class="items_list_with_text">
+                <div class="header_list">
+                    <p class="input_title"><strong class="ibdc_secondary_color">{{options.savedList.labelName | uppercase}} saved: </strong></p>
+                    <p class="input_title" style="margin-right: 15px;"><strong class="ibdc_secondary_color">Number of {{options.savedList.labelName}} : {{this.options.savedList.list.length}} </strong></p>
+                </div>
+                <br>
+                <div class="items_list">
+                    <div class="item" *ngFor="let item of this.options.savedList.list; let i = index">
+                        <p *ngIf="item.active !== false"> <span style="color: #858585;">{{i+1}}.</span>  {{item[this.options.savedList.selectItemName]}}</p>
+                    </div>
                 </div>
             </div>
         </div>
