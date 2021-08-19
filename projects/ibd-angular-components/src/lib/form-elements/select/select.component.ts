@@ -74,7 +74,10 @@ export class SelectComponent implements OnInit {
         this.selectList = res;
         // each key and sub keys to find the list
         if (this.options.service.objectName) this.options.service.objectName.map((objectName)=>this.selectList = this.selectList[objectName]);
-        this.findAndChangeFieldSelectorName()
+        if (this.options.form.value[this.options.formControlId]) {
+          this.findAndChangeFieldSelectorName()
+        }
+        
         // if (this.selectList.length < 4) {
         //   this.height = (this.selectList.length * 50) + 'px';
         // } else {

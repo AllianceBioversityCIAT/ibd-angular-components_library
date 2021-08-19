@@ -40,7 +40,7 @@
             </div>
             <div class="items_list">
                 <div class="item" *ngFor="let item of this.options.savedList.list">
-                    <span *ngIf="item.active !== false">{{item.name}}</span>
+                    <p *ngIf="item.active !== false">{{item[this.options.savedList.selectItemName]}}</p>
                 </div>
             </div>
         </div>

@@ -9,6 +9,7 @@ export interface SelectMultipleOptions{
     savedList:{
         list:any[];
         selectItemId:string|number;
+        selectItemName:string;
         idToSave:string|number;
     };
     selectList:any[];
