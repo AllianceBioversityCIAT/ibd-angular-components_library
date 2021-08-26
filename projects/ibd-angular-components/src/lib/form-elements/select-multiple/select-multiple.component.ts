@@ -74,6 +74,7 @@ export class SelectMultipleComponent implements OnInit {
     let itemFinded = this.options.savedList.list.find((savedItem:any)=>savedItem[this.options.savedList.selectItemId] == option[this.options.selectItemId]);
     let itemFindedIndex = this.options.savedList.list.findIndex((savedItem:any)=>savedItem[this.options.savedList.selectItemId] == option[this.options.selectItemId]);
     option.selected =  !option.selected;
+    option.active = option.selected;
     let itemFindedActions = ()=>{
       itemFinded[this.options.savedList.idToSave]?itemFinded.active = option.selected:null;
       !option.selected && !itemFinded[this.options.savedList.idToSave]?this.options.savedList.list.splice(itemFindedIndex, 1):null;
