@@ -58,8 +58,9 @@
 
 .field_selector{
     position: relative;
-    top: -10px;
-    z-index: 101;
+    margin-top: 5px;
+    // top: -10px;
+    // z-index: 101;
     width: auto;
     // height: 100px;
     @include mat-elevation(3);
