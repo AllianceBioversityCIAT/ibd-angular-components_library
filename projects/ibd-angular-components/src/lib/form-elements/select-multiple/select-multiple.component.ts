@@ -62,7 +62,7 @@ export class SelectMultipleComponent implements OnInit {
   }
 
   writtenInSearchField(){
-    console.log("writtenInSearchField");
+    // console.log("writtenInSearchField");
     // this.mapSelected();
   }
 
@@ -71,16 +71,36 @@ export class SelectMultipleComponent implements OnInit {
   }
 
   onSelectOption(option:any){
+    // encontrar en lista de guardados la opcion seleccionada
     let itemFinded = this.options.savedList.list.find((savedItem:any)=>savedItem[this.options.savedList.selectItemId] == option[this.options.selectItemId]);
     let itemFindedIndex = this.options.savedList.list.findIndex((savedItem:any)=>savedItem[this.options.savedList.selectItemId] == option[this.options.selectItemId]);
+    // toggle de seleccion (quitar / poner)
     option.selected =  !option.selected;
-    option.active = option.selected;
-    let itemFindedActions = ()=>{
-      itemFinded[this.options.savedList.idToSave]?itemFinded.active = option.selected:null;
-      !option.selected && !itemFinded[this.options.savedList.idToSave]?this.options.savedList.list.splice(itemFindedIndex, 1):null;
+    // Eliminado logico o eliminar de elementos de un array que no están en la bd
+    if (option.selected) {
+      // opcion de agregar
+      if (itemFinded) {
+        //busca si uno de los guardados tiene borrado logico para ponerlo active true
+        itemFinded.active = true;
+      }else{
+        // agregar option al array
+        this.options.savedList.list.push(option);
+      }
+    }else{
+      //formas de borrar
+      if (itemFinded) {
+        // si tiene id de la bd pero de guardado
+        if (itemFinded[this.options.savedList.idToSave]) {
+          //borrado logico
+          itemFinded.active = false;
+        }else{
+          //borrado de array
+          this.options.savedList.list.splice(itemFindedIndex, 1)
+        }
+        
+      }
     }
-    itemFinded?itemFindedActions():this.options.savedList.list.push(option);
-    console.log(this.options.savedList.list);
+
   }
 
 }
