@@ -21,8 +21,6 @@ import {InputTextModule} from 'primeng/inputtext';
 import {InputNumberModule} from 'primeng/inputnumber';
 //
 import { WordCounterComponent } from './components/word-counter/word-counter.component';
-import {SkeletonModule} from 'primeng/skeleton';
-
 
 
 
@@ -46,8 +44,7 @@ const primeNgModulesList = [
   EditorModule,
   DropdownModule,
   InputTextModule,
-  InputNumberModule,
-  SkeletonModule
+  InputNumberModule
 ];
 @NgModule({
   declarations: [...componentsList, SelectFilterPipe, WordCounterComponent],
