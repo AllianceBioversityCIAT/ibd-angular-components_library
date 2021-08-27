@@ -33,7 +33,10 @@
                             (ngModelChange)="options.frontendSearchAttribute ? writtenInSearchField() : consumeService()">
                     </div>
                     <div class="field_selector_list">
-                        <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+                        <div *ngIf="!this.showList">
+                            <p-skeleton *ngFor="let item of [1,2,3,4,5]" width="100%" height="2rem"></p-skeleton>
+                        </div>
+                        <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport" *ngIf="this.showList">
                             <div class="select_option"
                                 *cdkVirtualFor="let option of options.frontendSearchAttribute?(selectList | selectFilter:searchText:options.frontendSearchAttribute):selectList"
                                 (click)="onSelectOption(option)">

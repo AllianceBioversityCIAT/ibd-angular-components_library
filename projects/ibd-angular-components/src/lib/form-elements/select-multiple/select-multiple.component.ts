@@ -21,7 +21,7 @@ export class SelectMultipleComponent implements OnInit {
     value:'244242424',
     name:''
   }
-
+  showList = false;
 
   // valors='asasasas';
 
@@ -30,6 +30,7 @@ export class SelectMultipleComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log("Dentro");
     this.searchText = this.options.initialSearchText?this.options.initialSearchText:this.searchText;
     this.consumeService();
   }
@@ -38,14 +39,17 @@ export class SelectMultipleComponent implements OnInit {
     if (this.options.service && !this.options.selectList) {
 
       this.options.service.serviceTS[this.options.service.functionName]('todo').subscribe((res) => {
+
         this.selectList = res;
         // each key and sub keys to find the list
         if (this.options.service.objectName) this.options.service.objectName.map((objectName)=>this.selectList = this.selectList[objectName]);
         this.mapSavedList();
         // console.log(this.selectList);
+        this.showList = true;
       });
       
     }else{
+      this.showList = true;
       this.selectList = this.options.selectList;
       this.mapSavedList();
     }
