@@ -26,40 +26,14 @@
                 </p-header>
               </p-editor>
               <ibdc-word-counter *ngIf="this.options.maxWords" [form]="this.options.form" [formControlNameInput]="this.options.formControlName" [maxWords]="this.options.maxWords"></ibdc-word-counter>
-            <!-- <div class="editText">
-                <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
-                <p *ngIf="options.description" class="description_field">{{options.description}}</p>
-                <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"> </ngx-editor-menu>
-                <ngx-editor [editor]="editor"  [formControl]="textareaInput" (ngModelChange)="setValue()"></ngx-editor>
-            <mat-form-field class="general-information-full-width mat-form-field-aux">
-                <textarea  type="text"  matInput required [hidden]="true" [hidden]="true" style="position: absolute;"></textarea>
-            </mat-form-field>
-            </div> -->
             <br>
         </div>
 
         <div *ngSwitchDefault class="normal_textarea">
             <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
             <p *ngIf="options.description" class="description_field" style="margin-bottom: 8px;">{{options.description}}</p>
-            <textarea [formControl]="textareaInput" (ngModelChange)="setValue()" class="prime_textarea" [rows]="options.initialParagraphs?options.initialParagraphs:3" [cols]="30" pInputTextarea autoResize="autoResize"></textarea>
-            <ibdc-word-counter *ngIf="this.options.maxWords" [form]="this.options.form" [formControlNameInput]="this.options.formControlName" [maxWords]="this.options.maxWords"></ibdc-word-counter>
-            <!-- <mat-form-field class="general-information-full-width">
-                <textarea [hidden]="true"  type="text" [formControl]="textareaInput" matInput required (ngModelChange)="setValue()" cdkTextareaAutosize></textarea>
-                <mat-hint align="start" *ngIf="options.maxWords"><strong>Max {{options.maxWords}} words</strong> </mat-hint>
-                <mat-hint align="end" *ngIf="options.maxWords"><strong><span [style.color]="words <= options.maxWords?'':'red'">{{words}}</span> / {{options.maxWords}}</strong></mat-hint>
-                
-                <mat-error align="start" *ngIf="textareaInput.hasError('maxWords')">
-                    <strong>Max {{options.maxWords}} words</strong> 
-                </mat-error>
-                <mat-error  align="end" *ngIf="textareaInput.hasError('maxWords')">
-                    <strong>{{words}} / <span [style.color]="words <= options.maxWords?'':'black'">{{options.maxWords}}</span></strong>
-               
-                </mat-error>
-                <mat-error *ngIf="textareaInput.hasError('required')">
-                    The <strong>{{options.inputTitle}}</strong> is required
-                </mat-error>
-               
-            </mat-form-field> -->
+            <textarea #textAreaValue  [formControl]="textareaInput" (ngModelChange)="setValue()" class="prime_textarea" [rows]="options.initialParagraphs?options.initialParagraphs:3" [cols]="30" pInputTextarea autoResize="autoResize"></textarea>
+            <ibdc-word-counter (writeEvent)="deleteLastWord()" *ngIf="this.options.maxWords" [form]="this.options.form" [formControlNameInput]="this.options.formControlName" [maxWords]="this.options.maxWords"></ibdc-word-counter>
         </div>
         
         </div>

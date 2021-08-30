@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -12,6 +12,7 @@ export class WordCounterComponent implements OnInit {
   @Input() form:FormGroup;
   @Input() formControlNameInput:string;
   @Input() maxWords:any;
+  @Output() writeEvent = new EventEmitter;
   constructor() { }
 
   ngOnInit(): void {
@@ -24,6 +25,12 @@ export class WordCounterComponent implements OnInit {
   wordCounter() {
     this.wordCount = this.form.get(this.formControlNameInput).value ? this.form.get(this.formControlNameInput).value.split(/\s+/) : 0;
     this.words = this.wordCount ? (this.wordCount[this.wordCount.length-1]=="" ? this.wordCount.length-1 : this.wordCount.length ) : 0;
+    if (this.words > this.maxWords) {
+      this.writeEvent.emit();
+    }
+    // console.log(this.maxWords);
+    // console.log(this.words);
+   
     // console.log(this.words);
   }
 
