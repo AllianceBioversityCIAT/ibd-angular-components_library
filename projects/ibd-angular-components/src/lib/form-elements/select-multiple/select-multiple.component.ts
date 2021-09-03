@@ -1,8 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
-import { MatSelectChange } from '@angular/material/select';
-import { selectOptions } from '../../models/select-options.interface';
-import { map } from 'rxjs/operators';
 import { SelectMultipleOptions } from '../../models/select-multiple-interface';
 @Component({
   selector: 'ibdc-select-multiple',

@@ -20,6 +20,7 @@ import {DropdownModule} from 'primeng/dropdown';
 import {InputTextModule} from 'primeng/inputtext';
 import {InputNumberModule} from 'primeng/inputnumber';
 import {ButtonModule} from 'primeng/button';
+import {TooltipModule} from 'primeng/tooltip';
 
 //
 import { WordCounterComponent } from './components/word-counter/word-counter.component';
@@ -38,7 +39,6 @@ const componentsList = [
   SimpleTextComponent, 
   SaveButtonComponent,
   TermsOrPoliciesComponent
-
 ];
 
 const primeNgModulesList = [
@@ -47,7 +47,8 @@ const primeNgModulesList = [
   DropdownModule,
   InputTextModule,
   InputNumberModule,
-  ButtonModule
+  ButtonModule,
+  TooltipModule
 ];
 @NgModule({
   declarations: [...componentsList, SelectFilterPipe, WordCounterComponent],

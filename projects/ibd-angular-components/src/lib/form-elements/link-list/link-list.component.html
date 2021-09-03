@@ -26,8 +26,8 @@
                         <p class="readonly_link"> 
                             <span   [ngClass]="{'rl': item[options.savedList.attributeLink]}"
                             (click)="goToLink(item[options.savedList.attributeLink])" 
-                            matTooltip="Click to open link" 
-                            matTooltipPosition="left">{{item[options.savedList.attributeLink]||'Not available'}}</span>
+                            pTooltip="Click to open link" 
+                            >{{item[options.savedList.attributeLink]||'Not available'}}</span>
                         </p>
 
                         <!-- <input (ngModelChange)="addAttributeEdited(i)" [value]="item[options.savedList.attributeLink]" [(ngModel)]="item[options.savedList.attributeLink]"  class="custom_input" type="text" #myInput> -->
@@ -35,7 +35,7 @@
                 </div>
                 <div class="open_link_button center_flex">
                     <a routerLink="" (click)="goToLink(item[options.savedList.attributeLink])">
-                        <mat-icon>open_in_new</mat-icon>
+                        <span class="material-icons">open_in_new</span>
                     </a>
                 </div>
             </div>
@@ -71,23 +71,28 @@
                 <div class="delete_button center_flex">
                     <div class="delete_options">
                         <div style="display: flex;">
-                            <mat-icon>delete</mat-icon>
+                            <span class="material-icons">delete</span>
                             <span class="message">Are you sure?</span>
                         </div>
-    
-                        <button class="confirm" mat-button type="button" (click)="removeLink(i,item,itemLink)">Yes</button>
+                        <button pButton pRipple type="button" label="Yes" class="p-button-rounded p-button-danger confirm" (click)="removeLink(i,item,itemLink)"></button>
                     </div>
                 </div>
                 <div class="open_link_button center_flex">
                     <a routerLink="" (click)="goToLink(myInput.value)">
-                        <mat-icon>open_in_new</mat-icon>
+                        <span class="material-icons">open_in_new</span>
                     </a>
                 </div>
             </div>
         </div>
         <br>
         <div class="button_add_container center_flex">
-            <button (click)="addLink()" class="button_add" type="button" mat-raised-button color="accent">Add link<mat-icon style="margin-left: 5px;">add</mat-icon></button>
+            <button 
+            pButton pRipple 
+            type="button" label="Add link" 
+            class="p-button-success save-button"     
+            icon="pi pi-plus" iconPos="right" 
+            (click)="addLink()" 
+            ></button>
         </div>
     
         <br>

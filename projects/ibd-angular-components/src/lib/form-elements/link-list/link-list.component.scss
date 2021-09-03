@@ -1,6 +1,8 @@
 @import '~@angular/material/theming';
 @import '../../styles/styles.scss';
-
+.material-icons{
+    color: white;
+}
 .card_container{
     // @include mat-elevation(3);
     border: solid 1px rgb(216, 216, 216) ;
@@ -85,7 +87,7 @@
             }
         }
         &:hover{
-            width: 50%;
+            width: 20%;
             transition: all .3s ease-out;
             .delete_options{
                 display: flex;

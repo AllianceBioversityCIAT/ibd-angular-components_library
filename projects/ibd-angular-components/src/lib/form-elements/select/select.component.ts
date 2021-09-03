@@ -1,8 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { MatSelectChange } from '@angular/material/select';
 import { selectOptions } from '../../models/select-options.interface';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'ibdc-select',
@@ -42,7 +40,7 @@ export class SelectComponent implements OnInit {
     this.fieldSelector.name = this.selectList.find(resp =>resp[this.options.selectItemId].toString() == this.options.form.value[this.options.formControlId])[this.options.selectItemName];
   }
 
-  setValue(event: MatSelectChange){
+  setValue(event){
     if (event && this.options.formControlName) {
       this.options.form.controls[this.options.formControlName].setValue(event.source.triggerValue);
     }
