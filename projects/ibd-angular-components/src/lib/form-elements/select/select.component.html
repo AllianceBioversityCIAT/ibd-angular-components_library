@@ -8,21 +8,6 @@
 
     <div *ngSwitchDefault>
 
-        <!-- <p-dropdown [options]="options.selectList"  [optionLabel]="options.selectItemName" [optionValue]="options.selectItemId"></p-dropdown> -->
-
-        <!-- <mat-form-field appearance="standard" class="general-information-full-width" *ngIf="!options.service">
-            <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span class="ibdc_asterisk">* </span></p>
-            <br>
-            <p *ngIf="options.description" class="description_field"><i>{{options.description}}</i></p>
-            <br>
-            <mat-select [formControl]="selectInput" (selectionChange)="setValue($event)">
-                <mat-option *ngFor="let item of options.selectList" [disabled]="disableOption(item)"
-                    [value]="item[options.selectItemId]">{{item[options.selectItemName]}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field> -->
-
-
         <div class="manual_select">
             <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span
                     class="ibdc_asterisk">* </span></p>
@@ -30,13 +15,13 @@
             </p>
             <div class="custom_select_field" (click)="toggle_field_selector_class()">
                 <div class="custom_select_field_value">{{fieldSelector.name}}</div>
-                <mat-icon>arrow_drop_down</mat-icon>
+                <span class="material-icons">arrow_drop_down</span>
             </div>
             <div class="field_selector {{fieldSelector.class}}">
 
-                <button type="button" mat-icon-button class="field_selector_close_button" (click)="toggle_field_selector_class()">
-                    <mat-icon>close</mat-icon>
-                </button>
+                <div type="button" span-button class="field_selector_close_button" (click)="toggle_field_selector_class()">
+                    <span class="material-icons">close</span>
+                </div>
                 <div class="field_selector_search">
                     <input type="text" [(ngModel)]="searchText"
                         (ngModelChange)="options.frontendSearchAttribute ? writtenInSearchField() : consumeService()">
@@ -46,8 +31,8 @@
                         <div class="select_option" [style.pointerEvents]="disableOption(option)?'none':'all'"
                             *cdkVirtualFor="let option of options.frontendSearchAttribute?(selectList | selectFilter:searchText:options.frontendSearchAttribute):selectList"
                             (click)="toggle_field_selector_class();onSelectOption(option)">
-                            <mat-icon *ngIf="options.toDisableList" aria-hidden="false" color="primary">
-                                {{disableOption(option)?'radio_button_checked':'radio_button_unchecked'}}</mat-icon>
+                            <span class="material-icons" *ngIf="options.toDisableList" aria-hidden="false" color="primary">
+                                {{disableOption(option)?'radio_button_checked':'radio_button_unchecked'}}</span>
                             <span [style.marginLeft.px]="options.toDisableList?25:0" [style.color]="disableOption(option)?'#8f8f8f':'unset'">{{option[options.selectItemName]}}</span>
                         </div>
                     </cdk-virtual-scroll-viewport>

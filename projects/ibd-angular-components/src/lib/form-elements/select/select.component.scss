@@ -1,14 +1,6 @@
 @import '~@angular/material/theming';
 @import '../../styles/styles.scss';
 
-.manual_select mat-form-field{
-    
-    outline: none;
-    mat-select{
-        outline: none;  
-    }
-}
-
 .manual_select{
     position: relative;
 }
@@ -45,7 +37,7 @@
     top: 0;
     right: 0;
     margin: 10px 10px 0px 0px;
-    mat-icon{
+    .material-icons{
         color: rgb(230, 59, 59);
     }
 }
@@ -88,7 +80,7 @@
         background-color: rgb(247, 247, 247);
         border-radius: 8px;
     }
-    mat-icon{
+    .material-icons{
         position: absolute;
         left: 0;
         margin-left: 5px;
@@ -121,7 +113,7 @@
     justify-content: space-between;
     padding: 6px 10px 3px 10px;
     background-color: white;
-    mat-icon{
+    .material-icons{
         color: rgb(156, 156, 156);
     }
     &:hover{
