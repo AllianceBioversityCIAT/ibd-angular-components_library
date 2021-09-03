@@ -26,14 +26,14 @@ export class TextareaComponent implements OnInit {
   }
 
   deleteLastWord(){
-    let text = this.options.form.get(this.options.formControlName).value;
-    console.log(text);
-    let lastIndex = text.lastIndexOf(" ");
-    text = text.substring(0, lastIndex);
-    console.log(text);
-    this.txtArea.nativeElement.value = text;
-    this.options.form.controls[this.options.formControlName].setValue(text);
-    // console.log("writing");
+    // let text = this.options.form.get(this.options.formControlName).value;
+    // console.log(text);
+    // let lastIndex = text.lastIndexOf(" ");
+    // text = text.substring(0, lastIndex);
+    // console.log(text);
+    // this.txtArea.nativeElement.value = text;
+    // this.options.form.controls[this.options.formControlName].setValue(text);
+    // // console.log("writing");
   }
 
 
