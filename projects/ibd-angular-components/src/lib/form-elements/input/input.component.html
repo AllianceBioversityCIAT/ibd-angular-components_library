@@ -22,14 +22,16 @@
             <p *ngIf="options.description" class="description_field">{{options.description}}</p>
             <!-- <input (change)="setValue()" [formControl]="textInput" [type]="this.options.type" pInputText /> -->
             <div class="p-grid p-fluid">
-                <div class="p-field p-col-12">
+                <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon">$</span>
+                    <input min="0" type="number" [(ngModel)]="numericField" pInputText placeholder="Price" (ngModelChange)="setValueWithNumber()">        
+                </div>
+
+                <!-- <div class="p-field p-col-12">
                     <p-inputNumber [(ngModel)]="numericField"  (ngModelChange)="setValueWithNumber()" mode="currency" currency="USD" locale="en-US" [minFractionDigits]="2" [maxFractionDigits]="2">
                     </p-inputNumber>
-                </div>
+                </div> -->
             </div>
-
-
-
         </div>
         
         <!-- </div> -->
