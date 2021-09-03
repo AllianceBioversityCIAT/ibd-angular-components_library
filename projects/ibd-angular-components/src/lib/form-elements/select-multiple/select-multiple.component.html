@@ -21,13 +21,13 @@
                 </p>
                 <div class="custom_select_field" (click)="toggle_field_selector_class()">
                     <div class="custom_select_field_value">Select options...</div>
-                    <mat-icon>arrow_drop_down</mat-icon>
+                    <span class="material-icons">arrow_drop_down</span>
                 </div>
                 <div class="field_selector {{fieldSelector.class}}">
     
-                    <button type="button" mat-icon-button class="field_selector_close_button" (click)="toggle_field_selector_class()">
-                        <mat-icon>close</mat-icon>
-                    </button>
+                    <span class="field_selector_close_button" (click)="toggle_field_selector_class()">
+                        <span class="material-icons">close</span>
+                    </span>
                     <div class="field_selector_search">
                         <input type="text" [(ngModel)]="searchText"
                             (ngModelChange)="options.frontendSearchAttribute ? writtenInSearchField() : consumeService()">
@@ -37,7 +37,7 @@
                             <div class="select_option"
                                 *cdkVirtualFor="let option of options.frontendSearchAttribute?(selectList | selectFilter:searchText:options.frontendSearchAttribute):selectList"
                                 (click)="onSelectOption(option)">
-                                <mat-icon aria-hidden="false" [style.color]="option.selected?'green':'unset'">{{option.selected?'radio_button_checked':'radio_button_unchecked'}}</mat-icon>
+                                <span class="material-icons" aria-hidden="false" [style.color]="option.selected?'green':'unset'">{{option.selected?'radio_button_checked':'radio_button_unchecked'}}</span>
                                 <span [style.marginLeft.px]="options.toDisableList?25:0" [style.color]="option.selected?'green':'unset'">{{option[options.selectItemName]}}</span>
                             </div>
                         </cdk-virtual-scroll-viewport>
