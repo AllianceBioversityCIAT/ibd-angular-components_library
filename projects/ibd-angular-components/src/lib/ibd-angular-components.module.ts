@@ -19,6 +19,8 @@ import {EditorModule} from 'primeng/editor';
 import {DropdownModule} from 'primeng/dropdown';
 import {InputTextModule} from 'primeng/inputtext';
 import {InputNumberModule} from 'primeng/inputnumber';
+import {ButtonModule} from 'primeng/button';
+
 //
 import { WordCounterComponent } from './components/word-counter/word-counter.component';
 
@@ -44,7 +46,8 @@ const primeNgModulesList = [
   EditorModule,
   DropdownModule,
   InputTextModule,
-  InputNumberModule
+  InputNumberModule,
+  ButtonModule
 ];
 @NgModule({
   declarations: [...componentsList, SelectFilterPipe, WordCounterComponent],

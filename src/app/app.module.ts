@@ -12,7 +12,6 @@ import { IbdAngularComponentsModule } from '../../projects/ibd-angular-component
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenuComponent } from './shared/components/menu/menu.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
-import { MaterialModule } from './angular_material_module/material.module';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -27,7 +26,6 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     IbdAngularComponentsModule,
     BrowserAnimationsModule,
-    MaterialModule,
     HttpClientModule
   ],
   providers: [],

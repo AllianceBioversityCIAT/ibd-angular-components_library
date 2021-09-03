@@ -1,6 +1,18 @@
 
 <br>
-<button *ngIf="!this.options.readOnlyVariable" (click)="onclick()" type="submit" color="accent" [disabled]="options.disabled || options.underConstruction == true" mat-raised-button class="save-button">
+    <button 
+    pButton pRipple 
+    type="submit" label="Success" 
+    class="p-button-success save-button"     
+    icon="pi {{!options.underConstruction?'pi-save':'pi-info'}}" iconPos="right" 
+    *ngIf="!this.options.readOnlyVariable" 
+    [disabled]="options.disabled || options.underConstruction == true"
+    (click)="onclick()" 
+    ></button>
+
+<!-- <button *ngIf="false" color="accent" [disabled]="options.disabled || options.underConstruction == true" mat-raised-button class="save-button">
     Save <mat-icon class="save_icon" aria-hidden="false" aria-label="save icon">{{!options.underConstruction?'save':'construction'}}</mat-icon>
-</button>
+</button> -->
+
+
 <br><br>
