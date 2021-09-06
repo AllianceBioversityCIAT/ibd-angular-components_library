@@ -53,20 +53,25 @@
     
         <div class="card_container">
             <div #itemLink class="custom-card animate__animated animate__fadeInRight animate__faster" *ngFor="let item of options.savedList.list; let i = index">
-                <div class="blue_flag"></div>
+                <!-- <div class="blue_flag"></div> -->
                 <div class="inputs_container">
+
                     <div class="input_container">
-                        <p class="readonly_text_title"><strong class="ibdc_secondary_color">Citation: </strong><span
-                                class="ibdc_asterisk">* </span></p>
-    
-                        <input (ngModelChange)="addAttributeEdited(i)" [value]="item[options.savedList.attributeDescription]" [(ngModel)]="item[options.savedList.attributeDescription]" class="custom_input" type="text">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">  www  </span>
+                            <input type="text" pInputText placeholder="Website" (ngModelChange)="addAttributeEdited(i)" [value]="item[options.savedList.attributeDescription]" [(ngModel)]="item[options.savedList.attributeDescription]">      
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 5px;"></div>
+
+                    <div class="input_container">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">Citation</span>
+                            <input type="text" pInputText placeholder="Citation" (ngModelChange)="addAttributeEdited(i)" [value]="item[options.savedList.attributeLink]" [(ngModel)]="item[options.savedList.attributeLink]" #myInput>      
+                        </div>
                     </div>
     
-                    <div class="input_container" style="margin-top: 8px;">
-                        <p class="readonly_text_title" style="width: 65px;"><strong class="ibdc_secondary_color">Link:
-                            </strong><span class="ibdc_asterisk">* </span></p>
-                        <input (ngModelChange)="addAttributeEdited(i)" [value]="item[options.savedList.attributeLink]" [(ngModel)]="item[options.savedList.attributeLink]"  class="custom_input" type="text" #myInput>
-                    </div>
                 </div>
                 <div class="delete_button center_flex">
                     <div class="delete_options">

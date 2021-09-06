@@ -1,10 +1,9 @@
-@import '~@angular/material/theming';
 @import '../../styles/styles.scss';
 .material-icons{
     color: white;
 }
 .card_container{
-    // @include mat-elevation(3);
+
     border: solid 1px rgb(216, 216, 216) ;
     border-radius: 10px 5px 5px 10px;
     padding: 10px;
@@ -12,18 +11,19 @@
     max-height: 500px;
     overflow-y: scroll !important;
     overflow-x: hidden;
-    background-color: rgb(233, 233, 233);
+    background-color: #f5f6fb;
     .custom-card{
+        border: 2px solid #087b8369;
         max-height: 120px;
         transition: ease all .3s;
         position: relative;
-        @include mat-elevation(3);
-        background-color: #f8f8f8;
+        box-shadow: 0 4px 3px #d8d8d8a6, 0 1px 2px #d8d8d8a6;
+        background-color: #ffffff;
         // // height: 40px;
         width: 100%;
-        border-radius: 10px;
+        border-radius: 30px 30px 30px 30px;
         overflow: hidden;
-        border: none;
+        // border: none;
         margin-bottom: 10px;
         // padding: 20px 30px;
         display: flex;
@@ -48,14 +48,14 @@
         position: absolute;
         cursor: pointer;
         right: 45px;
-        background-color: #014d66;   
+        // background-color: #014d66;   
         height: 40px;
         width: 40px;
         top: 50%;
         border-radius: 5px;
         transform: translateY(-50%);
-        mat-icon{
-            color: white !important;
+        .material-icons{
+            color: #014d66 !important;
             font-size: 1.5em !important;
             margin: 3px 0px 0px 3px;
             cursor: pointer;
@@ -125,8 +125,8 @@
     }
 }
 
-.readonly_text_title{
-    margin-right: 10px;
+.p-inputgroup{
+    margin-right: 70px !important;
 }
 .readonly_link{
     .rl{
