@@ -1,7 +1,6 @@
 <span [ngSwitch]="this.options.readOnlyVariable">
     <div *ngSwitchCase="true">
-        <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span
-                class="ibdc_asterisk">* </span></p>
+        <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
         <p class="description_field" *ngIf="!this.options.savedList.list.length">Not available</p>
         <div class="items_list" *ngIf="this.options.savedList.list.length">
             <div class="item" *ngFor="let item of this.options.savedList.list">
@@ -15,8 +14,7 @@
     <div *ngSwitchDefault>
         <div class="selector_container">
             <div class="manual_select">
-                <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span
-                        class="ibdc_asterisk">* </span></p>
+                <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
                 <p *ngIf="options.description" class="description_field"><i>{{options.description}}</i>
                 </p>
                 <div class="custom_select_field" (click)="toggle_field_selector_class()">
