@@ -44,6 +44,16 @@ export class LinkListComponent implements OnInit {
     this.options.savedList.list[index].edited = true;
   }
 
+  validatewebPage(link:any){
+    var expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+    var regex = new RegExp(expression);
+    if (link.match(regex)) {
+      return '';
+    }else{
+      return 'ng-invalid ng-dirty';
+    }
+  }
+
   addLink(){
     // let item={};
     let item = new Object();

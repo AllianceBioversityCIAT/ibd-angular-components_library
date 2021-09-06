@@ -59,7 +59,7 @@
                     <div class="input_container">
                         <div class="p-inputgroup">
                             <span class="p-inputgroup-addon">  www  </span>
-                            <input type="text" pInputText placeholder="Website" (ngModelChange)="addAttributeEdited(i)" [value]="item[options.savedList.attributeDescription]" [(ngModel)]="item[options.savedList.attributeDescription]">      
+                            <input class="{{validatewebPage(item[options.savedList.attributeDescription])}}" type="text" pInputText placeholder="Website" (ngModelChange)="addAttributeEdited(i);" [value]="item[options.savedList.attributeDescription]" [(ngModel)]="item[options.savedList.attributeDescription]">      
                         </div>
                     </div>
 
