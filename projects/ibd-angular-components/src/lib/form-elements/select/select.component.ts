@@ -28,6 +28,7 @@ export class SelectComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.options);
     this.searchText = this.options.initialSearchText?this.options.initialSearchText:this.searchText;
     this.consumeService();
     this.selectInput = new FormControl(this.options.form.value[this.options.formControlId], [
@@ -37,7 +38,9 @@ export class SelectComponent implements OnInit {
   }
 
   findAndChangeFieldSelectorName(){
-    this.fieldSelector.name = this.selectList.find(resp =>resp[this.options.selectItemId].toString() == this.options.form.value[this.options.formControlId])[this.options.selectItemName];
+    if (this.options.form.value[this.options.formControlId]) {
+      this.fieldSelector.name = this.selectList.find(resp =>resp[this.options.selectItemId].toString() == this.options.form.value[this.options.formControlId])[this.options.selectItemName];
+    }
   }
 
   setValue(event){

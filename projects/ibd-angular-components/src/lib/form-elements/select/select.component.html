@@ -14,7 +14,7 @@
             <p *ngIf="options.description" class="description_field"><i>{{options.description}}</i>
             </p>
             <div class="custom_select_field" (click)="toggle_field_selector_class()">
-                <div class="custom_select_field_value">{{fieldSelector.name}}</div>
+                <div class="custom_select_field_value" [ngClass]="{'unselected': !fieldSelector.name}" >{{fieldSelector.name || 'Unselected'}}</div>
                 <span class="material-icons">arrow_drop_down</span>
             </div>
             <div class="field_selector {{fieldSelector.class}}">
