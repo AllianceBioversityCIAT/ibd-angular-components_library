@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { UploadFiles } from '../../models/upload-files-options.interface';
 
 @Component({
   selector: 'ibdc-upload-files',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./upload-files.component.scss']
 })
 export class UploadFilesComponent implements OnInit {
-
+  @Input() options:UploadFiles;
   constructor() { }
 
   ngOnInit(): void {
   }
+  myUploader(event) {
+    console.log(event.files);
+    console.log(event);
+}
 
 }

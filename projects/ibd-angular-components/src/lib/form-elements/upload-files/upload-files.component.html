@@ -1,1 +1,11 @@
-<p>upload-files works!</p>
+<p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
+<p *ngIf="options.description" class="description_field">{{options.description}}</p>
+
+<p-fileUpload 
+[showUploadButton]="false" 
+[files]="[]"
+name="myfile[]" 
+customUpload="true"
+(onSelect)="myUploader($event)" 
+multiple="multiple" 
+></p-fileUpload>

@@ -21,9 +21,11 @@ import {InputTextModule} from 'primeng/inputtext';
 import {InputNumberModule} from 'primeng/inputnumber';
 import {ButtonModule} from 'primeng/button';
 import {TooltipModule} from 'primeng/tooltip';
+import {FileUploadModule} from 'primeng/fileupload';
 
 //
 import { WordCounterComponent } from './components/word-counter/word-counter.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -48,7 +50,8 @@ const primeNgModulesList = [
   InputTextModule,
   InputNumberModule,
   ButtonModule,
-  TooltipModule
+  TooltipModule,
+  FileUploadModule
 ];
 @NgModule({
   declarations: [...componentsList, SelectFilterPipe, WordCounterComponent],
@@ -59,6 +62,7 @@ const primeNgModulesList = [
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     ...primeNgModulesList
   ]
   
