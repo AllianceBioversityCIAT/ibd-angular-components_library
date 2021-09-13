@@ -28,8 +28,9 @@ export class SelectNgmodelComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.options.selectList);
+    // console.log(this.options.selectList);
     this.searchText = this.options.initialSearchText?this.options.initialSearchText:this.searchText;
+    this.findAndChangeFieldSelectorName();
   }
 
   findAndChangeFieldSelectorName(){

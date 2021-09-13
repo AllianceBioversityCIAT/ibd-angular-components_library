@@ -41,9 +41,9 @@ export class SelectComponent implements OnInit {
   }
 
   validateIfIsOnlyOneDateToSelect(){
-    console.log("validateIfIsOnlyOneDateToSelect");
-    console.log(this.selectList);
-    console.log(this.selectList.length);
+    // console.log("validateIfIsOnlyOneDateToSelect");
+    // console.log(this.selectList);
+    // console.log(this.selectList.length);
     if (this.selectList.length == 1) {
       this.oneDate = true;
       this.fieldSelector.name = this.selectList[0][this.options.selectItemName];
@@ -115,7 +115,7 @@ export class SelectComponent implements OnInit {
   }
 
   writtenInSearchField(){
-    console.log("writtenInSearchField");
+    // console.log("writtenInSearchField");
     // this.mapSelected();
   }
 
