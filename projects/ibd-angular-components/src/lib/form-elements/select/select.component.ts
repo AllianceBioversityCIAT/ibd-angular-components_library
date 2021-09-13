@@ -30,7 +30,6 @@ export class SelectComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // console.log(this.options);
     this.searchText = this.options.initialSearchText?this.options.initialSearchText:this.searchText;
     this.consumeService();
     this.selectInput = new FormControl(this.options.form.value[this.options.formControlId], [
@@ -41,9 +40,6 @@ export class SelectComponent implements OnInit {
   }
 
   validateIfIsOnlyOneDateToSelect(){
-    // console.log("validateIfIsOnlyOneDateToSelect");
-    // console.log(this.selectList);
-    // console.log(this.selectList.length);
     if (this.selectList.length == 1) {
       this.oneDate = true;
       this.fieldSelector.name = this.selectList[0][this.options.selectItemName];
@@ -55,8 +51,6 @@ export class SelectComponent implements OnInit {
   }
 
   findAndChangeFieldSelectorName(){
-    // console.log(this.options.inputTitle);
-    // console.log(this.selectList);
     if (this.options.form.value[this.options.formControlId]) {
       this.fieldSelector.name = this.selectList.find(resp =>resp[this.options.selectItemId].toString() == this.options.form.value[this.options.formControlId])[this.options.selectItemName];
     }
@@ -92,13 +86,9 @@ export class SelectComponent implements OnInit {
 
       this.options.service.serviceTS[this.options.service.functionName](this.options.service.functionfirstParam).subscribe((res) => {
         this.selectList = res;
-        // console.log(res);
         // each key and sub keys to find the list
         if (this.options.service.objectName) this.options.service.objectName.map((objectName)=>this.selectList = this.selectList[objectName]);
-        if (this.options.form.value[this.options.formControlId]) {
-          this.findAndChangeFieldSelectorName()
-        }
-        
+        this.findAndChangeFieldSelectorName()
         // if (this.selectList.length < 4) {
         //   this.height = (this.selectList.length * 50) + 'px';
         // } else {
@@ -115,7 +105,6 @@ export class SelectComponent implements OnInit {
   }
 
   writtenInSearchField(){
-    // console.log("writtenInSearchField");
     // this.mapSelected();
   }
 
@@ -124,10 +113,8 @@ export class SelectComponent implements OnInit {
   }
 
   onSelectOption(option){
-    // console.log(option[this.options.selectItemName]+' - '+option[this.options.selectItemId]);
     if (this.options?.formControlName)this.options.form.controls[this.options.formControlName].setValue(option[this.options.selectItemName]);
     this.options.form.controls[this.options.formControlId].setValue(option[this.options.selectItemId]);
-    // this.selectInput.setValue(data[this.options.formControlName]);
     this.fieldSelector.name = option[this.options.selectItemName];
 
   }
