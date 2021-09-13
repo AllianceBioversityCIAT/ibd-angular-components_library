@@ -10,6 +10,7 @@ import { selectOptions } from '../../models/select-options.interface';
 export class SelectComponent implements OnInit {
 
   searchText = '';
+  oneDate = false;
   @Input() options:selectOptions;
   
   selectInput:FormControl;
@@ -36,6 +37,21 @@ export class SelectComponent implements OnInit {
       Validators.required,
     ]);
      this.setValue(null);
+  
+  }
+
+  validateIfIsOnlyOneDateToSelect(){
+    console.log("validateIfIsOnlyOneDateToSelect");
+    console.log(this.selectList);
+    console.log(this.selectList.length);
+    if (this.selectList.length == 1) {
+      this.oneDate = true;
+      this.fieldSelector.name = this.selectList[0][this.options.selectItemName];
+      this.options.form.controls[this.options.formControlId].setValue(this.selectList[0][this.options.selectItemId]);
+      if (this.options.formControlName) {
+        this.options.form.controls[this.options.formControlName].setValue(this.selectList[0][this.options.selectItemName]);
+      }
+    }
   }
 
   findAndChangeFieldSelectorName(){
@@ -88,11 +104,13 @@ export class SelectComponent implements OnInit {
         // } else {
         //   this.height = '200px'
         // }
+        this.validateIfIsOnlyOneDateToSelect();
       });
       
     }else{
       this.selectList = this.options.selectList;
-      this.findAndChangeFieldSelectorName()
+      this.findAndChangeFieldSelectorName();
+      this.validateIfIsOnlyOneDateToSelect();
     }
   }
 

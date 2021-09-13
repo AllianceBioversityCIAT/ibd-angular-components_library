@@ -112,6 +112,20 @@
     }
 }
 
+.custom_select_field_block{
+    cursor: pointer;
+    width: auto;
+    border-radius: 5px;
+    border: solid 1px rgb(221, 221, 221);
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 10px 3px 10px;
+    background-color: white;
+    .material-icons{
+        color: rgb(156, 156, 156);
+    }
+}
+
 .custom_select_field{
     cursor: pointer;
     width: auto;
