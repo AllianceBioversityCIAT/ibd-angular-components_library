@@ -1,0 +1,44 @@
+<div [ngSwitch]="this.options.readOnlyVariable">
+
+
+    <div *ngSwitchCase="true">
+        <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span class="ibdc_asterisk">* </span></p>
+        <p class="description_field">{{options.form.value[options.formControlName]||'Not available'}}</p>
+        <br>
+    </div>
+
+    <div *ngSwitchDefault>
+
+        <div [ngSwitch]="options.type">
+
+        <div *ngSwitchCase="'text'">
+            <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
+            <p *ngIf="options.description" class="description_field">{{options.description}}</p>
+            <input type="text" pInputText />
+        </div>
+
+        <div *ngSwitchDefault>
+            <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
+            <p *ngIf="options.description" class="description_field">{{options.description}}</p>
+            <!-- <input (change)="setValue()" [formControl]="textInput" [type]="this.options.type" pInputText /> -->
+            <div class="p-grid p-fluid">
+                <div class="p-inputgroup">
+                    <!-- <span class="p-inputgroup-addon">$</span> -->
+                    <input min="0" type="number" [(ngModel)]="this.options.item[this.options.itemName]" pInputText placeholder="Price">        
+                </div>
+
+                <!-- <div class="p-field p-col-12">
+                    <p-inputNumber [(ngModel)]="numericField"  (ngModelChange)="setValueWithNumber()" mode="currency" currency="USD" locale="en-US" [minFractionDigits]="2" [maxFractionDigits]="2">
+                    </p-inputNumber>
+                </div> -->
+            </div>
+        </div>
+        
+        <!-- </div> -->
+    </div>
+
+</div>
+
+
+
+

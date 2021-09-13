@@ -26,6 +26,8 @@ import {FileUploadModule} from 'primeng/fileupload';
 //
 import { WordCounterComponent } from './components/word-counter/word-counter.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SelectNgmodelComponent } from './form-elements/select-ngmodel/select-ngmodel.component';
+import { InputNgmodelComponent } from './form-elements/input-ngmodel/input-ngmodel.component';
 
 
 
@@ -40,7 +42,9 @@ const componentsList = [
   InputComponent, 
   SimpleTextComponent, 
   SaveButtonComponent,
-  TermsOrPoliciesComponent
+  TermsOrPoliciesComponent,
+  SelectNgmodelComponent,
+  InputNgmodelComponent
 ];
 
 const primeNgModulesList = [

@@ -1,0 +1,45 @@
+<span [ngSwitch]="this.options.readOnlyVariable">
+    <div *ngSwitchCase="true">
+        <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span
+                class="ibdc_asterisk">* </span></p>
+        <p class="description_field">{{this.fieldSelector.name||'Not available'}}</p>
+        <br>
+    </div>
+
+    <div *ngSwitchDefault>
+
+        <div class="manual_select">
+            <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span
+                    class="ibdc_asterisk">* </span></p>
+            <p *ngIf="options.description" class="description_field"><i>{{options.description}}</i>
+            </p>
+            <div class="custom_select_field" (click)="toggle_field_selector_class()">
+                <div class="custom_select_field_value" [ngClass]="{'unselected': !fieldSelector.name}" >{{fieldSelector.name || 'Unselected'}}</div>
+                <span class="material-icons">arrow_drop_down</span>
+            </div>
+            <div class="field_selector {{fieldSelector.class}}">
+
+                <div type="button" span-button class="field_selector_close_button" (click)="toggle_field_selector_class()">
+                    <span class="material-icons">close</span>
+                </div>
+                <div class="field_selector_search">
+                    <input type="text" [(ngModel)]="searchText"
+                        (ngModelChange)="options.frontendSearchAttribute ? writtenInSearchField() : consumeService()">
+                </div>
+                <div class="field_selector_list">
+                    <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+                        <div class="select_option" [style.pointerEvents]="disableOption(option)?'none':'all'"
+                            *cdkVirtualFor="let option of options.frontendSearchAttribute?(this.options.selectList | selectFilter:searchText:options.frontendSearchAttribute):this.options.selectList"
+                            (click)="toggle_field_selector_class();onSelectOption(option)">
+                            <span class="material-icons" *ngIf="options.toDisableList" aria-hidden="false" color="primary">
+                                {{disableOption(option)?'radio_button_checked':'radio_button_unchecked'}}</span>
+                            <span [style.marginLeft.px]="options.toDisableList?25:0" [style.color]="disableOption(option)?'#8f8f8f':'unset'">{{option[options.itemName]}}</span>
+                        </div>
+                    </cdk-virtual-scroll-viewport>
+                </div>
+            </div>
+        </div>
+        <br>
+
+    </div>
+</span>
