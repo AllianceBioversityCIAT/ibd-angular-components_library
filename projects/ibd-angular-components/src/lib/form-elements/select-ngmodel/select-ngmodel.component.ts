@@ -34,8 +34,12 @@ export class SelectNgmodelComponent implements OnInit {
   }
 
   findAndChangeFieldSelectorName(){
+    // console.log("_______________________________");
+    // console.log(this.options.inputTitle);
+    // console.log(this.options.selectList);
+    // console.log(this.options.item[this.options.itemId]);
     if (this.options.item[this.options.itemId]) {
-      this.fieldSelector.name = this.options.selectList.find((resp:any) =>resp[this.options.itemId].toString() == this.options.item[this.options.itemId])[this.options.itemName];
+      this.fieldSelector.name = this.options?.selectList.find((resp:any) =>resp[this.options.itemId].toString() == this.options.item[this.options.itemId])[this.options.itemName];
     }
   }
 
