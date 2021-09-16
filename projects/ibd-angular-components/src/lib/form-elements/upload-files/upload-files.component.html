@@ -1,11 +1,57 @@
 <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
 <p *ngIf="options.description" class="description_field">{{options.description}}</p>
 
-<p-fileUpload 
-[showUploadButton]="false" 
-[files]="[]"
-name="myfile[]" 
-customUpload="true"
-(onSelect)="myUploader($event)" 
-multiple="multiple" 
-></p-fileUpload>
+<div class="uf_header">
+    <label class="custom-file-upload">
+        <span class="material-icons">upload_file</span>
+        Choose Files
+        <input class="choose_button" #inputFile  type="file" (change)="onSelectFiles($event,inputFile)" multiple="true">
+    </label>
+</div>
+
+<div class="uf_to_save_header">
+    <div class="title">List of files to save</div>
+</div>
+
+<div class="uf_to_save">
+
+    <div *ngFor="let file of this.options.filesList; let i = index">
+        <!-- <span class="animate__animated animate__fadeInRight animate__faster" #fileHE>name: {{file.name}} ---- type: {{file.type}} --- lastModifiedDate: {{file.lastModifiedDate}} <button (click)="removeFile(i,file,fileHE)">Delete</button></span> -->
+        <div class="uf_file animate__animated animate__fadeInRight animate__faster" #fileHE>
+            <div class="format_icon" [ngStyle]="{'background-image': 'url(' + '/assets/icons/'+getFormat(file.name) + '.png)'}">
+                <!-- <img src="/assets/icons/excel.png" alt="" srcset=""> -->
+            </div>
+            <span class="name">{{file.name}}</span>
+            <button type="button" pButton  icon="pi pi-times" (click)="removeFile(i,file,fileHE)"></button>
+        </div>
+    </div>
+    
+    <div *ngIf="!this.options.filesList.length" class="noFilesMessage">
+        <strong class="color-secondary">No files to upload</strong>
+    </div>
+
+</div>
+
+<div class="uf_saved_header">
+    <div class="title">Saved files</div>
+</div>
+
+<div class="uf_saved">
+
+    <span *ngFor="let file of this.options.filesSavedList;" [hidden]="file.show === false">
+        <div class="uf_file animate__animated animate__fadeInRight animate__faster" #fileHED>
+            <div class="format_icon" [ngStyle]="{'background-image': 'url(' + '/assets/icons/'+getFormat(file.name) + '.png)'}"></div>
+            <a class="name" [href]="file.url" target="_blank">{{file.name}}</a>
+            <button type="button" pButton icon="pi pi-times" (click)="removeFileSaved(file,fileHED)"></button>
+        </div>
+    </span>
+
+    <span *ngIf="!this.options.filesSavedList.length" class="noFilesMessage">
+        <strong class="color-secondary">No files saved</strong>
+    </span>
+    
+</div>
+
+
+
+
