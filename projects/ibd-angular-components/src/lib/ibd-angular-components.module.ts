@@ -28,6 +28,7 @@ import { WordCounterComponent } from './components/word-counter/word-counter.com
 import { HttpClientModule } from '@angular/common/http';
 import { SelectNgmodelComponent } from './form-elements/select-ngmodel/select-ngmodel.component';
 import { InputNgmodelComponent } from './form-elements/input-ngmodel/input-ngmodel.component';
+import { AlertComponent } from './form-elements/alert/alert.component';
 
 
 
@@ -44,7 +45,8 @@ const componentsList = [
   SaveButtonComponent,
   TermsOrPoliciesComponent,
   SelectNgmodelComponent,
-  InputNgmodelComponent
+  InputNgmodelComponent,
+  AlertComponent
 ];
 
 const primeNgModulesList = [
@@ -55,7 +57,7 @@ const primeNgModulesList = [
   InputNumberModule,
   ButtonModule,
   TooltipModule,
-  FileUploadModule
+  FileUploadModule,
 ];
 @NgModule({
   declarations: [...componentsList, SelectFilterPipe, WordCounterComponent],

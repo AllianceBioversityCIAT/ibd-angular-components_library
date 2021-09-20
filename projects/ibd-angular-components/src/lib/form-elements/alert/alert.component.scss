@@ -1,0 +1,47 @@
+.idb-alert-container{
+    border-radius: 5px;
+    width: 100%;
+    padding: 20px 20px 20px 20px;
+    margin: 15px 0px;
+    border: 1.7px solid ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p{
+        margin: 0px !important;
+        padding: 0px !important;
+    }
+    span{
+        margin: 0px 27px;
+    }
+}
+
+.warning {
+    background-color: #ffecb3;
+    border-color: #ffe082;
+    color: #948154 ;
+}
+
+.danger{
+    background-color: #ffcdd2;
+    border-color: #ef9a9a;
+    color: #725454;
+    
+}
+
+.alert{
+    background-color: #bbdefb;
+    border-color:#90caf9;
+    color: #4a5b69;
+    
+}
+
+.info{
+    background-color: #b2dfdb;
+    border-color: #80cbc4;
+    color: #425e5b;
+   
+}
+
+
+
