@@ -29,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SelectNgmodelComponent } from './form-elements/select-ngmodel/select-ngmodel.component';
 import { InputNgmodelComponent } from './form-elements/input-ngmodel/input-ngmodel.component';
 import { AlertComponent } from './form-elements/alert/alert.component';
+import {TableModule} from 'primeng/table';
 
 
 
@@ -58,6 +59,7 @@ const primeNgModulesList = [
   ButtonModule,
   TooltipModule,
   FileUploadModule,
+  TableModule
 ];
 @NgModule({
   declarations: [...componentsList, SelectFilterPipe, WordCounterComponent],

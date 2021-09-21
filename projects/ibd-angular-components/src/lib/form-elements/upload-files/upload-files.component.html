@@ -38,17 +38,48 @@
 
 <div class="uf_saved">
 
-    <span *ngFor="let file of this.options.filesSavedList;" [hidden]="file.show === false">
+    <!-- <span *ngFor="let file of this.options.filesSavedList;" [hidden]="file.show === false">
         <div class="uf_file animate__animated animate__fadeInRight animate__faster" #fileHED>
             <div class="format_icon" [ngStyle]="{'background-image': 'url(' + '/assets/icons/'+getFormat(file.name) + '.png)'}"></div>
             <a class="name" [href]="file.url" target="_blank">{{file.name}}</a>
             <button type="button" pButton icon="pi pi-times" (click)="removeFileSaved(file,fileHED)"></button>
         </div>
-    </span>
+    </span> -->
 
     <span *ngIf="!this.options.filesSavedList.length" class="noFilesMessage">
         <strong class="color-secondary">No files saved</strong>
     </span>
+
+
+    <p-table [value]="this.options.filesSavedList" responsiveLayout="scroll">
+        <!-- <ng-template pTemplate="caption">
+            <div class="p-d-flex p-ai-center p-jc-between">
+                Products
+                <p-button icon="pi pi-refresh"></p-button>
+            </div>
+        </ng-template> -->
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Type</th>
+                <th>Name</th>
+                <th>Updated at</th>
+                <th style="width: 100px; ">Delete</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-file let-rowIndex="rowIndex">
+            <tr #fileHES>
+                <td><div class="files-table-format_icon" [ngStyle]="{'background-image': 'url(' + '/assets/icons/'+getFormat(file.name) + '.png)'}"></div></td>
+                <td>{{file.name}}</td>
+                <td>{{file.updated_at}}</td>
+                <td style="width: 100px; display: flex; justify-content: center;"><button type="button" pButton  icon="pi pi-times" (click)="removeFileSaved(file,fileHES)"></button></td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="summary">
+            <div class="p-d-flex p-ai-center p-jc-between">
+                In total there are {{this.options.filesSavedList ? this.options.filesSavedList.length : 0 }} files.
+            </div>
+        </ng-template>
+    </p-table>
     
 </div>
 

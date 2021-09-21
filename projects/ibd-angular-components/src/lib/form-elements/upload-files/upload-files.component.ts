@@ -11,7 +11,7 @@ export class UploadFilesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.options);
+    // console.log(this.options);
   }
   myUploader(event) {
     // this.selectFile.emit(event);
@@ -26,7 +26,8 @@ export class UploadFilesComponent implements OnInit {
         object.edited = true;
         object.active = false;
         setTimeout(() => {
-          itemLink.style.display = 'none';
+          itemLink.style.display = 'none !important';
+          itemLink.classList.add('hide-element');
         }, 300);
       }else{
         setTimeout(() => {
