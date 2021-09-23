@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { UploadFiles } from '../../models/upload-files-options.interface';
-
+import { map } from 'rxjs/operators';
 @Component({
   selector: 'ibdc-upload-files',
   templateUrl: './upload-files.component.html',
@@ -11,7 +11,7 @@ export class UploadFilesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // console.log(this.options);
+    console.log(this.options);
   }
   myUploader(event) {
     // this.selectFile.emit(event);
@@ -38,6 +38,21 @@ export class UploadFilesComponent implements OnInit {
       
       console.log(this.options.filesList);
     });
+  }
+
+  validateEmptyArrayWithActive(array){
+    console.log('validateEmptyArrayWithActive');
+    let arrayAux = [];
+
+    array.map(resp=>{
+      if (resp.show !== false) {
+        arrayAux.push(resp)
+      }
+    })
+    console.log(arrayAux);
+    console.log(arrayAux.length);
+    return arrayAux.length;
+
   }
 
   removeFileSaved(object,itemLink:HTMLElement){

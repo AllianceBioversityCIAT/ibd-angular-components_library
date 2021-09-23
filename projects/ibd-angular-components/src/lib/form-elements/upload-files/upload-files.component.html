@@ -46,12 +46,12 @@
         </div>
     </span> -->
 
-    <span *ngIf="!this.options.filesSavedList.length" class="noFilesMessage">
+    <span *ngIf="!validateEmptyArrayWithActive(this.options.filesSavedList)" class="noFilesMessage">
         <strong class="color-secondary">No files saved</strong>
     </span>
 
 
-    <p-table [value]="this.options.filesSavedList" responsiveLayout="scroll">
+    <p-table [value]="this.options.filesSavedList" responsiveLayout="scroll" *ngIf="validateEmptyArrayWithActive(this.options.filesSavedList)" class="noFilesMessage">
         <!-- <ng-template pTemplate="caption">
             <div class="p-d-flex p-ai-center p-jc-between">
                 Products
@@ -69,7 +69,7 @@
         <ng-template pTemplate="body" let-file let-rowIndex="rowIndex">
             <tr #fileHES>
                 <td><div class="files-table-format_icon" [ngStyle]="{'background-image': 'url(' + '/assets/icons/'+getFormat(file.name) + '.png)'}"></div></td>
-                <td>{{file.name}}</td>
+                <td><a [href]="file.url" target="_blank">{{file.name}}</a></td>
                 <td>{{file.updated_at}}</td>
                 <td style="width: 100px; display: flex; justify-content: center;"><button type="button" pButton  icon="pi pi-times" (click)="removeFileSaved(file,fileHES)"></button></td>
             </tr>
