@@ -3,6 +3,7 @@ export interface SelectMultipleOptions{
     readOnlyVariable?:boolean
     inputTitle:string;
     description?:string;
+    hideSavedList:boolean;
     // form:FormGroup;
     chipName:string;
     // maxWords:number;

@@ -57,7 +57,7 @@ export class SelectNgmodelComponent implements OnInit {
   }
 
   writtenInSearchField(){
-    console.log("writtenInSearchField");
+    // console.log("writtenInSearchField");
     // this.mapSelected();
   }
 

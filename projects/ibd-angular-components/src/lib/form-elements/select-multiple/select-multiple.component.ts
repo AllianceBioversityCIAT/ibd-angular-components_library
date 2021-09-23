@@ -67,6 +67,8 @@ export class SelectMultipleComponent implements OnInit {
   }
 
   onSelectOption(option:any){
+    // console.log(this.options.savedList.list);
+    // console.log(option);
     // encontrar en lista de guardados la opcion seleccionada
     let itemFinded = this.options.savedList.list.find((savedItem:any)=>savedItem[this.options.savedList.selectItemId] == option[this.options.selectItemId]);
     let itemFindedIndex = this.options.savedList.list.findIndex((savedItem:any)=>savedItem[this.options.savedList.selectItemId] == option[this.options.selectItemId]);

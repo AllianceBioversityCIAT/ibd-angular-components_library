@@ -52,14 +52,14 @@ export class SelectComponent implements OnInit {
 
   findAndChangeFieldSelectorName(){
     // if (this.options.inputTitle== "Choose a depth scale") {
-      console.log("_______________________________");
-      console.log(this.options);
-      console.log(this.options.inputTitle);
-      // console.log(this.options.selectList);
-      console.log(this.selectList);
-      console.log(this.options.form.value[this.options.formControlId]);
-      console.log(this.options.form.value);
-    // }
+    //   console.log("_______________________________");
+    //   console.log(this.options);
+    //   console.log(this.options.inputTitle);
+    //   // console.log(this.options.selectList);
+    //   console.log(this.selectList);
+    //   console.log(this.options.form.value[this.options.formControlId]);
+    //   console.log(this.options.form.value);
+    // // }
 
     if (this.options.form.value[this.options.formControlId]) {
       this.fieldSelector.name = this.selectList.find(resp =>resp[this.options.selectItemId].toString() == this.options.form.value[this.options.formControlId])[this.options.selectItemName];
