@@ -28,14 +28,12 @@ export class InputComponent implements OnInit {
 
   setValue(){
     this.options.form.controls[this.options.formControlName].setValue(this.textInput.value);
+    // console.log(this.options.form.value);
     // console.log('cambiando');
   }
 
   setValueWithNumber(){
-    // let numberToString = this.numericField.toString();
-    // numberToString.replace('-','');
-    // this.numericField = Number(numberToString)
-    // this.options.form.controls[this.options.formControlName].setValue(this.numericField);
+    this.options.form.controls[this.options.formControlName].setValue(this.numericField);
     // console.log('ngmodel number');
   }
 
