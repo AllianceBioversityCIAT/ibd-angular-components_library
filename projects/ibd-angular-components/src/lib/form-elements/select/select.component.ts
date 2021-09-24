@@ -60,10 +60,19 @@ export class SelectComponent implements OnInit {
     //   console.log(this.options.form.value[this.options.formControlId]);
     //   console.log(this.options.form.value);
     // // }
-
+    // console.log(this.options.form.value[this.options.formControlId]);
+    // console.log(this.options.formControlId);
     if (this.options.form.value[this.options.formControlId]) {
-      this.fieldSelector.name = this.selectList.find(resp =>resp[this.options.selectItemId].toString() == this.options.form.value[this.options.formControlId])[this.options.selectItemName];
+      this.fieldSelector.name = this.selectList?.find(resp =>resp[this.options.selectItemId].toString() == this.options.form.value[this.options.formControlId]);
+      if (this.fieldSelector.name) {
+        this.fieldSelector.name = this.fieldSelector.name[this.options.selectItemName]
+      }else{
+        this.fieldSelector.name = '';
+      }
+      // this.fieldSelector.name = this.fieldSelector.name[this.options.selectItemName]
+      // console.log(this.fieldSelector.name);
     }
+
   }
 
   setValue(event){
