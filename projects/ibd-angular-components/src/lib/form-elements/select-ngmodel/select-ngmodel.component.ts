@@ -70,7 +70,7 @@ export class SelectNgmodelComponent implements OnInit {
     option.selected = !option.selected;
     this.beforeOption = option;
     if (!option.selected) {
-     this.options.item[this.options.itemId] ="";
+     this.options.item[this.options.itemId] = null;
      this.fieldSelector.name = ""; 
      this.beforeOption = null;
     }
