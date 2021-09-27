@@ -112,6 +112,18 @@
     }
 }
 
+.option_unselected{
+
+}
+
+.option_selected{
+    color: #dddddd;
+}
+
+.option_selectedWithAccess{
+    color: #149725;
+}
+
 .custom_select_field{
     cursor: pointer;
     width: auto;

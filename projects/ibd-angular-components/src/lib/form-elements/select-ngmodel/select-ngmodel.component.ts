@@ -20,6 +20,8 @@ export class SelectNgmodelComponent implements OnInit {
     name:''
   }
 
+  beforeOption:any = null;
+
 
   // valors='asasasas';
 
@@ -39,20 +41,10 @@ export class SelectNgmodelComponent implements OnInit {
     // console.log(this.options.selectList);
     // console.log(this.options.item[this.options.itemId]);
     if (this.options.item[this.options.itemId]) {
-      this.fieldSelector.name = this.options?.selectList.find((resp:any) =>resp[this.options.itemId].toString() == this.options.item[this.options.itemId])[this.options.itemName];
-    }
-  }
-
-  disableOption(option){
-    if ( this.options.toDisableList) {
-      for (const code of this.options.toDisableList) {
-        
-        if (option[this.options.selectItemId]==code[this.options.selectItemId]) {
-          return true;
-        }
-      }
-    }else{
-      return false;
+      let itemFinded:any =  this.options?.selectList.find((resp:any) =>resp[this.options.itemId].toString() == this.options.item[this.options.itemId]);
+      itemFinded.selected = true;
+      this.fieldSelector.name =itemFinded[this.options.itemName];
+      this.beforeOption = itemFinded;
     }
   }
 
@@ -66,9 +58,46 @@ export class SelectNgmodelComponent implements OnInit {
   }
 
   onSelectOption(option){
+    if (this.beforeOption && (option[this.options.itemId] != this.options.item[this.options.itemId])) this.beforeOption.selected = false;
+    
+
+
     if (this.options?.itemName)this.options.item[this.options.itemName] = option[this.options.itemName];
     this.options.item[this.options.itemId] = option[this.options.itemId];
     this.fieldSelector.name = option[this.options.itemName];
+
+
+    option.selected = !option.selected;
+    this.beforeOption = option;
+    if (!option.selected) {
+     this.options.item[this.options.itemId] ="";
+     this.fieldSelector.name = ""; 
+     this.beforeOption = null;
+    }
+    
+    console.log(this.beforeOption);
+  }
+
+  validateColor(option){
+    if (option[this.options.itemId] == this.options.item[this.options.itemId]) {
+      return 'option_selectedWithAccess';
+    }
+    if (option.selected) {
+      return 'option_selected';
+    }
+//     option_unselected
+
+// option_selectedWithAccess
+  }
+
+  validateBlockOption(option){
+    if ((option[this.options.itemId] == this.options.item[this.options.itemId])) {
+      return false;
+    }
+    if (option.selected == true) {
+      return true;
+    }
+
 
   }
 

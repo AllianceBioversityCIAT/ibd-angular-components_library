@@ -10,7 +10,6 @@ export interface selectNgModelOptions{
     selectList:[];
     selectItemName:string;
     selectItemId:string|number;
-    toDisableList:[];
     itemName:string;
     itemId:string;
     item:any;
