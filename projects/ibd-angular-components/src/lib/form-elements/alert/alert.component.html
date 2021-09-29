@@ -1,4 +1,5 @@
 <div class="idb-alert-container {{this.options.type}}">
-    <p>{{this.options.text}}</p>
+    <p *ngIf="this.options.text">{{this.options.text}}</p>
+    <div *ngIf="this.options.htmlText" [innerHtml]="this.options.htmlText"></div>
     <span class="material-icons">{{typeToIcon(this.options.type)}}</span>
 </div>
