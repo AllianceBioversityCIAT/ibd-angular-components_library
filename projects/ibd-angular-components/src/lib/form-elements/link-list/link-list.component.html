@@ -20,7 +20,7 @@
                     </div>
     
                     <div class="input_container">
-                        <p class="readonly_text_title"><strong class="ibdc_secondary_color">Link:</strong>
+                        <p class="readonly_text_title"><strong class="ibdc_secondary_color">Web Link:</strong>
                             <!-- <span class="ibdc_asterisk">* </span> -->
                         </p>
                         <p class="readonly_link"> 
@@ -58,7 +58,7 @@
 
                     <div class="input_container">
                         <div class="p-inputgroup">
-                            <span class="p-inputgroup-addon">  Link  </span>
+                            <span class="p-inputgroup-addon"> Web Link  </span>
                             <input class="{{validatewebPage(item[options.savedList.attributeDescription])}}" type="text" pInputText placeholder="Website" (ngModelChange)="addAttributeEdited(i);" [value]="item[options.savedList.attributeDescription]" [(ngModel)]="item[options.savedList.attributeDescription]">      
                         </div>
                     </div>
@@ -88,6 +88,7 @@
                     </a>
                 </div>
             </div>
+            <h3 style="text-align: center; margin-top: 20px;" *ngIf="!options.savedList.list.length"><strong class="ibdc_secondary_color" >No items added in the list</strong></h3>
         </div>
         <br>
         <div class="button_add_container center_flex">

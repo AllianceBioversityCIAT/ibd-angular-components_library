@@ -45,7 +45,7 @@ export class LinkListComponent implements OnInit {
   }
 
   validatewebPage(link:any){
-    var expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+    var expression = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!():,.;]*[-A-Z0-9+&@#\/%=~_|])/gi;
     var regex = new RegExp(expression);
     if (link.match(regex)) {
       return '';
