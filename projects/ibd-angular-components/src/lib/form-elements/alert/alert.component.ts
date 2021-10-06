@@ -22,6 +22,9 @@ export class AlertComponent implements OnInit {
       case 'danger':
         return 'dangerous';
 
+      case 'success':
+        return 'task_alt';
+
       case 'alert':
         return 'priority_high';
 

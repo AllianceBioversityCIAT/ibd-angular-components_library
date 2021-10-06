@@ -29,11 +29,13 @@
     
 }
 
-// .plain_text{
-//     .alert{
-//         color: #3b6181; 
-//     }
-// }
+.success{
+    background-color: #5cc560;
+    border-color: #5cc560;
+    color: white; 
+    font-size: 1.2em;
+    font-weight: 700;
+}
 
 .alert{
     background-color: #b9d9ef;
