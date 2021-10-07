@@ -45,7 +45,7 @@
             <div class="items_list_with_text" *ngIf="this.options.hideSavedList !== true">
                 <div class="header_list">
                     <p class="input_title"><strong class="ibdc_secondary_color">{{options.savedList.labelName | uppercase}} saved: </strong></p>
-                    <p class="input_title" style="margin-right: 15px;"><strong class="ibdc_secondary_color">Number of {{options.savedList.labelName}} : {{this.options.savedList.list.length}} </strong></p>
+                    <p class="input_title" style="margin-right: 15px;"><strong class="ibdc_secondary_color">Number of {{options.savedList.labelName}} : {{countOnlyNoDelete(this.options.savedList.list)}} </strong></p>
                 </div>
                 <br>
                 <div class="items_list">
