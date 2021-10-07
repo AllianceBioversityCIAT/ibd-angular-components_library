@@ -30,6 +30,22 @@ export class SelectMultipleComponent implements OnInit {
     this.consumeService();
   }
 
+  countOnlyNoDelete(array:any){
+    let cont = 0;
+    for (const item of array) {
+
+      if (!item.hasOwnProperty('active')) {
+        cont++
+      }else{
+        if (item.active == true) {
+          cont++;
+        }
+      }
+    }
+
+    return cont;
+  }
+
   consumeService() {
     if (this.options.service && !this.options.selectList) {
 
