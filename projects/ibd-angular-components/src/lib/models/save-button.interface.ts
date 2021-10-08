@@ -1,5 +1,7 @@
 export interface SaveButton{
     underConstruction:boolean,
     disabled:boolean,
-    readOnlyVariable: any
+    readOnlyVariable: any,
+    remember:boolean
+    minutesToRemember:number
 }

@@ -1,0 +1,46 @@
+.save-button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 30px 100px;
+}
+
+.message{
+    background-color: var(--ibdc-secondary-color);
+    color: white;
+    font-weight: 500;
+    padding: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: -100px;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+
+    p{
+        margin: 0px;
+        padding: 0px;
+        white-space: nowrap;
+    }
+}
+
+.show_message{
+    transition: all .3s ease-in-out;
+    width: 300px;
+    p{
+        opacity: 1;
+        transition: all .3s ease-in-out;
+    }
+}
+
+.hide_message{
+    transition: all .3s ease-in-out;
+    width: 0px;
+    padding: 0px;
+    p{
+        opacity: 0;
+        transition: all .3s ease-in-out;
+    }
+}

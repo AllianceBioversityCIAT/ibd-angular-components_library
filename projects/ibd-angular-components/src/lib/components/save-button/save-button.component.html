@@ -1,14 +1,21 @@
 
 <br>
+<div class="save-button">
+    <div class="message {{move?'show_message':'hide_message'}}">
+        <p>Remember to save the information</p>
+    </div>
     <button 
+    #saveButton 
     pButton pRipple 
     type="submit" label="Save" 
-    class="p-button-success save-button"     
+    class="p-button-success  {{move?'animate__animated animate__swing':''}}"     
     icon="pi {{!options.underConstruction?'pi-save':'pi-info'}}" iconPos="right" 
     *ngIf="!this.options.readOnlyVariable" 
     [disabled]="options.disabled || options.underConstruction == true"
     (click)="onclick()" 
     ></button>
+</div>
+
 
 <!-- <button *ngIf="false" color="accent" [disabled]="options.disabled || options.underConstruction == true" mat-raised-button class="save-button">
     Save < class="save_icon" aria-hidden="false" aria-label="save icon">{{!options.underConstruction?'save':'construction'}}</>
