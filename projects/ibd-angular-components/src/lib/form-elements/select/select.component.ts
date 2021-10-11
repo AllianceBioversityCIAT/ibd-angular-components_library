@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { selectOptions } from '../../models/select-options.interface';
 
@@ -22,6 +22,15 @@ export class SelectComponent implements OnInit {
     name:''
   }
 
+  @HostListener('click')
+  clickInside() {
+    console.log("clicked inside");
+  }
+  
+  @HostListener('document:click')
+  clickout() {
+    console.log("clicked outside");
+  }
 
   // valors='asasasas';
 
