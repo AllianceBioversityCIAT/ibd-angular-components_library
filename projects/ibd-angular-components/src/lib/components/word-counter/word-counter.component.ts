@@ -23,25 +23,27 @@ export class WordCounterComponent implements OnInit {
   }
 
   wordCounter() {
-    this.wordCount = this.form.get(this.formControlNameInput).value ? this.form.get(this.formControlNameInput).value.split(/\s+/) : 0;
-    this.words = this.wordCount ? (this.wordCount[this.wordCount.length-1]=="" ? this.wordCount.length-1 : this.wordCount.length ) : 0;
-    if (this.words > this.maxWords) {
-      this.writeEvent.emit();
+    let textTocount = this.form.get(this.formControlNameInput).value;
+    if (textTocount) {
+      let textReplaced = textTocount.replace(/(<([^>]+)>)/g,' ');
+      if (textReplaced) {
+        console.log(textReplaced);
+        this.words = textReplaced.match(/\S+/g).length;
+        console.log(this.words);
+        if (this.words > this.maxWords) {
+          this.writeEvent.emit();
+        }
+      }else{
+        this.words = 0;
+      }
+
+    }else{
+      this.words = 0;
     }
-    // console.log(this.maxWords);
-    // console.log(this.words);
-   
-    // console.log(this.words);
+
+
   }
 
-  // this.textareaInput = new FormControl(this.options.form.value[this.options.formControlName]?this.options.form.value[this.options.formControlName]:'', [
-  //   Validators.required,
-  //   this.options.maxWords ? this.maxWordsValidator(): Validators.required
-  // ]);
 
-
-//   maxWordsValidator(): ValidatorFn {  
-//     return  (control: AbstractControl): { [key: string]: any } | null => this.words < this.options.maxWords ? null:{maxWords: control.value};
-// }
 
 }
