@@ -27,9 +27,7 @@ export class WordCounterComponent implements OnInit {
     if (textTocount) {
       let textReplaced = textTocount.replace(/(<([^>]+)>)/g,' ');
       if (textReplaced) {
-        console.log(textReplaced);
         this.words = textReplaced.match(/\S+/g).length;
-        console.log(this.words);
         if (this.words > this.maxWords) {
           this.writeEvent.emit();
         }
