@@ -71,7 +71,23 @@ export class SelectMultipleComponent implements OnInit {
       itemFinded?itemFinded.selected = true:null;
       // console.log(itemFinded);
     });
+    
+  
+    
   }
+
+  mapDisableList() {
+    if (this.options.savedList.listToDisableElements) {
+      // console.log(this.options.savedList.list);
+      this.options.savedList.listToDisableElements.map(savedItem => {
+        // console.log(savedItem);
+        let itemFinded = this.selectList.find(originalItem => originalItem[this.options.selectItemId] == savedItem[this.options.savedList.selectItemId]);
+        itemFinded ? itemFinded.disabled = true : false;
+        // console.log(itemFinded);
+      });
+    }
+  }
+
 
   writtenInSearchField(){
     // console.log("writtenInSearchField");

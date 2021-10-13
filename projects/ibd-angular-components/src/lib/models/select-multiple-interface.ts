@@ -13,6 +13,7 @@ export interface SelectMultipleOptions{
         selectItemName:string;
         idToSave:string|number;
         labelName:string;
+        listToDisableElements:any[];
     };
     selectList:any[];
     selectItemName:string;

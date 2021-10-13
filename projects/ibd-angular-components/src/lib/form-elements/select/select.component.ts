@@ -22,15 +22,15 @@ export class SelectComponent implements OnInit {
     name:''
   }
 
-  @HostListener('click')
-  clickInside() {
-    console.log("clicked inside");
-  }
+  // @HostListener('click')
+  // clickInside() {
+  //   console.log("clicked inside");
+  // }
   
-  @HostListener('document:click')
-  clickout() {
-    console.log("clicked outside");
-  }
+  // @HostListener('document:click')
+  // clickout() {
+  //   console.log("clicked outside");
+  // }
 
   // valors='asasasas';
 

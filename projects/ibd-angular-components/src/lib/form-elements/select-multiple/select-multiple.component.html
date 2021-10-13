@@ -32,11 +32,12 @@
                     </div>
                     <div class="field_selector_list">
                         <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
-                            <div class="select_option"
+                            <div class="select_option {{this.mapDisableList()}}"
+                                [style.pointerEvents]=" option.disabled ? 'none':'all'"
                                 *cdkVirtualFor="let option of options.frontendSearchAttribute?(selectList | selectFilter:searchText:options.frontendSearchAttribute):selectList"
                                 (click)="onSelectOption(option)">
-                                <span class="material-icons" aria-hidden="false" [style.color]="option.selected?'green':'unset'">{{option.selected?'radio_button_checked':'radio_button_unchecked'}}</span>
-                                <span [style.marginLeft.px]="options.toDisableList?25:20" [style.color]="option.selected?'green':'unset'">{{option[options.selectItemName]}}</span>
+                                <span class="material-icons" aria-hidden="false" [style.color]="option.disabled?'gray':option.selected?'green':'unset'">{{option.disabled?'radio_button_checked':option.selected?'radio_button_checked':'radio_button_unchecked'}}</span>
+                                <span [style.marginLeft.px]="options.toDisableList?25:20" [style.color]="option.disabled?'gray':option.selected?'green':'unset'">{{option[options.selectItemName]}}</span>
                             </div>
                         </cdk-virtual-scroll-viewport>
                     </div>

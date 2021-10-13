@@ -17,10 +17,7 @@ export class TextareaComponent implements OnInit {
     let options={
       plugins:[]
     };
-    this.textareaInput = new FormControl(this.options.form.value[this.options.formControlName]?this.options.form.value[this.options.formControlName]:'', [
-      Validators.required,
-      // this.options.maxWords ? this.maxWordsValidator(): Validators.required
-    ]);
+    this.textareaInput = new FormControl(this.options.form.value[this.options.formControlName]?this.options.form.value[this.options.formControlName]:'');
 
      this.setValue();
   }

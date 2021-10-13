@@ -1,4 +1,4 @@
-<div class="idb-alert-container {{this.options.type}}">
+<div class="animate__animated animate__bounceIn idb-alert-container {{this.options.type}}">
     <p *ngIf="this.options.text">{{this.options.text}}</p>
     <div *ngIf="this.options.htmlText" [innerHtml]="this.options.htmlText"></div>
     <span class="material-icons">{{typeToIcon(this.options.type)}}</span>
