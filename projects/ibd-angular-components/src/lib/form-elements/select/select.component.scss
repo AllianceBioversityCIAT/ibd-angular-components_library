@@ -1,8 +1,35 @@
 @import '~@angular/material/theming';
 @import '../../styles/styles.scss';
 
-.manual_select{
-    position: relative;
+.manual_select {
+  border: 1px solid white;
+  position: relative;
+
+  .field_selector {
+    // width: 0px;
+    height: 0px;
+    opacity: 0;
+  }
+  .openSelectInput{
+    display: flex;
+  }
+  .closeSelectInput{
+      display: none;
+  }
+  &:focus-within {
+      .openSelectInput{
+        display: none !important;
+      }
+      .closeSelectInput{
+          display: flex !important;
+      }
+    .field_selector {
+      width: auto;
+      padding: 10px !important;
+      height: 320px !important;
+      opacity: 1 !important;
+    }
+  }
 }
 
 .big_button_outside{
@@ -51,15 +78,15 @@
 }
 .hide_field_selector{
     // width: 0px;
-    height: 0px;
-    opacity: 0;
+    // height: 0px;
+    // opacity: 0;
 }
-.show_field_selector{
-    padding: 10px;
-    height: 320px;
-    opacity: 1;
-    // width: auto;
-}
+// .show_field_selector{
+//     padding: 10px;
+//     height: 320px;
+//     opacity: 1;
+//     // width: auto;
+// }
 
 .field_selector_search{
     margin-top: 5px;

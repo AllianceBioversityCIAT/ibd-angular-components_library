@@ -8,7 +8,7 @@
 
     <div *ngSwitchDefault>
 
-        <span [ngSwitch]="this.oneDate">
+        <div [ngSwitch]="this.oneDate">
             <div class="manual_select" *ngSwitchCase="true">
                 <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span
                         class="ibdc_asterisk">* </span></p>
@@ -19,19 +19,22 @@
                     <!-- <span class="material-icons">arrow_drop_down</span> -->
                 </div>
             </div>
-
-            <div class="manual_select" *ngSwitchCase="false">
+            <a class="manual_select" #focusElement [routerLink]="currentRoute" *ngSwitchCase="false">
                 <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span
                         class="ibdc_asterisk">* </span></p>
                 <p *ngIf="options.description" class="description_field"><i>{{options.description}}</i>
                 </p>
-                <div class="custom_select_field" (click)="toggle_field_selector_class()">
+                <div class="custom_select_field openSelectInput">
+                    <div class="custom_select_field_value" [ngClass]="{'unselected': !fieldSelector.name}" >{{fieldSelector.name || 'Unselected'}}</div>
+                    <span class="material-icons">arrow_drop_down</span>
+                </div>
+                <div class="custom_select_field closeSelectInput" (click)="closeSelect(focusElement)">
                     <div class="custom_select_field_value" [ngClass]="{'unselected': !fieldSelector.name}" >{{fieldSelector.name || 'Unselected'}}</div>
                     <span class="material-icons">arrow_drop_down</span>
                 </div>
                 <div class="field_selector {{fieldSelector.class}}">
     
-                    <div type="button" span-button class="field_selector_close_button" (click)="toggle_field_selector_class()">
+                    <div type="button" span-button class="field_selector_close_button" (click)="closeSelect(focusElement)">
                         <span class="material-icons">close</span>
                     </div>
                     <div class="field_selector_search">
@@ -42,16 +45,16 @@
                         <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
                             <div class="select_option" [style.pointerEvents]="disableOption(option)?'none':'all'"
                                 *cdkVirtualFor="let option of options.frontendSearchAttribute?(selectList | selectFilter:searchText:options.frontendSearchAttribute):selectList"
-                                (click)="toggle_field_selector_class();onSelectOption(option)">
-                                <span class="material-icons" *ngIf="options.toDisableList" aria-hidden="false" color="primary">
-                                    {{disableOption(option)?'radio_button_checked':'radio_button_unchecked'}}</span>
-                                <span [style.marginLeft.px]="options.toDisableList?25:0" [style.color]="disableOption(option)?'#8f8f8f':'unset'">{{option[options.selectItemName]}}</span>
+                                (click)="onSelectOption(option,focusElement)">
+                                <span class="material-icons" aria-hidden="false" color="primary" [style.color]="activeCurrentOption(option)?'green':'#3d3d3d'">
+                                    {{activeCurrentOption(option)?'radio_button_checked':'radio_button_unchecked'}}</span>
+                                <span [style.marginLeft.px]="25" [style.color]="disableOption(option)?'#8f8f8f':option.disabled?'gray':activeCurrentOption(option)?'green':'#3d3d3d'">{{option[options.selectItemName]}}</span>
                             </div>
                         </cdk-virtual-scroll-viewport>
                     </div>
                 </div>
-            </div>
-        </span>
+            </a>
+        </div>
 
 
         <br>

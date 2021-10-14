@@ -31,6 +31,7 @@ import { InputNgmodelComponent } from './form-elements/input-ngmodel/input-ngmod
 import { AlertComponent } from './form-elements/alert/alert.component';
 import {TableModule} from 'primeng/table';
 import { SelectNgmodelNoRepeatComponent } from './form-elements/select-ngmodel-no-repeat/select-ngmodel-no-repeat.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -73,6 +74,7 @@ const primeNgModulesList = [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    RouterModule,
     ...primeNgModulesList
   ]
   
