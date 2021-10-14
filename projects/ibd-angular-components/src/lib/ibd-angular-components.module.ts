@@ -30,6 +30,7 @@ import { SelectNgmodelComponent } from './form-elements/select-ngmodel/select-ng
 import { InputNgmodelComponent } from './form-elements/input-ngmodel/input-ngmodel.component';
 import { AlertComponent } from './form-elements/alert/alert.component';
 import {TableModule} from 'primeng/table';
+import { SelectNgmodelNoRepeatComponent } from './form-elements/select-ngmodel-no-repeat/select-ngmodel-no-repeat.component';
 
 
 
@@ -46,6 +47,7 @@ const componentsList = [
   SaveButtonComponent,
   TermsOrPoliciesComponent,
   SelectNgmodelComponent,
+  SelectNgmodelNoRepeatComponent,
   InputNgmodelComponent,
   AlertComponent
 ];

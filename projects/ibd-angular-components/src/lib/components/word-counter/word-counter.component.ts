@@ -26,7 +26,7 @@ export class WordCounterComponent implements OnInit {
     let textTocount = this.form.get(this.formControlNameInput).value;
     if (textTocount) {
       let textReplaced = textTocount.replace(/(<(\/?p)>)/gi,' ').replace(/(<([^>]+)>)/gi,'');
-      console.log(textReplaced);
+      // console.log(textReplaced);
       if (textReplaced) {
         let textMatch =textReplaced.match(/\S+/g)
         if (textMatch) {

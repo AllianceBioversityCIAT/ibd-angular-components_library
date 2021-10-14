@@ -28,12 +28,12 @@
                 </div>
                 <div class="field_selector_list">
                     <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
-                        <div class="select_option" [style.pointerEvents]="disableOption(option)?'none':'all'"
+                        <div class="select_option" [style.pointerEvents]=" validateBlockOption(option) ? 'none':'all'"
                             *cdkVirtualFor="let option of options.frontendSearchAttribute?(this.options.selectList | selectFilter:searchText:options.frontendSearchAttribute):this.options.selectList"
                             (click)="toggle_field_selector_class();onSelectOption(option)">
-                            <span class="material-icons" *ngIf="options.toDisableList" aria-hidden="false" color="primary">
-                                {{disableOption(option)?'radio_button_checked':'radio_button_unchecked'}}</span>
-                            <span [style.marginLeft.px]="options.toDisableList?25:0" [style.color]="disableOption(option)?'#8f8f8f':'unset'">{{option[options.itemName]}}</span>
+                            <span class="material-icons {{validateColor(option)}}" aria-hidden="false" color="primary">
+                                {{ option.selected == true ?'radio_button_checked':'radio_button_unchecked'}}</span>
+                            <span [style.marginLeft.px]="25" class="{{validateColor(option)}}">{{option[options.itemName]}}</span>
                         </div>
                     </cdk-virtual-scroll-viewport>
                 </div>

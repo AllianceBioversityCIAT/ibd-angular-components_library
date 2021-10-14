@@ -1,45 +1,6 @@
 @import '~@angular/material/theming';
 @import '../../styles/styles.scss';
 
-.manual_select mat-form-field{
-    
-    outline: none;
-    mat-select{
-        outline: none;  
-    }
-}
-.header_list{
-    display: flex;
-    justify-content: space-between;
-}
-
-.selector_container{
-    // display: flex;
-    width: 100%;
-    .manual_select{
-        width: 100%;
-        box-shadow: 0 3px 6px #96969629, 0 3px 6px #96969629;
-        padding: 10px;
-        border-radius: 7px;
-    }
-    .items_list_with_text{
-        margin-top: 20px;
-        box-shadow: 0 3px 6px #96969629, 0 3px 6px #96969629;
-        padding: 10px;
-        border-radius: 7px;
-    }
-    .items_list{
-        
-        padding: 0px 10px;
-        width: 100%;
-        // max-width: 10%;
-        overflow-y: scroll;
-        max-height: 300px;
-        margin-top: 10px;
-    
-    }
-}
-
 .manual_select{
     position: relative;
 }
@@ -54,6 +15,14 @@
     z-index: 90;
     display: none;
     // pointer-events: visibleStroke;
+}
+
+.custom_select_field_value{
+    color: #5a5a5a;
+}
+
+.unselected{
+    color: #919191 !important;
 }
 
 .field_selector{
@@ -77,8 +46,7 @@
     right: 0;
     margin: 10px 10px 0px 0px;
     .material-icons{
-        cursor: pointer;
-        color: rgb(230, 59, 59) !important;
+        color: rgb(230, 59, 59);
     }
 }
 .hide_field_selector{
@@ -115,15 +83,15 @@
     cursor: pointer;
     padding: 15px 10px;
     transition: all ease .3s;
-    display: flex;
-    align-items: center;
     &:hover{
         transition: all ease .3s;
         background-color: rgb(247, 247, 247);
         border-radius: 8px;
     }
     .material-icons{
-        margin: 0px 8px 0px 5px;
+        position: absolute;
+        left: 0;
+        margin-left: 5px;
     }
 }
 
@@ -142,6 +110,18 @@
         //    border-radius: 5px;
         }
     }
+}
+
+.option_unselected{
+
+}
+
+.option_selected{
+    color: #dddddd;
+}
+
+.option_selectedWithAccess{
+    color: #149725;
 }
 
 .custom_select_field{
@@ -176,25 +156,25 @@
 
 
     /* width */
-    .example-viewport::-webkit-scrollbar,.items_list::-webkit-scrollbar {
+    .example-viewport::-webkit-scrollbar {
         width: 10px;
         border-radius: 30px;
       }
       
       /* Track */
-      .example-viewport::-webkit-scrollbar-track,.items_list::-webkit-scrollbar-track {
+      .example-viewport::-webkit-scrollbar-track {
         background: #f1f1f1; 
         border-radius: 30px;
       }
        
       /* Handle */
-      .example-viewport::-webkit-scrollbar-thumb,.items_list::-webkit-scrollbar-thumb {
+      .example-viewport::-webkit-scrollbar-thumb {
         background: #025c7a; 
         border-radius: 30px;
       }
       
       /* Handle on hover */
-      .example-viewport::-webkit-scrollbar-thumb:hover,.items_list::-webkit-scrollbar-thumb:hover {
+      .example-viewport::-webkit-scrollbar-thumb:hover {
         background: #014d66; 
         border-radius: 30px;
       }
