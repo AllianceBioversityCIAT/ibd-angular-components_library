@@ -1,11 +1,33 @@
 @import '~@angular/material/theming';
 @import '../../styles/styles.scss';
 
-.manual_select mat-form-field{
-    
-    outline: none;
-    mat-select{
-        outline: none;  
+.manual_select{
+    border: 1px solid white;
+    position: relative;
+    .field_selector {
+      // width: 0px;
+      height: 0px;
+      opacity: 0;
+    }
+    .openSelectInput{
+      display: flex;
+    }
+    .closeSelectInput{
+        display: none;
+    }
+    &:focus-within {
+        .openSelectInput{
+          display: none !important;
+        }
+        .closeSelectInput{
+            display: flex !important;
+        }
+      .field_selector {
+        width: auto;
+        padding: 10px !important;
+        height: 320px !important;
+        opacity: 1 !important;
+      }
     }
 }
 .header_list{
@@ -16,7 +38,7 @@
 .selector_container{
     // display: flex;
     width: 100%;
-    .manual_select{
+    .manual_select_container{
         width: 100%;
         box-shadow: 0 3px 6px #96969629, 0 3px 6px #96969629;
         padding: 10px;
@@ -81,17 +103,17 @@
         color: rgb(230, 59, 59) !important;
     }
 }
-.hide_field_selector{
-    // width: 0px;
-    height: 0px;
-    opacity: 0;
-}
-.show_field_selector{
-    padding: 10px;
-    height: 320px;
-    opacity: 1;
-    // width: auto;
-}
+// .hide_field_selector{
+//     // width: 0px;
+//     height: 0px;
+//     opacity: 0;
+// }
+// .show_field_selector{
+//     padding: 10px;
+//     height: 320px;
+//     opacity: 1;
+//     // width: auto;
+// }
 
 .field_selector_search{
     margin-top: 5px;

@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { SelectMultipleOptions } from '../../models/select-multiple-interface';
 @Component({
   selector: 'ibdc-select-multiple',
@@ -10,6 +11,7 @@ export class SelectMultipleComponent implements OnInit {
  
   searchText = '';
   @Input() options:SelectMultipleOptions;
+  @Output() unselect = new EventEmitter();
   selectList=[];
 
   fieldSelector= {
@@ -21,9 +23,12 @@ export class SelectMultipleComponent implements OnInit {
 
   // valors='asasasas';
 
+  currentRoute = this.router.routerState.snapshot.url;
 
  
-  constructor() { }
+  constructor(
+    private router:Router
+  ) { }
 
   ngOnInit(): void {
     this.searchText = this.options.initialSearchText?this.options.initialSearchText:this.searchText;
@@ -63,6 +68,11 @@ export class SelectMultipleComponent implements OnInit {
     }
   }
 
+  
+  closeSelect(focusElement){
+    focusElement.blur();
+  }
+
   mapSavedList(){
     // console.log(this.options.savedList.list);
     this.options.savedList.list.map(savedItem=>{
@@ -78,7 +88,6 @@ export class SelectMultipleComponent implements OnInit {
 
   mapDisableList() {
     if (this.options.savedList.listToDisableElements) {
-      // console.log(this.options.savedList.list);
       this.options.savedList.listToDisableElements.map(savedItem => {
         // console.log(savedItem);
         let itemFinded = this.selectList.find(originalItem => originalItem[this.options.selectItemId] == savedItem[this.options.savedList.selectItemId]);
@@ -94,11 +103,11 @@ export class SelectMultipleComponent implements OnInit {
     // this.mapSelected();
   }
 
-  toggle_field_selector_class(){
-    this.fieldSelector.class =='show_field_selector'?this.fieldSelector.class ='hide_field_selector':this.fieldSelector.class ='show_field_selector'
-  }
+  // toggle_field_selector_class(){
+  //   this.fieldSelector.class =='show_field_selector'?this.fieldSelector.class ='hide_field_selector':this.fieldSelector.class ='show_field_selector'
+  // }
 
-  onSelectOption(option:any){
+  onSelectOption(option:any,focusElement:HTMLElement){
     // console.log(this.options.savedList.list);
     // console.log(option);
     // encontrar en lista de guardados la opcion seleccionada
@@ -120,17 +129,18 @@ export class SelectMultipleComponent implements OnInit {
       //formas de borrar
       if (itemFinded) {
         // si tiene id de la bd pero de guardado
+        
         if (itemFinded[this.options.savedList.idToSave]) {
           //borrado logico
           itemFinded.active = false;
         }else{
           //borrado de array
-          this.options.savedList.list.splice(itemFindedIndex, 1)
+          this.options.savedList.list.splice(itemFindedIndex, 1);
         }
-        
+        this.unselect.emit(option);
       }
     }
-
+    this.closeSelect(focusElement);
   }
 
 }

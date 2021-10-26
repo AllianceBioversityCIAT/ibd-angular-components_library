@@ -13,36 +13,43 @@
 
     <div *ngSwitchDefault>
         <div class="selector_container">
-            <div class="manual_select">
-                <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
-                <p *ngIf="options.description" class="description_field"><i>{{options.description}}</i>
-                </p>
-                <div class="custom_select_field" (click)="toggle_field_selector_class()">
-                    <div class="custom_select_field_value">Select options...</div>
-                    <span class="material-icons">arrow_drop_down</span>
-                </div>
-                <div class="field_selector {{fieldSelector.class}}">
-    
-                    <span class="field_selector_close_button" (click)="toggle_field_selector_class()">
-                        <span class="material-icons">close</span>
-                    </span>
-                    <div class="field_selector_search">
-                        <input type="text" [(ngModel)]="searchText"
-                            (ngModelChange)="options.frontendSearchAttribute ? writtenInSearchField() : consumeService()">
+            <div class="manual_select_container">
+                <a class="manual_select" #focusElement [routerLink]="currentRoute">
+                    <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
+                    <p *ngIf="options.description" class="description_field"><i>{{options.description}}</i>
+                    </p>
+                    <div class="custom_select_field openSelectInput" >
+                        <div class="custom_select_field_value" style="color: #3d3d3d;">Select options...</div>
+                        <span class="material-icons">arrow_drop_down</span>
                     </div>
-                    <div class="field_selector_list">
-                        <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
-                            <div class="select_option {{this.mapDisableList()}}"
-                                [style.pointerEvents]=" option.disabled ? 'none':'all'"
-                                *cdkVirtualFor="let option of options.frontendSearchAttribute?(selectList | selectFilter:searchText:options.frontendSearchAttribute):selectList"
-                                (click)="onSelectOption(option)">
-                                <span class="material-icons" aria-hidden="false" [style.color]="option.disabled?'gray':option.selected?'green':'unset'">{{option.disabled?'radio_button_checked':option.selected?'radio_button_checked':'radio_button_unchecked'}}</span>
-                                <span [style.marginLeft.px]="options.toDisableList?25:20" [style.color]="option.disabled?'gray':option.selected?'green':'unset'">{{option[options.selectItemName]}}</span>
-                            </div>
-                        </cdk-virtual-scroll-viewport>
+                    <div class="custom_select_field closeSelectInput" (click)="closeSelect(focusElement)">
+                        <div class="custom_select_field_value" style="color: #3d3d3d;">Select options...</div>
+                        <span class="material-icons">arrow_drop_down</span>
                     </div>
-                </div>
+                    <div class="field_selector {{fieldSelector.class}}">
+        
+                        <span class="field_selector_close_button" (click)="closeSelect(focusElement)">
+                            <span class="material-icons">close</span>
+                        </span>
+                        <div class="field_selector_search">
+                            <input type="text" [(ngModel)]="searchText"
+                                (ngModelChange)="options.frontendSearchAttribute ? writtenInSearchField() : consumeService()">
+                        </div>
+                        <div class="field_selector_list">
+                            <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+                                <div class="select_option {{this.mapDisableList()}}"
+                                    [style.pointerEvents]=" option.disabled ? 'none':'all'"
+                                    *cdkVirtualFor="let option of options.frontendSearchAttribute?(selectList | selectFilter:searchText:options.frontendSearchAttribute):selectList"
+                                    (click)="onSelectOption(option,focusElement)">
+                                    <span class="material-icons" aria-hidden="false" [style.color]="option.disabled?'gray':option.selected?'green':'#3d3d3d'">{{option.disabled?'radio_button_checked':option.selected?'radio_button_checked':'radio_button_unchecked'}}</span>
+                                    <span [style.marginLeft.px]="options.toDisableList?25:20" [style.color]="option.disabled?'gray':option.selected?'green':'#3d3d3d'">{{option[options.selectItemName]}}</span>
+                                </div>
+                            </cdk-virtual-scroll-viewport>
+                        </div>
+                    </div>
+                </a>
             </div>
+
             <div class="items_list_with_text" *ngIf="this.options.hideSavedList !== true">
                 <div class="header_list">
                     <p class="input_title"><strong class="ibdc_secondary_color">{{options.savedList.labelName | uppercase}} saved: </strong></p>

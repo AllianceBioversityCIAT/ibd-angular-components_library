@@ -69,6 +69,7 @@ export class SelectNgmodelComponent implements OnInit {
     if (this.options?.itemName)this.options.item[this.options.itemName] = option[this.options.itemName];
     this.options.item[this.options.itemId] = option[this.options.itemId];
     this.fieldSelector.name = option[this.options.itemName];
+    console.log(this.options);
 
   }
 
