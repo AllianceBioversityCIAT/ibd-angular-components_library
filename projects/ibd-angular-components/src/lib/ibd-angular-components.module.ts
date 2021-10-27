@@ -32,6 +32,7 @@ import { AlertComponent } from './form-elements/alert/alert.component';
 import {TableModule} from 'primeng/table';
 import { SelectNgmodelNoRepeatComponent } from './form-elements/select-ngmodel-no-repeat/select-ngmodel-no-repeat.component';
 import { RouterModule } from '@angular/router';
+import { SortAlphabeticallyPipe } from './pipes/sort-alphabetically.pipe';
 
 
 
@@ -65,7 +66,7 @@ const primeNgModulesList = [
   TableModule
 ];
 @NgModule({
-  declarations: [...componentsList, SelectFilterPipe, WordCounterComponent],
+  declarations: [...componentsList, SelectFilterPipe, WordCounterComponent, SortAlphabeticallyPipe],
   exports: [...componentsList],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [

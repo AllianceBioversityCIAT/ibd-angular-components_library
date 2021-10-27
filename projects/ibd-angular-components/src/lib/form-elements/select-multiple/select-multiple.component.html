@@ -39,7 +39,7 @@
                             <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
                                 <div class="select_option {{this.mapDisableList()}}"
                                     [style.pointerEvents]=" option.disabled ? 'none':'all'"
-                                    *cdkVirtualFor="let option of options.frontendSearchAttribute?(selectList | selectFilter:searchText:options.frontendSearchAttribute):selectList"
+                                    *cdkVirtualFor="let option of options.frontendSearchAttribute?(selectList | selectFilter:searchText:options.frontendSearchAttribute| sortAlphabetically:this.options?.selectItemName):selectList"
                                     (click)="onSelectOption(option,focusElement)">
                                     <span class="material-icons" aria-hidden="false" [style.color]="option.disabled?'gray':option.selected?'green':'#3d3d3d'">{{option.disabled?'radio_button_checked':option.selected?'radio_button_checked':'radio_button_unchecked'}}</span>
                                     <span [style.marginLeft.px]="options.toDisableList?25:20" [style.color]="option.disabled?'gray':option.selected?'green':'#3d3d3d'">{{option[options.selectItemName]}}</span>

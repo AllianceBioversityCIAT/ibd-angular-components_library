@@ -44,7 +44,7 @@
                     <div class="field_selector_list">
                         <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
                             <div class="select_option" [style.pointerEvents]="disableOption(option)?'none':'all'"
-                                *cdkVirtualFor="let option of options.frontendSearchAttribute?(selectList | selectFilter:searchText:options.frontendSearchAttribute):selectList"
+                                *cdkVirtualFor="let option of options.frontendSearchAttribute?(selectList | selectFilter:searchText:options.frontendSearchAttribute | sortAlphabetically:this.options?.selectItemName):selectList"
                                 (click)="onSelectOption(option,focusElement)">
                                 <span class="material-icons" aria-hidden="false" color="primary" [style.color]="activeCurrentOption(option)?'green':'#3d3d3d'">
                                     {{activeCurrentOption(option)?'radio_button_checked':'radio_button_unchecked'}}</span>
