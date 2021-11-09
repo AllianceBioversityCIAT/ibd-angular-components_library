@@ -12,3 +12,31 @@
     margin-top: 0px;
     margin-bottom: 10px;
 }
+
+.ta_container{
+    .texts_container{
+        background-color: var(--ibdc-tertiary-color);
+        padding-bottom: 5px;
+        .input_title{
+            // background-color: #69b1ec;
+            color: white;
+            font-weight: 500;
+            padding: 10px;
+            margin: 0px;
+        }
+        .description_field{
+            background-color: #4bb2b9;
+            color: white;
+            font-weight: 500;
+            padding: 10px;
+            margin: 0px 3px;
+            border-radius: 10px;
+        }
+    }
+
+    box-shadow: 0 10px 10px #aaaaaa30, 0 6px 6px #aaaaaa30;
+    border: 3px solid var(--ibdc-tertiary-color);
+    border-radius: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+}

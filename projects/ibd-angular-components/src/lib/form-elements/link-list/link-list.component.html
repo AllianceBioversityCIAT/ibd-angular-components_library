@@ -2,7 +2,7 @@
 <div *ngSwitchCase="true">
     <div>
         <br>
-        <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span class="ibdc_asterisk">* </span></p>
+        <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
         <p class="description_field">{{options.description}}</p>
         <br>
     
@@ -46,7 +46,7 @@
 <div *ngSwitchDefault>
     <div>
         <br>
-        <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span class="ibdc_asterisk">* </span></p>
+        <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
         <p class="description_field">{{options.description}}</p>
         <br>
     

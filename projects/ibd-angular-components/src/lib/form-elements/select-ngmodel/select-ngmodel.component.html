@@ -29,7 +29,7 @@
                 <div class="field_selector_list">
                     <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
                         <div class="select_option" [style.pointerEvents]="disableOption(option)?'none':'all'"
-                            *cdkVirtualFor="let option of options.frontendSearchAttribute?(this.options.selectList | selectFilter:searchText:options.frontendSearchAttribute):this.options.selectList"
+                            *cdkVirtualFor="let option of options.frontendSearchAttribute?(this.options.selectList | selectFilter:searchText:options.frontendSearchAttribute | sortAlphabetically:this.options?.itemName):this.options.selectList"
                             (click)="toggle_field_selector_class();onSelectOption(option)">
                             <span class="material-icons" *ngIf="options.toDisableList" aria-hidden="false" color="primary">
                                 {{disableOption(option)?'radio_button_checked':'radio_button_unchecked'}}</span>
