@@ -115,6 +115,14 @@
 //     // width: auto;
 // }
 
+.input_title{
+    strong{
+        &:link, &:visited, &:active{
+            text-decoration: none;
+        }
+    }
+}
+
 .field_selector_search{
     margin-top: 5px;
     input{

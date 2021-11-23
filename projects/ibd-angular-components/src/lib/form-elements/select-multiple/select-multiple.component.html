@@ -14,8 +14,8 @@
     <div *ngSwitchDefault>
         <div class="selector_container">
             <div class="manual_select_container">
-                <a class="manual_select" #focusElement [routerLink]="currentRoute">
-                    <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
+                <a style="text-decoration: none;" class="manual_select" #focusElement [routerLink]="currentRoute">
+                    <p class="input_title" ><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
                     <p *ngIf="options.description" class="description_field"><i>{{options.description}}</i>
                     </p>
                     <div class="custom_select_field openSelectInput" >

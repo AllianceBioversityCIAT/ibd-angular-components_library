@@ -18,7 +18,6 @@
            <div class="texts_container">
             <p class="input_title"><strong>{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
             <p *ngIf="options.description" class="description_field">{{options.description}}</p>
-
            </div>
 
             <p-editor  [formControl]="textareaInput" (ngModelChange)="setValue()" [style]="{'height':'150px'}">
