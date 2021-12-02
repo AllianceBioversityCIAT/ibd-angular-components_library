@@ -1,0 +1,180 @@
+@import '~@angular/material/theming';
+@import '../../styles/styles.scss';
+
+.manual_select{
+    position: relative;
+}
+
+.big_button_outside{
+    background-color: rgba(83, 83, 83, 0.336);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 90;
+    display: none;
+    // pointer-events: visibleStroke;
+}
+
+.custom_select_field_value{
+    color: #5a5a5a;
+}
+
+.unselected{
+    color: #919191 !important;
+}
+
+.field_selector{
+    position: relative;
+    margin-top: 5px;
+    // top: -10px;
+    // z-index: 101;
+    width: auto;
+    // height: 100px;
+    @include mat-elevation(3);
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: ease all .2s;
+    // position: absolute;
+    // top: 0;
+}
+.field_selector_close_button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px 10px 0px 0px;
+    .material-icons{
+        color: rgb(230, 59, 59);
+    }
+}
+.hide_field_selector{
+    // width: 0px;
+    height: 0px;
+    opacity: 0;
+}
+.show_field_selector{
+    padding: 10px;
+    height: 320px;
+    opacity: 1;
+    // width: auto;
+}
+
+.field_selector_search{
+    margin-top: 5px;
+    input{
+        outline: none;
+        border-radius: 100px;
+        width: 80%;
+        height: 25px;
+        border: 1px solid rgb(207, 207, 207);
+        padding-left: 10px;
+        color: rgb(88, 88, 88);
+    }
+}
+
+.field_selector_list{
+    margin: 10px 0px;
+
+}
+.select_option{
+    width: auto;
+    cursor: pointer;
+    padding: 15px 10px;
+    transition: all ease .3s;
+    &:hover{
+        transition: all ease .3s;
+        background-color: rgb(247, 247, 247);
+        border-radius: 8px;
+    }
+    .material-icons{
+        position: absolute;
+        left: 0;
+        margin-left: 5px;
+    }
+}
+
+.mat-form-field-cont{
+    position: relative;
+    .block_select{
+        // margin: 5px 1px 1px 0px;
+        width: 100%;
+        height: 57px;
+        position: absolute;
+        top: 0;
+        background-color: rgba(255, 255, 255, 0);
+        z-index: 100;
+        &:hover{
+        //    border: 1px solid rgb(136, 136, 136);
+        //    border-radius: 5px;
+        }
+    }
+}
+
+.option_unselected{
+
+}
+
+.option_selected{
+    color: #dddddd;
+}
+
+.option_selectedWithAccess{
+    color: #149725;
+}
+
+.custom_select_field{
+    cursor: pointer;
+    width: auto;
+    border-radius: 5px;
+    border: solid 1px rgb(221, 221, 221);
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 10px 3px 10px;
+    background-color: white;
+    .material-icons{
+        color: rgb(156, 156, 156);
+    }
+    &:hover{
+        border-color: #2196F3;
+    }
+    &:focus{
+        outline: 0 none;
+    outline-offset: 0;
+    box-shadow: 0 0 0 0.2rem #a6d5fa;
+    border-color: #2196F3;
+    }
+}
+
+.example-viewport {
+    height: 250px;
+    width: auto;
+    // border: 1px solid black;
+  }
+
+
+
+    /* width */
+    .example-viewport::-webkit-scrollbar {
+        width: 10px;
+        border-radius: 30px;
+      }
+      
+      /* Track */
+      .example-viewport::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+        border-radius: 30px;
+      }
+       
+      /* Handle */
+      .example-viewport::-webkit-scrollbar-thumb {
+        background: #025c7a; 
+        border-radius: 30px;
+      }
+      
+      /* Handle on hover */
+      .example-viewport::-webkit-scrollbar-thumb:hover {
+        background: #014d66; 
+        border-radius: 30px;
+      }

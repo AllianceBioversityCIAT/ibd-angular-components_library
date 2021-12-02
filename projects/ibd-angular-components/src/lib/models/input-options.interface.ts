@@ -10,4 +10,7 @@ export interface InputOptions{
     formControlName:string;
     maxWords?:number;
     type:string;
+    iconText:string;
+    min:number;
+    max:number;
 }

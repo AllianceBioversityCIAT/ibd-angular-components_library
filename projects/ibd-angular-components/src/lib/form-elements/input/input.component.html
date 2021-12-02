@@ -23,8 +23,9 @@
             <!-- <input (change)="setValue()" [formControl]="textInput" [type]="this.options.type" pInputText /> -->
             <div class="p-grid p-fluid">
                 <div class="p-inputgroup">
-                    <span class="p-inputgroup-addon">$</span>
-                    <input min="0" type="number" [(ngModel)]="numericField" pInputText placeholder="" (ngModelChange)="setValueWithNumber()">        
+                    <span class="p-inputgroup-addon"><span class="material-icons">{{this.options.iconText||'paid'}}</span></span>
+                    <!-- <span class="pi pi-arrows-h">{{this.options.iconText || '$'}}</span> -->
+                    <input *ngIf="reloadInput" [min]="this.options.min" [max]="this.options.max" type="number" [(ngModel)]="numericField" pInputText placeholder="" (ngModelChange)="setValueWithNumber()">        
                 </div>
 
                 <!-- <div class="p-field p-col-12">

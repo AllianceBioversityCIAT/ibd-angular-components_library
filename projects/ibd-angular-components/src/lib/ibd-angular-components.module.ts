@@ -5,7 +5,6 @@ import { TextareaComponent } from './form-elements/textarea/textarea.component';
 import { SelectMultipleComponent } from './form-elements/select-multiple/select-multiple.component';
 import { UploadFilesComponent } from './form-elements/upload-files/upload-files.component';
 import { LinkListComponent } from './form-elements/link-list/link-list.component';
-import { InputComponent } from './form-elements/input/input.component';
 import { SimpleTextComponent } from './form-elements/simple-text/simple-text.component';
 import { SaveButtonComponent } from './components/save-button/save-button.component';
 import { MaterialModule } from './angular_material_module/material.module';
@@ -33,6 +32,8 @@ import {TableModule} from 'primeng/table';
 import { SelectNgmodelNoRepeatComponent } from './form-elements/select-ngmodel-no-repeat/select-ngmodel-no-repeat.component';
 import { RouterModule } from '@angular/router';
 import { SortAlphabeticallyPipe } from './pipes/sort-alphabetically.pipe';
+import { InputFieldComponent } from './form-elements/input-field/input-field.component';
+import { SelectFieldComponent } from './form-elements/select-field/select-field.component';
 
 
 
@@ -44,14 +45,15 @@ const componentsList = [
   SelectMultipleComponent, 
   UploadFilesComponent, 
   LinkListComponent, 
-  InputComponent, 
   SimpleTextComponent, 
   SaveButtonComponent,
   TermsOrPoliciesComponent,
   SelectNgmodelComponent,
   SelectNgmodelNoRepeatComponent,
   InputNgmodelComponent,
-  AlertComponent
+  AlertComponent,
+  InputFieldComponent,
+  SelectFieldComponent
 ];
 
 const primeNgModulesList = [
