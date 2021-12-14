@@ -34,6 +34,9 @@ import { RouterModule } from '@angular/router';
 import { SortAlphabeticallyPipe } from './pipes/sort-alphabetically.pipe';
 import { InputFieldComponent } from './form-elements/input-field/input-field.component';
 import { SelectFieldComponent } from './form-elements/select-field/select-field.component';
+import { InputComponent } from './form-elements/input/input.component';
+import { TextAreaFieldComponent } from './form-elements/text-area-field/text-area-field.component';
+import { FormatCurrencyDirective } from './directives/format-currency.directive';
 
 
 
@@ -53,7 +56,9 @@ const componentsList = [
   InputNgmodelComponent,
   AlertComponent,
   InputFieldComponent,
-  SelectFieldComponent
+  SelectFieldComponent,
+  InputComponent,
+  TextAreaFieldComponent
 ];
 
 const primeNgModulesList = [
@@ -68,7 +73,7 @@ const primeNgModulesList = [
   TableModule
 ];
 @NgModule({
-  declarations: [...componentsList, SelectFilterPipe, WordCounterComponent, SortAlphabeticallyPipe],
+  declarations: [...componentsList, SelectFilterPipe, WordCounterComponent, SortAlphabeticallyPipe, FormatCurrencyDirective],
   exports: [...componentsList],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [

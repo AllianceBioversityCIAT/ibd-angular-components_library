@@ -1,1 +1,15 @@
-<textarea #rara class="input-field" type="text" [(ngModel)]="this.objectItem[this.objectAtributteName]" rows="3" name="some"></textarea>
+<!-- <div class="title">{{inputTitle}}</div>
+<textarea #rara class="input-field" type="text" [(ngModel)]="this.objectItem[this.objectAtributteName]" [rows]="this.rows || 3" name="some"></textarea> -->
+
+<div class="ta_container">
+    <div class="texts_container ibdc_green_gradient">
+        <p class="input_title"><strong>{{inputTitle}}: </strong><span [hidden]="inputRequired === false"
+                class="ibdc_asterisk">* </span></p>
+        <p *ngIf="inputDescription" class="description_field">{{options.description}}</p>
+    </div>
+
+    <input class="input-field" type="text" [(ngModel)]="this.objectItem[this.objectAtributteName]">
+
+    <!-- <ibdc-word-counter *ngIf="this.options.maxWords" [form]="this.options.form" [formControlNameInput]="this.options.formControlName" [maxWords]="this.options.maxWords"></ibdc-word-counter> -->
+
+</div>

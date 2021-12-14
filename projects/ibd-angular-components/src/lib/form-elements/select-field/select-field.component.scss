@@ -27,7 +27,7 @@
 
 .field_selector{
     position: relative;
-    margin-top: 5px;
+    // margin-top: 5px;
     // top: -10px;
     // z-index: 101;
     width: auto;
@@ -127,7 +127,7 @@
 .custom_select_field{
     cursor: pointer;
     width: auto;
-    border-radius: 5px;
+    // border-radius: 5px;
     border: solid 1px rgb(221, 221, 221);
     display: flex;
     justify-content: space-between;
@@ -154,27 +154,70 @@
   }
 
 
+/* width */
+.example-viewport::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 30px;
+}
 
-    /* width */
-    .example-viewport::-webkit-scrollbar {
-        width: 10px;
-        border-radius: 30px;
-      }
-      
-      /* Track */
-      .example-viewport::-webkit-scrollbar-track {
-        background: #f1f1f1; 
-        border-radius: 30px;
-      }
-       
-      /* Handle */
-      .example-viewport::-webkit-scrollbar-thumb {
-        background: #025c7a; 
-        border-radius: 30px;
-      }
-      
-      /* Handle on hover */
-      .example-viewport::-webkit-scrollbar-thumb:hover {
-        background: #014d66; 
-        border-radius: 30px;
-      }
+/* Track */
+.example-viewport::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 30px;
+}
+
+/* Handle */
+.example-viewport::-webkit-scrollbar-thumb {
+  background: #025c7a;
+  border-radius: 30px;
+}
+
+/* Handle on hover */
+.example-viewport::-webkit-scrollbar-thumb:hover {
+  background: #014d66;
+  border-radius: 30px;
+}
+
+
+//? new styles
+
+.input-field{
+    outline: none;
+    border: 1px solid rgb(228, 228, 228);
+    padding: 5px 0px 5px 5px;
+    width: 100%;
+    color: rgb(71, 71, 71);
+    // height: 100%;
+    // height: 300px;
+    resize: none;
+    min-height: 40px;
+    line-height: 20px;
+}
+
+
+.ta_container{
+    .texts_container{
+        padding-bottom: 5px;
+        .input_title{
+            // background-color: #69b1ec;
+            color: white;
+            font-weight: 500;
+            padding: 10px;
+            margin: 0px;
+        }
+        .description_field{
+            background-color: #83cba5;
+            color: white;
+            font-weight: 500;
+            padding: 10px;
+            margin: 0px 3px;
+            border-radius: 10px;
+        }
+    }
+
+    box-shadow: 0 10px 10px #aaaaaa30, 0 6px 6px #aaaaaa30;
+    border: 3px solid rgb(91,189,147);
+    border-radius: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
