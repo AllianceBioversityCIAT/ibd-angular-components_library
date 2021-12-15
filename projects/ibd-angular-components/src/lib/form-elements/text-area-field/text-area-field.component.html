@@ -1,1 +1,12 @@
-<p>text-area-field works!</p>
+<div class="ta_container">
+
+    <div class="texts_container ibdc_green_gradient" *ngIf="inputTitle || inputDescription">
+        <p *ngIf="inputTitle" class="input_title"><strong>{{inputTitle}}: </strong><span [hidden]="inputRequired === false"
+                class="ibdc_asterisk">* </span></p>
+        <p *ngIf="inputDescription" class="description_field">{{inputDescription}}</p>
+    </div>
+
+    <textarea [(ngModel)]="this.objectItem[this.objectAtributteName]" class="basic_textarea" [rows]="initialParagraphs?initialParagraphs:3" [cols]="30" pInputTextarea autoResize="autoResize"></textarea>
+    <!-- <ibdc-word-counter *ngIf="this.options.maxWords" [form]="this.options.form" [formControlNameInput]="this.options.formControlName" [maxWords]="this.options.maxWords"></ibdc-word-counter> -->
+    
+</div>

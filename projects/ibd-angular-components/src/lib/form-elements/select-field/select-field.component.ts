@@ -12,6 +12,7 @@ export class SelectFieldComponent implements OnInit {
 
   @Input() readOnlyVariable;
   @Input() selectableList;
+  @Input() selectableListAtributteName;
   @Input() inputTitle;
   @Input() inputDescription;
   @Input() frontendSearchAttribute;
@@ -32,7 +33,7 @@ export class SelectFieldComponent implements OnInit {
   // }
 
   onSelectOption(option,focusElement:HTMLElement){
-    this.objectItem[this.objectAtributteName] = option.categoryName;
+    this.objectItem[this.objectAtributteName] = option[this.selectableListAtributteName];
     this.closeSelect(focusElement);
   }
 
