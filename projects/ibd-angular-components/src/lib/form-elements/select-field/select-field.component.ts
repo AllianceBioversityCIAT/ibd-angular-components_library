@@ -13,6 +13,7 @@ export class SelectFieldComponent implements OnInit {
   @Input() readOnlyVariable;
   @Input() selectableList;
   @Input() inputTitle;
+  @Input() inputDescription;
   @Input() frontendSearchAttribute;
 
     fieldSelector= {
@@ -26,12 +27,17 @@ export class SelectFieldComponent implements OnInit {
 
 
 
-  toggle_field_selector_class(){
-    this.fieldSelector.class =='show_field_selector'?this.fieldSelector.class ='hide_field_selector':this.fieldSelector.class ='show_field_selector'
+  // toggle_field_selector_class(){
+  //   this.fieldSelector.class =='show_field_selector'?this.fieldSelector.class ='hide_field_selector':this.fieldSelector.class ='show_field_selector'
+  // }
+
+  onSelectOption(option,focusElement:HTMLElement){
+    this.objectItem[this.objectAtributteName] = option.categoryName;
+    this.closeSelect(focusElement);
   }
 
-  onSelectOption(option){
-    this.objectItem[this.objectAtributteName] = option.categoryName;
+  closeSelect(focusElement){
+    focusElement.blur();
   }
 
 }

@@ -14,65 +14,76 @@
 
 
 
+<div class="ta_container">
 
-        <div class="ta_container">
-
-            <div class="texts_container ibdc_green_gradient" *ngIf="inputTitle || inputDescription">
-                <p *ngIf="inputTitle" class="input_title"><strong>{{inputTitle}}: </strong><span [hidden]="inputRequired === false"
-                        class="ibdc_asterisk">* </span></p>
-                <p *ngIf="inputDescription" class="description_field">{{inputDescription}}</p>
-            </div>
-        
-            <!-- <input class="input-field" type="text" [(ngModel)]="this.objectItem[this.objectAtributteName]"> -->
-            <div class="custom_select_field" (click)="toggle_field_selector_class()">
-                <div class="custom_select_field_value" [ngClass]="{'unselected': !this.objectItem[this.objectAtributteName]}" >{{this.objectItem[this.objectAtributteName] || 'Unselected'}}</div>
-                <span class="material-icons">arrow_drop_down</span>
-            </div>
-            <div class="field_selector {{fieldSelector.class}}">
-
-                <div type="button" span-button class="field_selector_close_button" (click)="toggle_field_selector_class()">
-                    <span class="material-icons">close</span>
-                </div>
-                <div class="field_selector_search">
-                    <input type="text" [(ngModel)]="searchText"
-                        (ngModelChange)="options.frontendSearchAttribute ? writtenInSearchField() : consumeService()">
-                </div>
-                <div class="field_selector_list">
-                    <!-- <br> -->
-                    <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
-                        <div class="select_option" 
-                            *cdkVirtualFor="let option of frontendSearchAttribute?(this.selectableList | selectFilter:searchText:frontendSearchAttribute | sortAlphabetically:this.options?.itemName):this.selectableList"
-                            (click)="toggle_field_selector_class();onSelectOption(option)">
-                            <div>{{option['categoryName']}}</div>
-
-                        </div>
-                    </cdk-virtual-scroll-viewport>
-                    
-                </div>
-            </div>
-        
-            <!-- <ibdc-word-counter *ngIf="this.options.maxWords" [form]="this.options.form" [formControlNameInput]="this.options.formControlName" [maxWords]="this.options.maxWords"></ibdc-word-counter> -->
-        
+    <a style="text-decoration: none;" class="manual_select" #focusElement [routerLink]="currentRoute">
+        <div class="texts_container ibdc_green_gradient" *ngIf="inputTitle || inputDescription">
+            <p *ngIf="inputTitle" class="input_title"><strong>{{inputTitle}}: </strong><span
+                    [hidden]="inputRequired === false" class="ibdc_asterisk">* </span></p>
+            <p *ngIf="inputDescription" class="description_field">{{inputDescription}}</p>
         </div>
 
+        <!-- <input class="input-field" type="text" [(ngModel)]="this.objectItem[this.objectAtributteName]"> -->
+        <div class="custom_select_field openSelectInput">
+            <div class="custom_select_field_value" [ngClass]="{'unselected': !this.objectItem[this.objectAtributteName]}">
+                {{this.objectItem[this.objectAtributteName] || 'Unselected'}}</div>
+            <span class="material-icons">arrow_drop_down</span>
+        </div>
+
+        <div class="custom_select_field closeSelectInput" (click)="closeSelect(focusElement)">
+            <div class="custom_select_field_value" [ngClass]="{'unselected': !this.objectItem[this.objectAtributteName]}">
+                {{this.objectItem[this.objectAtributteName] || 'Unselected'}}</div>
+            <span class="material-icons">arrow_drop_down</span>
+        </div>
+
+        <div class="field_selector {{fieldSelector.class}}">
+
+            <div type="button" span-button class="field_selector_close_button" (click)="closeSelect(focusElement)">
+                <span class="material-icons">close</span>
+            </div>
+            <div class="field_selector_search">
+                <input type="text" [(ngModel)]="searchText"
+                    (ngModelChange)="options.frontendSearchAttribute ? writtenInSearchField() : consumeService()">
+            </div>
+            <div class="field_selector_list">
+                <!-- <br> -->
+                <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+                    <div class="select_option"
+                        *cdkVirtualFor="let option of frontendSearchAttribute?(this.selectableList | selectFilter:searchText:frontendSearchAttribute | sortAlphabetically:this.options?.itemName):this.selectableList"
+                        (click)="onSelectOption(option,focusElement)">
+                        <div>{{option['categoryName']}}</div>
+
+                    </div>
+                </cdk-virtual-scroll-viewport>
+
+            </div>
+        </div>
+    </a>
+    <!-- <ibdc-word-counter *ngIf="this.options.maxWords" [form]="this.options.form" [formControlNameInput]="this.options.formControlName" [maxWords]="this.options.maxWords"></ibdc-word-counter> -->
+
+</div>
 
 
 
 
+</div>
+</span>
 
 
-        <div class="manual_select" *ngIf="false">
+
+
+        <!-- <div class="manual_select" *ngIf="false">
             <p *ngIf="inputTitle" class="input_title"><strong class="ibdc_secondary_color">{{inputTitle}}: </strong><span
                     class="ibdc_asterisk">* </span></p>
             <p *ngIf="inputDescription" class="description_field"><i>{{inputDescription}}</i>
             </p>
-            <div class="custom_select_field" (click)="toggle_field_selector_class()">
+            <div class="custom_select_field" >
                 <div class="custom_select_field_value" [ngClass]="{'unselected': !this.objectItem[this.objectAtributteName]}" >{{this.objectItem[this.objectAtributteName] || 'Unselected'}}</div>
                 <span class="material-icons">arrow_drop_down</span>
             </div>
             <div class="field_selector {{fieldSelector.class}}">
 
-                <div type="button" span-button class="field_selector_close_button" (click)="toggle_field_selector_class()">
+                <div type="button" span-button class="field_selector_close_button">
                     <span class="material-icons">close</span>
                 </div>
                 <div class="field_selector_search">
@@ -80,11 +91,11 @@
                         (ngModelChange)="options.frontendSearchAttribute ? writtenInSearchField() : consumeService()">
                 </div>
                 <div class="field_selector_list">
-                    <!-- <br> -->
+         
                     <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
                         <div class="select_option" 
                             *cdkVirtualFor="let option of frontendSearchAttribute?(this.selectableList | selectFilter:searchText:frontendSearchAttribute | sortAlphabetically:this.options?.itemName):this.selectableList"
-                            (click)="toggle_field_selector_class();onSelectOption(option)">
+                            (click)="onSelectOption(option)">
                             <div>{{option['categoryName']}}</div>
 
                         </div>
@@ -92,8 +103,5 @@
                     
                 </div>
             </div>
-        </div>
-
-    </div>
-</span>
+        </div> -->
 

@@ -3,6 +3,26 @@
 
 .manual_select{
     position: relative;
+    .openSelectInput{
+        display: flex;
+      }
+    .closeSelectInput{
+        display: none;
+    }
+    &:focus-within {
+        .openSelectInput{
+          display: none !important;
+        }
+        .closeSelectInput{
+            display: flex !important;
+        }
+      .field_selector {
+        width: auto;
+        padding: 10px !important;
+        height: 320px !important;
+        opacity: 1 !important;
+      }
+    }
 }
 
 .big_button_outside{
@@ -83,6 +103,7 @@
     cursor: pointer;
     padding: 15px 10px;
     transition: all ease .3s;
+    color: gray !important;
     &:hover{
         transition: all ease .3s;
         background-color: rgb(247, 247, 247);
