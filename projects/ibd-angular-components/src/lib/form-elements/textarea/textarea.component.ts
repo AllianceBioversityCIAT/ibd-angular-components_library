@@ -1,7 +1,9 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, FormControl, ValidatorFn, Validators } from '@angular/forms';
+import { Clipboard } from '@angular/cdk/clipboard';
 
 import { textareaOptions } from '../../models/textarea-options.interface';
+declare var $:any;
 @Component({
   selector: 'ibdc-textarea',
   templateUrl: './textarea.component.html',
@@ -11,7 +13,7 @@ export class TextareaComponent implements OnInit {
   @Input() options:textareaOptions;
   textareaInput:FormControl;
   @ViewChild("textAreaValue") txtArea:ElementRef;
-  constructor() { }
+  constructor(private clipboard: Clipboard) { }
 
   ngOnInit(): void {
     let options={
@@ -22,25 +24,18 @@ export class TextareaComponent implements OnInit {
      this.setValue();
   }
 
-  deleteLastWord(){
-    // let text = this.options.form.get(this.options.formControlName).value;
-    // console.log(text);
-    // let lastIndex = text.lastIndexOf(" ");
-    // text = text.substring(0, lastIndex);
-    // console.log(text);
-    // this.txtArea.nativeElement.value = text;
-    // this.options.form.controls[this.options.formControlName].setValue(text);
-    // // console.log("writing");
-  }
+  ngAfterViewInit(): void {
 
+    $('.ql-editor').bind('paste', (e) => {
+      var data = e.originalEvent.clipboardData.getData('Text');
+      this.clipboard.copy(data.replace(/(<(\/?p)>)|(&nbsp;)/gi, ' ').replace(/(<([^>]+)>)/gi, ''));
+    });
+
+  }
 
   setValue(){
     this.options.form.controls[this.options.formControlName].setValue(this.textareaInput.value);
   }
 
-
-  ngOnDestroy(): void {
-   
-  }
 
 }

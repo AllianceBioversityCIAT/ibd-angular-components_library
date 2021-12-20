@@ -20,7 +20,7 @@
             <p *ngIf="options.description" class="description_field">{{options.description}}</p>
            </div>
 
-            <p-editor  [formControl]="textareaInput" (ngModelChange)="setValue()" [style]="{'height':'150px'}">
+            <p-editor class="editorr"  [formControl]="textareaInput" (ngModelChange)="setValue()" [style]="{'height':'150px'}">
                 <p-header>
                   <span class="ql-formats">
                     <button class="ql-bold"></button>
