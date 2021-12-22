@@ -12,7 +12,7 @@ export class WordCounterComponent implements OnInit {
   @Input() form:FormGroup;
   @Input() formControlNameInput:string;
   @Input() maxWords:any;
-  @Output() writeEvent = new EventEmitter;
+  // @Output() writeEvent = new EventEmitter;
   constructor() { }
 
   ngOnInit(): void {
@@ -34,9 +34,9 @@ export class WordCounterComponent implements OnInit {
           this.words++
         })
 
-        if (this.words > this.maxWords) {
-          this.writeEvent.emit();
-        }
+        // if (this.words > this.maxWords) {
+        //   this.writeEvent.emit();
+        // }
       } else {
         this.words = 0;
       }
