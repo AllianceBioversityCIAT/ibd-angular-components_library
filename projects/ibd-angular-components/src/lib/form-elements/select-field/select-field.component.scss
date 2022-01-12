@@ -1,4 +1,4 @@
-@import '~@angular/material/theming';
+// @import '~@angular/material/theming';
 @import '../../styles/styles.scss';
 
 .manual_select{
@@ -52,7 +52,7 @@
     // z-index: 101;
     width: auto;
     // height: 100px;
-    @include mat-elevation(3);
+    // @include mat-elevation(3);
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     overflow: hidden;
