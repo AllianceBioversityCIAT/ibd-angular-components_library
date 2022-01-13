@@ -7,12 +7,12 @@
     "forceConsistentCasingInFileNames": false,
     "strict": false,
     "noImplicitOverride": true,
-    "paths": {
-      "ibd-angular-components": [
-        "dist/ibd-angular-components/ibd-angular-components",
-        "dist/ibd-angular-components"
-      ]
-    },
+    // "paths": {
+    //   "ibd-angular-components": [
+    //     "dist/ibd-angular-components/ibd-angular-components",
+    //     "dist/ibd-angular-components"
+    //   ]
+    // },
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": false,
     "noFallthroughCasesInSwitch": false,
@@ -30,6 +30,7 @@
     ]
   },
   "angularCompilerOptions": {
+    "enableIvy":false,
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": false,
     "strictInputAccessModifiers": false,

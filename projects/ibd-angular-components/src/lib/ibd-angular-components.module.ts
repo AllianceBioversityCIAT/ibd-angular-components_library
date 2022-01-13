@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { SimpleTextComponent } from './form-elements/simple-text/simple-text.component';
 import { IbdAngularComponentsComponent } from './ibd-angular-components.component';
 import { TextAreaFieldComponent } from './form-elements/text-area-field/text-area-field.component';
@@ -29,8 +29,13 @@ import {TooltipModule} from 'primeng/tooltip';
 import {FileUploadModule} from 'primeng/fileupload';
 import {TableModule} from 'primeng/table';
 import { ClipboardModule } from '@angular/cdk/clipboard';
-import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+// import { RouterModule } from '@angular/router';
+// import { HttpClientModule } from '@angular/common/http';
+import { SelectFilterPipe } from './pipes/select-filter.pipe';
+import { WordCounterComponent } from './components/word-counter/word-counter.component';
+import { SortAlphabeticallyPipe } from './pipes/sort-alphabetically.pipe';
+import { FormatCurrencyDirective } from './directives/format-currency.directive';
+// import { MaterialModule } from './angular_material_module/material.module';
 
 const componentsList = [
   AlertComponent,
@@ -66,20 +71,20 @@ const primeNgModulesList = [
 
 @NgModule({
   declarations: [
-    IbdAngularComponentsComponent,
-    ...componentsList
+    ...componentsList, SelectFilterPipe, WordCounterComponent, SortAlphabeticallyPipe, FormatCurrencyDirective
+    
   ],
+  exports: [...componentsList],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     CommonModule,
+    // MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
-    RouterModule,
+    // HttpClientModule,
+    // RouterModule,
     ...primeNgModulesList
-  ],
-  exports: [
-    IbdAngularComponentsComponent,
-    ...componentsList
   ]
+
 })
 export class IbdAngularComponentsModule { }
