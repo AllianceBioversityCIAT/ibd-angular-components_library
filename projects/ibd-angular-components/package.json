@@ -1,11 +1,11 @@
 {
   "name": "ibd-angular-components",
-  "version": "2.3.4",
+  "version": "3.0.6",
   "peerDependencies": {
-    "@angular/common": "^10.0.14",
-    "@angular/core": "^10.0.14"
+    "@angular/common": "^13.1.0",
+    "@angular/core": "^13.1.0"
   },
   "dependencies": {
-    "tslib": "^2.0.0"
+    "tslib": "^2.3.0"
   }
 }

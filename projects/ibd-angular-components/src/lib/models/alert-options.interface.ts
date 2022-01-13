@@ -1,5 +1,5 @@
 export interface AlertOptions{
-    type:string
-    text:string
-    htmlText:string
+    type?:string
+    text?:string
+    htmlText?:string
 }
