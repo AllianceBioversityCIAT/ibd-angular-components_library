@@ -123,7 +123,7 @@ export class SelectMultipleComponent implements OnInit {
         itemFinded.active = true;
       }else{
         // agregar option al array
-        this.options.savedList.list.push(option);
+        this.options.savedList.list.push({...option,active:true});
       }
     }else{
       //formas de borrar
