@@ -9,10 +9,10 @@
     </div>
 
     <input *ngIf="this.inputType == 'text'" class="input-field" type="text" [(ngModel)]="this.objectItem[this.objectAtributteName]">
-    <p-inputNumber *ngIf="this.inputType == 'number'"  [(ngModel)]="this.objectItem[this.objectAtributteName]"></p-inputNumber>
-    <!-- [inputStyle] = "{'width':'5px'}" -->
+
     <div class="p-grid p-fluid">
-        <p-inputNumber *ngIf="this.inputType == 'currency'" [(ngModel)]="this.objectItem[this.objectAtributteName]" inputId="locale-us" mode="decimal" locale="en-US" [minFractionDigits]="2"></p-inputNumber>
+        <p-inputNumber *ngIf="this.inputType == 'number'"  [(ngModel)]="this.objectItem[this.objectAtributteName]"></p-inputNumber>
+        <p-inputNumber *ngIf="this.inputType == 'currency'" [(ngModel)]="this.objectItem[this.objectAtributteName]" inputId="currency-us" mode="currency" currency="USD" locale="en-US" [minFractionDigits]="2"></p-inputNumber>
     </div>
  
 
