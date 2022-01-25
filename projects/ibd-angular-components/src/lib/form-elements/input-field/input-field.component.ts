@@ -8,10 +8,10 @@ import { Component, Input, OnInit } from '@angular/core';
 export class InputFieldComponent implements OnInit {
   @Input() inputTitle;
   @Input() inputDescription;
-  @Input() inputRequired
+  @Input() inputRequired;
+  @Input() inputType: 'number' | 'text' | 'currency' = 'text';
   @Input() objectItem;
   @Input() objectAtributteName;
-  @Input() rows;
   constructor() { }
 
   ngOnInit(): void {

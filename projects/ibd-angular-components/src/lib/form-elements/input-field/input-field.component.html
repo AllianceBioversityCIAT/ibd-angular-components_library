@@ -8,7 +8,14 @@
         <p *ngIf="inputDescription" class="description_field">{{inputDescription}}</p>
     </div>
 
-    <input class="input-field" type="text" [(ngModel)]="this.objectItem[this.objectAtributteName]">
+    <input *ngIf="this.inputType == 'text'" class="input-field" type="text" [(ngModel)]="this.objectItem[this.objectAtributteName]">
+    <p-inputNumber *ngIf="this.inputType == 'number'"  [(ngModel)]="this.objectItem[this.objectAtributteName]"></p-inputNumber>
+    <!-- [inputStyle] = "{'width':'5px'}" -->
+    <div class="p-grid p-fluid">
+        <p-inputNumber *ngIf="this.inputType == 'currency'" [(ngModel)]="this.objectItem[this.objectAtributteName]" inputId="locale-us" mode="decimal" locale="en-US" [minFractionDigits]="2"></p-inputNumber>
+    </div>
+ 
+
 
     <!-- <ibdc-word-counter *ngIf="this.options.maxWords" [form]="this.options.form" [formControlNameInput]="this.options.formControlName" [maxWords]="this.options.maxWords"></ibdc-word-counter> -->
 
