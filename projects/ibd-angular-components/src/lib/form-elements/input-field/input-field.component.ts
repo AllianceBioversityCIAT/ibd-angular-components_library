@@ -9,6 +9,7 @@ export class InputFieldComponent implements OnInit {
   @Input() inputTitle;
   @Input() inputDescription;
   @Input() inputRequired;
+  @Input() readOnlyVariable;
   @Input() inputType: 'number' | 'text' | 'currency' = 'text';
   @Input() objectItem;
   @Input() objectAtributteName;
