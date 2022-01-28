@@ -8,10 +8,12 @@ import { map } from 'rxjs/operators';
 })
 export class UploadFilesComponent implements OnInit {
   @Input() options:UploadFiles;
+  @Input() multipleFiles: boolean = true;
   constructor() { }
 
   ngOnInit(): void {
     // console.log(this.options);
+    
   }
   myUploader(event) {
     // this.selectFile.emit(event);

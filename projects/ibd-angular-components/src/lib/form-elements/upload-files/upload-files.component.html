@@ -1,19 +1,19 @@
 <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
 <p *ngIf="options.description" class="description_field">{{options.description}}</p>
 
-<div class="uf_header">
+<div class="uf_header" *ngIf="!validateEmptyArrayWithActive(this.options.filesSavedList) || multipleFiles">
     <label class="custom-file-upload">
         <span class="material-icons">upload_file</span>
         Choose Files
-        <input class="choose_button" #inputFile  type="file" (change)="onSelectFiles($event,inputFile)" multiple="true">
+        <input class="choose_button" #inputFile  type="file" [multiple]="multipleFiles" (change)="onSelectFiles($event,inputFile)" multiple="true">
     </label>
 </div>
 
-<div class="uf_to_save_header">
+<div class="uf_to_save_header" *ngIf="!validateEmptyArrayWithActive(this.options.filesSavedList) || multipleFiles">
     <div class="title">List of files to save</div>
 </div>
 
-<div class="uf_to_save">
+<div class="uf_to_save" *ngIf="!validateEmptyArrayWithActive(this.options.filesSavedList) || multipleFiles">
 
     <div *ngFor="let file of this.options.filesList; let i = index">
         <!-- <span class="animate__animated animate__fadeInRight animate__faster" #fileHE>name: {{file.name}} ---- type: {{file.type}} --- lastModifiedDate: {{file.lastModifiedDate}} <button (click)="removeFile(i,file,fileHE)">Delete</button></span> -->
