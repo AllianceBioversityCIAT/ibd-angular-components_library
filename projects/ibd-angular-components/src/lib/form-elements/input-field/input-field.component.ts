@@ -13,6 +13,7 @@ export class InputFieldComponent implements OnInit {
   @Input() inputType: 'number' | 'text' | 'currency' = 'text';
   @Input() objectItem;
   @Input() objectAtributteName;
+  @Input() maxWords:number;
   constructor() { }
 
   ngOnInit(): void {

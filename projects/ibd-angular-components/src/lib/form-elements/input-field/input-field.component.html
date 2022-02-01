@@ -16,9 +16,14 @@
             <p-inputNumber *ngIf="this.inputType == 'number'"  [(ngModel)]="this.objectItem[this.objectAtributteName]"></p-inputNumber>
             <p-inputNumber *ngIf="this.inputType == 'currency'" [(ngModel)]="this.objectItem[this.objectAtributteName]" inputId="currency-us" mode="currency" currency="USD" locale="en-US" [minFractionDigits]="2"></p-inputNumber>
         </div>
-  
-    <!-- <ibdc-word-counter *ngIf="this.options.maxWords" [form]="this.options.form" [formControlNameInput]="this.options.formControlName" [maxWords]="this.options.maxWords"></ibdc-word-counter> -->
 
+        <ibdc-word-counter-for-fields 
+        *ngIf="this.maxWords"
+        [objectItem]="this.objectItem"
+        [objectAtributteName]="this.objectAtributteName"
+        [maxWords]="this.maxWords"
+        ></ibdc-word-counter-for-fields>
+  
 </div>
 
 <div *ngIf="readOnlyVariable">
