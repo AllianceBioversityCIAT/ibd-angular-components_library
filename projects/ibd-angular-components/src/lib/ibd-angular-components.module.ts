@@ -37,7 +37,6 @@ import { SelectFieldComponent } from './form-elements/select-field/select-field.
 import { InputComponent } from './form-elements/input/input.component';
 import { TextAreaFieldComponent } from './form-elements/text-area-field/text-area-field.component';
 import { FormatCurrencyDirective } from './directives/format-currency.directive';
-// import { ClipboardModule } from '@angular/cdk/clipboard';
 
 
 
@@ -71,8 +70,7 @@ const primeNgModulesList = [
   ButtonModule,
   TooltipModule,
   FileUploadModule,
-  TableModule,
-  // ClipboardModule
+  TableModule
 ];
 @NgModule({
   declarations: [...componentsList, SelectFilterPipe, WordCounterComponent, SortAlphabeticallyPipe, FormatCurrencyDirective],

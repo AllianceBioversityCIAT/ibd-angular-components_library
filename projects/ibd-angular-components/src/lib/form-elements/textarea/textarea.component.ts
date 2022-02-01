@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, FormControl, ValidatorFn, Validators } from '@angular/forms';
-import { Clipboard } from '@angular/cdk/clipboard';
+
 
 import { textareaOptions } from '../../models/textarea-options.interface';
 declare var $:any;
@@ -13,7 +13,7 @@ export class TextareaComponent implements OnInit {
   @Input() options:textareaOptions;
   textareaInput:FormControl;
   @ViewChild("textAreaValue") txtArea:ElementRef;
-  constructor(private clipboard: Clipboard) { }
+  constructor() { }
 
   ngOnInit(): void {
     let options={
@@ -26,10 +26,10 @@ export class TextareaComponent implements OnInit {
 
   ngAfterViewInit(): void {
 
-    $('.ql-editor').bind('paste', (e) => {
-      var data = e.originalEvent.clipboardData.getData('Text');
-      this.clipboard.copy(data.replace(/(<(\/?p)>)|(&nbsp;)/gi, ' ').replace(/(<([^>]+)>)/gi, ''));
-    });
+    // $('.ql-editor').bind('paste', (e) => {
+    //   var data = e.originalEvent.clipboardData.getData('Text');
+    //   this.clipboard.copy(data.replace(/(<(\/?p)>)|(&nbsp;)/gi, ' ').replace(/(<([^>]+)>)/gi, ''));
+    // });
 
   }
 

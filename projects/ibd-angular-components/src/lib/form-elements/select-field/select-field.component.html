@@ -18,18 +18,17 @@
                     <p *ngIf="inputDescription" class="description_field">{{inputDescription}}</p>
                 </div>
 
-                <!-- <input class="input-field" type="text" [(ngModel)]="this.objectItem[this.objectAtributteName]"> -->
                 <div class="custom_select_field openSelectInput">
                     <div class="custom_select_field_value"
-                        [ngClass]="{'unselected': !this.objectItem[this.objectAtributteName]}">
-                        {{this.objectItem[this.objectAtributteName] || 'Unselected'}}</div>
+                        [ngClass]="{'unselected': !this.getItemNameValue()}">
+                        {{this.getItemNameValue() || 'Unselected'}}</div>
                     <span class="material-icons">arrow_drop_down</span>
                 </div>
 
                 <div class="custom_select_field closeSelectInput" (click)="closeSelect(focusElement)">
                     <div class="custom_select_field_value"
-                        [ngClass]="{'unselected': !this.objectItem[this.objectAtributteName]}">
-                        {{this.objectItem[this.objectAtributteName] || 'Unselected'}}</div>
+                        [ngClass]="{'unselected': !this.getItemNameValue()}">
+                        {{this.getItemNameValue() || 'Unselected'}}</div>
                     <span class="material-icons">arrow_drop_down</span>
                 </div>
 
