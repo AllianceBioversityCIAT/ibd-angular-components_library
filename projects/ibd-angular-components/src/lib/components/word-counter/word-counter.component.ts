@@ -11,7 +11,7 @@ export class WordCounterComponent implements OnInit {
   words: any;
   @Input() form:FormGroup;
   @Input() formControlNameInput:string;
-  @Input() maxWords:any;
+  @Input() maxWords:number;
   // @Output() writeEvent = new EventEmitter;
   constructor() { }
 

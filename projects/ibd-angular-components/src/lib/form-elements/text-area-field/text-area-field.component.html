@@ -6,7 +6,22 @@
         <p *ngIf="inputDescription" class="description_field">{{inputDescription}}</p>
     </div>
 
-    <textarea [(ngModel)]="this.objectItem[this.objectAtributteName]" class="basic_textarea" [rows]="initialParagraphs?initialParagraphs:3" [cols]="30" pInputTextarea autoResize="autoResize"></textarea>
+    <textarea *ngIf="!editText" [(ngModel)]="this.objectItem[this.objectAtributteName]" class="basic_textarea" [rows]="initialParagraphs?initialParagraphs:3" [cols]="30" pInputTextarea autoResize="autoResize"></textarea>
+
+    <p-editor *ngIf="editText" class="editorr" [(ngModel)]="this.objectItem[this.objectAtributteName]" [style]="{'height':'150px'}">
+        <p-header>
+          <span class="ql-formats">
+            <button class="ql-bold"></button>
+            <button class="ql-italic"></button>
+            <button class="ql-link"></button>
+          </span>
+        </p-header>
+      </p-editor>
+      <ibdc-word-counter-for-fields 
+      [objectItem]="this.objectItem"
+      [objectAtributteName]="this.objectAtributteName"
+      [maxWords]="this.maxWords"
+      ></ibdc-word-counter-for-fields>
     <!-- <ibdc-word-counter *ngIf="this.options.maxWords" [form]="this.options.form" [formControlNameInput]="this.options.formControlName" [maxWords]="this.options.maxWords"></ibdc-word-counter> -->
     
 </div>

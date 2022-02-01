@@ -37,6 +37,7 @@ import { SelectFieldComponent } from './form-elements/select-field/select-field.
 import { InputComponent } from './form-elements/input/input.component';
 import { TextAreaFieldComponent } from './form-elements/text-area-field/text-area-field.component';
 import { FormatCurrencyDirective } from './directives/format-currency.directive';
+import { WordCounterForFieldsComponent } from './components/word-counter-for-fields/word-counter-for-fields.component';
 
 
 
@@ -73,7 +74,7 @@ const primeNgModulesList = [
   TableModule
 ];
 @NgModule({
-  declarations: [...componentsList, SelectFilterPipe, WordCounterComponent, SortAlphabeticallyPipe, FormatCurrencyDirective],
+  declarations: [...componentsList, SelectFilterPipe, WordCounterComponent, SortAlphabeticallyPipe, FormatCurrencyDirective, WordCounterForFieldsComponent],
   exports: [...componentsList],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [

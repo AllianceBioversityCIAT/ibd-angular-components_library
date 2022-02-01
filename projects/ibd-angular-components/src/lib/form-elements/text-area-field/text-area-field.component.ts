@@ -14,6 +14,8 @@ export class TextAreaFieldComponent implements OnInit {
   @Input() readOnlyVariable;
   @Input() rows;
   @Input() initialParagraphs;
+  @Input() editText: boolean = false;
+  @Input() maxWords:number;
   constructor() { }
 
   ngOnInit(): void {
