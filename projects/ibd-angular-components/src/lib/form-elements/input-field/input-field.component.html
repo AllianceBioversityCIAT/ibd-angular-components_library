@@ -13,7 +13,8 @@
         <input *ngIf="this.inputType == 'text'" class="input-field" type="text" [(ngModel)]="this.objectItem[this.objectAtributteName]">
     
         <div class="p-grid p-fluid">
-            <p-inputNumber *ngIf="this.inputType == 'number'"  [(ngModel)]="this.objectItem[this.objectAtributteName]"></p-inputNumber>
+            <p-inputNumber *ngIf="this.inputType == 'number'" [(ngModel)]="this.objectItem[this.objectAtributteName]"></p-inputNumber>
+            <p-inputNumber *ngIf="this.inputType == 'decimal'" [minFractionDigits]="1" [maxFractionDigits]="5"  [(ngModel)]="this.objectItem[this.objectAtributteName]"></p-inputNumber>
             <p-inputNumber *ngIf="this.inputType == 'currency'" [(ngModel)]="this.objectItem[this.objectAtributteName]" inputId="currency-us" mode="currency" currency="USD" locale="en-US" [minFractionDigits]="2"></p-inputNumber>
         </div>
 
