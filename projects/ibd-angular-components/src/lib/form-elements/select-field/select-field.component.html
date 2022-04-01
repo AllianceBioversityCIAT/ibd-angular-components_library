@@ -39,7 +39,7 @@
                         <span class="material-icons">close</span>
                     </div>
                     <div class="field_selector_search">
-                        <input type="button" [(ngModel)]="searchText"
+                        <input type="text" [(ngModel)]="searchText"
                             (ngModelChange)="options.frontendSearchAttribute ? writtenInSearchField() : consumeService()">
                     </div>
                     <div class="field_selector_list">

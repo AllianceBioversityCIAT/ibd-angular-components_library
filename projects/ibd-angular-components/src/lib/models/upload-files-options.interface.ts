@@ -1,5 +1,6 @@
 export interface UploadFiles{
     required?:boolean;
+    readOnlyVariable?:boolean;
     // readonly?:boolean;
     inputTitle:string;
     description?:string;

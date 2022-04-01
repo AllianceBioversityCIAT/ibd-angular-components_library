@@ -1,7 +1,7 @@
 <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
 <p *ngIf="options.description" class="description_field">{{options.description}}</p>
 
-<div class="uf_header" *ngIf="!validateEmptyArrayWithActive(this.options.filesSavedList) || multipleFiles">
+<div class="uf_header" *ngIf="!validateEmptyArrayWithActive(this.options.filesSavedList) || multipleFiles && !this.options?.readOnlyVariable">
     <label class="custom-file-upload" *ngIf="!this.options.filesList.length || multipleFiles" >
         <span class="material-icons">upload_file</span>
         Choose Files
@@ -9,11 +9,11 @@
     </label>
 </div>
 
-<div class="uf_to_save_header" *ngIf="!validateEmptyArrayWithActive(this.options.filesSavedList) || multipleFiles">
+<div class="uf_to_save_header" *ngIf="!validateEmptyArrayWithActive(this.options.filesSavedList) || multipleFiles && !this.options?.readOnlyVariable">
     <div class="title">List of files to save</div>
 </div>
 
-<div class="uf_to_save" *ngIf="!validateEmptyArrayWithActive(this.options.filesSavedList) || multipleFiles">
+<div class="uf_to_save" *ngIf="!validateEmptyArrayWithActive(this.options.filesSavedList) || multipleFiles && !this.options?.readOnlyVariable">
 
     <div *ngFor="let file of this.options.filesList; let i = index">
         <!-- <span class="animate__animated animate__fadeInRight animate__faster" #fileHE>name: {{file.name}} ---- type: {{file.type}} --- lastModifiedDate: {{file.lastModifiedDate}} <button (click)="removeFile(i,file,fileHE)">Delete</button></span> -->
@@ -32,7 +32,7 @@
 
 </div>
 
-<div class="uf_saved_header">
+<div class="uf_saved_header" *ngIf="!this.options?.readOnlyVariable">
     <div class="title">Saved files</div>
 </div>
 
@@ -63,7 +63,7 @@
                 <th>Type</th>
                 <th>Name</th>
                 <th>Updated at</th>
-                <th style="width: 100px; ">Delete</th>
+                <th style="width: 100px; " *ngIf="!this.options?.readOnlyVariable">Delete</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-file let-rowIndex="rowIndex">
@@ -71,7 +71,7 @@
                 <td><div class="files-table-format_icon" [ngStyle]="{'background-image': 'url(' + '/assets/icons/'+getFormat(file.name) + '.png)'}"></div></td>
                 <td><a [href]="file.url" target="_blank">{{file.name}}</a></td>
                 <td>{{file.updated_at}}</td>
-                <td style="width: 100px; display: flex; justify-content: center;"><button type="button" pButton  icon="pi pi-times" (click)="removeFileSaved(file,fileHES)"></button></td>
+                <td *ngIf="!this.options?.readOnlyVariable" style="width: 100px; display: flex; justify-content: center;"><button type="button" pButton  icon="pi pi-times" (click)="removeFileSaved(file,fileHES)"></button></td>
             </tr>
         </ng-template>
         <ng-template pTemplate="summary">
