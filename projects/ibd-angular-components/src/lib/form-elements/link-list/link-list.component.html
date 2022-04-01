@@ -8,6 +8,7 @@
     
     
         <div class="card_container">
+            <div class="no-data" *ngIf="!options.savedList.list.length">There are no links.</div>
             <div #itemLink class="custom-card animate__animated animate__fadeInRight animate__faster" *ngFor="let item of options.savedList.list; let i = index">
                 <div class="blue_flag"></div>
                 <div class="inputs_container">
@@ -59,7 +60,7 @@
                     <div class="input_container">
                         <div class="p-inputgroup">
                             <span class="p-inputgroup-addon"> Web Link  </span>
-                            <input class="{{validatewebPage(item[options.savedList.attributeDescription])}}" type="text" pInputText placeholder="Example: https://www.example.com" (ngModelChange)="addAttributeEdited(i);" [value]="item[options.savedList.attributeDescription]" [(ngModel)]="item[options.savedList.attributeDescription]">      
+                            <input class="{{validatewebPage(item[options.savedList.attributeDescription])}}" #myInput type="text" pInputText placeholder="Example: https://www.example.com" (ngModelChange)="addAttributeEdited(i);" [value]="item[options.savedList.attributeDescription]" [(ngModel)]="item[options.savedList.attributeDescription]">      
                         </div>
                     </div>
 
@@ -68,10 +69,9 @@
                     <div class="input_container">
                         <div class="p-inputgroup">
                             <span class="p-inputgroup-addon">Citation</span>
-                            <input type="text" pInputText placeholder="Citation" (ngModelChange)="addAttributeEdited(i)" [value]="item[options.savedList.attributeLink]" [(ngModel)]="item[options.savedList.attributeLink]" #myInput>      
+                            <input type="text" pInputText placeholder="Citation" (ngModelChange)="addAttributeEdited(i)" [value]="item[options.savedList.attributeLink]" [(ngModel)]="item[options.savedList.attributeLink]" >      
                         </div>
                     </div>
-    
                 </div>
                 <div class="delete_button center_flex">
                     <div class="delete_options">
@@ -82,11 +82,12 @@
                         <button pButton pRipple type="button" label="Yes" class="p-button-rounded p-button-danger confirm" (click)="removeLink(i,item,itemLink)"></button>
                     </div>
                 </div>
-                <!-- <div class="open_link_button center_flex">
-                    <a routerLink="" (click)="goToLink(myInput.value)">
+                
+                <div class="open_link_button center_flex">
+                    <a target="_blank" [href]="myInput.value">
                         <span class="material-icons">open_in_new</span>
                     </a>
-                </div> -->
+                </div>
             </div>
             <h3 style="text-align: center; margin-top: 20px;" *ngIf="!options.savedList.list.length"><strong class="ibdc_secondary_color" >No items added in the list</strong></h3>
         </div>
