@@ -25,9 +25,6 @@ export class AlertComponent implements OnInit {
       case 'success':
         return 'task_alt';
 
-      case 'alert':
-        return 'priority_high';
-
       case 'info':
         return 'info';
 

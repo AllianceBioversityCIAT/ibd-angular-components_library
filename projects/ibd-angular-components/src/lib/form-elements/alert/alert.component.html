@@ -1,5 +1,10 @@
-<div class="animate__animated animate__bounceIn idb-alert-container {{this.options.type}}">
-    <p *ngIf="this.options.text">{{this.options.text}}</p>
-    <div *ngIf="this.options.htmlText" [innerHtml]="this.options.htmlText"></div>
-    <span class="material-icons">{{typeToIcon(this.options.type)}}</span>
+<div class="animate__animated animate__bounceIn idb-alert-container">
+    <div class="left-line {{this.options.type}}"></div>
+    <div class="content">
+        <div class="icon_container {{this.options.type}}">
+            <i class="material-icons">{{typeToIcon(this.options.type)}}</i>
+        </div>
+        <p *ngIf="this.options.text">{{this.options.text}}</p>
+        <div *ngIf="this.options.htmlText" [innerHtml]="this.options.htmlText"></div>
+    </div>
 </div>

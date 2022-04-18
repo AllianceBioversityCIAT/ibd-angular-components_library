@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./input-field.component.scss']
 })
 export class InputFieldComponent implements OnInit {
-  @Input() inputTitle;
+  @Input() inputTitle = null;
   @Input() inputDescription;
   @Input() inputRequired;
   @Input() readOnlyVariable;
