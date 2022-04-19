@@ -32,8 +32,7 @@
                             <span class="material-icons">close</span>
                         </span>
                         <div class="field_selector_search">
-                            <input type="text" [(ngModel)]="searchText"
-                                (ngModelChange)="options.frontendSearchAttribute ? writtenInSearchField() : consumeService()">
+                            <input type="text" [(ngModel)]="searchText" (ngModelChange)="options.frontendSearchAttribute ? writtenInSearchField() : consumeService()">
                         </div>
                         <div class="field_selector_list">
                             <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">

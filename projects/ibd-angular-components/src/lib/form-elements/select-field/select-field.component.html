@@ -34,12 +34,12 @@
 
                 <div class="field_selector {{fieldSelector.class}}">
 
-                    <div type="button" span-button class="field_selector_close_button"
+                    <!-- <div type="button" span-button class="field_selector_close_button"
                         (click)="closeSelect(focusElement)">
                         <span class="material-icons">close</span>
-                    </div>
+                    </div> -->
                     <div class="field_selector_search">
-                        <input type="text" [(ngModel)]="searchText"
+                        <input type="text" [(ngModel)]="searchText" *ngIf="this.selectableList?.length >= 6"
                             (ngModelChange)="options.frontendSearchAttribute ? writtenInSearchField() : consumeService()">
                     </div>
                     <div class="field_selector_list">
