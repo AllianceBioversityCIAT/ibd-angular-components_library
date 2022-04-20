@@ -1,6 +1,10 @@
 // @import '~@angular/material/theming';
 @import '../../styles/styles.scss';
 
+.textFinded{
+    font-weight: 700 !important;
+    background-color: rgb(172, 255, 220) !important;
+}
 .manual_select{
     border: 1px solid white;
     position: relative;
