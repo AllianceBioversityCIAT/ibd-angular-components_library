@@ -40,7 +40,7 @@
                     </div> -->
                     <div class="field_selector_search">
                         <input type="text" [(ngModel)]="searchText" *ngIf="this.selectableList?.length >= 6"
-                            (ngModelChange)="options.frontendSearchAttribute ? writtenInSearchField() : consumeService()">
+                            (ngModelChange)="options?.frontendSearchAttribute ? writtenInSearchField() : consumeService()">
                     </div>
                     <div class="field_selector_list">
                         <!-- <br> -->

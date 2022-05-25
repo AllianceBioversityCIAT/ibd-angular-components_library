@@ -8,6 +8,7 @@ import { textOptions } from '../../models/text-options.interface';
 })
 export class SimpleTextComponent implements OnInit {
   @Input() options:textOptions;
+  @Input() textAlign: 'unset' | 'justify' = 'unset';
   constructor() { }
 
   ngOnInit(): void {
