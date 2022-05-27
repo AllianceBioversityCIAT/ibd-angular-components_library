@@ -23,7 +23,7 @@ export class SelectFieldComponent implements OnInit {
   @Input() inputTitle;
   @Input() inputDescription;
   //? filter items
-  @Input() frontendSearchAttribute;
+  @Input() frontendSearchAttribute = '';
 
     fieldSelector= {
     class:'hide_field_selector',

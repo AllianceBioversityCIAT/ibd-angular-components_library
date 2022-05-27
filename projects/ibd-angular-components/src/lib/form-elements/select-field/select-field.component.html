@@ -39,14 +39,13 @@
                         <span class="material-icons">close</span>
                     </div> -->
                     <div class="field_selector_search">
-                        <input type="text" [(ngModel)]="searchText" *ngIf="this.selectableList?.length >= 6"
-                            (ngModelChange)="options?.frontendSearchAttribute ? writtenInSearchField() : consumeService()">
+                        <input type="text" [(ngModel)]="searchText" *ngIf="this.selectableList?.length >= 6">
                     </div>
                     <div class="field_selector_list">
                         <!-- <br> -->
                         <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
                             <div class="select_option"
-                                *cdkVirtualFor="let option of frontendSearchAttribute?(this.selectableList | selectFilter:searchText:frontendSearchAttribute | sortAlphabetically:this.options?.itemName):this.selectableList"
+                                *cdkVirtualFor="let option of frontendSearchAttribute?(this.selectableList | selectFilter:searchText||'':frontendSearchAttribute | sortAlphabetically:this.selectableListAtributteName):this.selectableList"
                                 (click)="onSelectOption(option,focusElement)">
                                 <div>{{option[this.selectableListAtributteName]}}</div>
 
@@ -56,7 +55,6 @@
                     </div>
                 </div>
             </a>
-            <!-- <ibdc-word-counter *ngIf="this.options.maxWords" [form]="this.options.form" [formControlNameInput]="this.options.formControlName" [maxWords]="this.options.maxWords"></ibdc-word-counter> -->
 
         </div>
 
