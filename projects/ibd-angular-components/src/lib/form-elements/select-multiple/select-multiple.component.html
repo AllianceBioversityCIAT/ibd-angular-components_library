@@ -1,7 +1,7 @@
 <span [ngSwitch]="this.options.readOnlyVariable">
     <div *ngSwitchCase="true">
         <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
-        <p class="description_field" *ngIf="!this.options.savedList.list.length">Not available</p>
+        <p class="description_field" *ngIf="!this.options.savedList.list.length">Not provided</p>
         <div class="items_list" *ngIf="this.options.savedList.list.length">
             <div class="item" *ngFor="let item of this.options.savedList.list">
                 <p *ngIf="item.active !== false">{{item[this.options.savedList.selectItemName]}}</p>

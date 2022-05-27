@@ -16,7 +16,7 @@
                         <p class="readonly_text_title"><strong class="ibdc_secondary_color">Citation: </strong>
                             <!-- <span class="ibdc_asterisk">* </span> -->
                         </p>
-                        <p class="readonly_value">{{item[options.savedList.attributeDescription]||'Not available'}}</p>
+                        <p class="readonly_value">{{item[options.savedList.attributeDescription]||'Not provided'}}</p>
                         <!-- <input (ngModelChange)="addAttributeEdited(i)" [value]="item[options.savedList.attributeDescription]" [(ngModel)]="item[options.savedList.attributeDescription]" class="custom_input" type="text"> -->
                     </div>
     
@@ -28,7 +28,7 @@
                             <span   [ngClass]="{'rl': item[options.savedList.attributeLink]}"
                             (click)="goToLink(item[options.savedList.attributeLink])" 
                             pTooltip="Click to open link" 
-                            >{{item[options.savedList.attributeLink]||'Not available'}}</span>
+                            >{{item[options.savedList.attributeLink]||'Not provided'}}</span>
                         </p>
 
                         <!-- <input (ngModelChange)="addAttributeEdited(i)" [value]="item[options.savedList.attributeLink]" [(ngModel)]="item[options.savedList.attributeLink]"  class="custom_input" type="text" #myInput> -->
