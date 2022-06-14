@@ -9,7 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build-lib": "ng build ibd-angular-components",
-    "build-pack": "ng build ibd-angular-components  && cd dist/ibd-angular-components && npm pack && npm publish --access public",
+    "build-pack": "ng build ibd-angular-components  && cd dist/ibd-angular-components && npm pack",
+    "build-pack-public": "ng build ibd-angular-components  && cd dist/ibd-angular-components && npm pack && npm publish --access public",
     "reload:node_modules": "RD /S node_modules && npm i"
   },
   "private": true,

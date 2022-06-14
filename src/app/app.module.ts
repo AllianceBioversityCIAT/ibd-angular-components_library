@@ -5,7 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 
-import { IbdAngularComponentsModule } from '../../projects/ibd-angular-components/src/lib/ibd-angular-components.module';
+// import { IbdAngularComponentsModule } from '../../projects/ibd-angular-components/src/lib/ibd-angular-components.module';
+import { IbdAngularComponentsModule } from '../../projects/ibd-angular-components/src/public-api';
+
 // import { IbdAngularComponentsModule } from 'ibd-angular-components';
 
 
@@ -20,7 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     MenuComponent,
     FooterComponent
   ],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA],
+  // schemas:[CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     BrowserModule,
     AppRoutingModule,
