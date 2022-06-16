@@ -9,17 +9,23 @@ import { SaveButton } from '../../models/save-button.interface';
 export class SaveButtonComponent implements OnInit {
   @Input() options: SaveButton;
   @Output() click = new EventEmitter<string>();
-  @ViewChild("saveButton") saveButton:any;
+  @ViewChild("saveButton") saveButton: any;
   move = false;
+  keyPressed = false;
   constructor() { }
 
   ngOnInit(): void {
+    document.querySelector('.card-container').addEventListener('keypress', () => {
+      this.keyPressed = true;
+    })
+
     if (this.options.readOnlyVariable === undefined) {
       this.options.readOnlyVariable = false;
     }
 
     if (this.options.remember && this.options.minutesToRemember) {
       setInterval(() => {
+        if (!this.keyPressed) return;
         this.move = true;
         setTimeout(() => {
           this.move = false;
@@ -31,7 +37,7 @@ export class SaveButtonComponent implements OnInit {
 
   }
 
-  onclick(){
+  onclick() {
     this.click.emit();
   }
 
