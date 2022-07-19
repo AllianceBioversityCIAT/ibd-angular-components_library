@@ -16,12 +16,19 @@ export class TextareaComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    let options={
-      plugins:[]
+    let options = {
+      plugins: []
     };
-    this.textareaInput = new FormControl(this.options.form.value[this.options.formControlName]?this.options.form.value[this.options.formControlName]:'');
+    this.textareaInput = new FormControl(this.options.form.value[this.options.formControlName] ? this.options.form.value[this.options.formControlName] : '');
 
-     this.setValue();
+    this.setValue();
+
+    setTimeout(() => {
+      let qlEditor = document.querySelector('.ql-editor');
+      if (!qlEditor) return;
+      qlEditor.setAttribute('style', 'height:200px')
+    }, 100);
+
   }
 
   ngAfterViewInit(): void {

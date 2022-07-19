@@ -6,9 +6,9 @@
         <p *ngIf="inputDescription" class="description_field">{{inputDescription}}</p>
     </div>
 
-    <textarea *ngIf="!editText" [(ngModel)]="this.objectItem[this.objectAtributteName]" class="basic_textarea" [rows]="initialParagraphs?initialParagraphs:3" [cols]="30" pInputTextarea autoResize="autoResize"></textarea>
+    <textarea *ngIf="!editText" [(ngModel)]="this.objectItem[this.objectAtributteName]" class="basic_textarea" [rows]="initialParagraphs?initialParagraphs:3" style="height: 70px;" pInputTextarea ></textarea>
 
-    <p-editor *ngIf="editText" class="editorr" [(ngModel)]="this.objectItem[this.objectAtributteName]" [style]="{'height':'150px'}">
+    <p-editor *ngIf="editText" class="editorr" [(ngModel)]="this.objectItem[this.objectAtributteName]" [style]="{'min-height':'150px'}">
         <p-header>
           <span class="ql-formats">
             <button class="ql-bold"></button>
@@ -16,7 +16,7 @@
             <button class="ql-link"></button>
           </span>
         </p-header>
-      </p-editor>
+    </p-editor>
       <ibdc-word-counter-for-fields 
       *ngIf="this.maxWords"
       [objectItem]="this.objectItem"

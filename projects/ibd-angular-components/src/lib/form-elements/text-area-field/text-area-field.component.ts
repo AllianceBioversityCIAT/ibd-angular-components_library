@@ -19,6 +19,13 @@ export class TextAreaFieldComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    setTimeout(() => {
+      let qlEditor = document.querySelector('.ql-editor');
+      if (!qlEditor) return;
+      qlEditor.setAttribute('style','height:200px')
+    }, 100);
+
   }
 
 }
