@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { selectNgModelOptions } from '../../models/select-ngmodel-options.interface';
 
@@ -12,6 +12,7 @@ export class SelectNgmodelNoRepeatComponent implements OnInit {
 
   searchText = '';
   @Input() options:selectNgModelOptions;
+  @Output() select = new EventEmitter();
   
   selectInput:FormControl;
 
@@ -59,6 +60,7 @@ export class SelectNgmodelNoRepeatComponent implements OnInit {
   }
 
   onSelectOption(option){
+    this.select.emit(option)
     if (this.beforeOption && (option[this.options.itemId] != this.options.item[this.options.itemId])) this.beforeOption.selected = false;
     
 
