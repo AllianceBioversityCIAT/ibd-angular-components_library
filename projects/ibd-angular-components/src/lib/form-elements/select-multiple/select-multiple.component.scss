@@ -42,9 +42,11 @@
 .selector_container{
     // display: flex;
     width: 100%;
+    .shadow{
+        box-shadow: 0 3px 6px #96969629, 0 3px 6px #96969629;
+    }
     .manual_select_container{
         width: 100%;
-        box-shadow: 0 3px 6px #96969629, 0 3px 6px #96969629;
         padding: 10px;
         border-radius: 7px;
     }

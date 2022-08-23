@@ -12,6 +12,7 @@ export class SelectMultipleComponent implements OnInit {
   searchText = '';
   @Input() options:SelectMultipleOptions;
   @Output() unselect = new EventEmitter();
+  @Output() onSelectOptionE = new EventEmitter();
   selectList=[];
 
   fieldSelector= {
@@ -31,6 +32,7 @@ export class SelectMultipleComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    if (this.options.shadow !== false) this.options.shadow = true;;
     this.searchText = this.options.initialSearchText?this.options.initialSearchText:this.searchText;
     this.consumeService();
   }
@@ -74,14 +76,18 @@ export class SelectMultipleComponent implements OnInit {
   }
 
   mapSavedList(){
-    // console.log(this.options.savedList.list);
+    console.log("mapSavedList")
+    console.log(this.options.savedList.list);
     this.options.savedList.list.map(savedItem=>{
-      // console.log(savedItem);
+      console.log(savedItem);
       let itemFinded = this.selectList.find(originalItem=>originalItem[this.options.selectItemId] == savedItem[this.options.savedList.selectItemId]);
-      itemFinded?itemFinded.selected = true:null;
+      console.log(itemFinded)
+      if (savedItem?.active !== false) itemFinded?itemFinded.selected = true:null;;
+      
       // console.log(itemFinded);
     });
     
+    console.log(this.selectList)
   
     
   }
@@ -140,6 +146,7 @@ export class SelectMultipleComponent implements OnInit {
         this.unselect.emit(option);
       }
     }
+    this.onSelectOptionE.emit(option)
     this.closeSelect(focusElement);
   }
 

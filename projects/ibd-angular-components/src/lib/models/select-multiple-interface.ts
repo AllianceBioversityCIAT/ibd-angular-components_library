@@ -4,6 +4,7 @@ export interface SelectMultipleOptions{
     inputTitle:string;
     description?:string;
     hideSavedList:boolean;
+    shadow:boolean;
     // form:FormGroup;
     chipName:string;
     // maxWords:number;
