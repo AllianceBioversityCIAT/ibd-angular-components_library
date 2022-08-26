@@ -1,6 +1,6 @@
 {
   "name": "ibd-angular-components",
-  "version": "3.4.7",
+  "version": "3.5.5",
   "peerDependencies": {
     "@angular/common": "^10.0.14",
     "@angular/core": "^10.0.14"

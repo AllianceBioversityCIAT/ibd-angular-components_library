@@ -1,7 +1,7 @@
 <span [ngSwitch]="this.options.readOnlyVariable">
     <div *ngSwitchCase="true">
         <p class="input_title"><strong class="ibdc_secondary_color">{{options.inputTitle}}: </strong><span [hidden]="options.required === false" class="ibdc_asterisk">* </span></p>
-        <p class="description_field" *ngIf="!this.options.savedList.list.length">Not provided</p>
+        <p class="description_field" *ngIf="this.options.description">{{this.options.description}}</p>
         <div class="items_list" *ngIf="this.options.savedList.list.length">
             <div class="item" *ngFor="let item of this.options.savedList.list">
                 <p *ngIf="item.active !== false">{{item[this.options.savedList.selectItemName]}}</p>
@@ -42,6 +42,9 @@
                                     (click)="onSelectOption(option,focusElement)">
                                     <span class="material-icons" aria-hidden="false" [style.color]="option.disabled?'gray':option.selected?'green':'#3d3d3d'">{{option.disabled?'radio_button_checked':option.selected?'radio_button_checked':'radio_button_unchecked'}}</span>
                                     <span [style.marginLeft.px]="options.toDisableList?25:20" [style.color]="option.disabled?'gray':option.selected?'green':'#3d3d3d'" [innerHTML]="option[options.selectItemName] | searchAndReplaceAsStrong: searchText"></span>
+                                    <strong *ngIf="options?.intermediateText && option[options?.selectItemNameBold]" [style.color]="option.disabled?'gray':option.selected?'green':'#3d3d3d'"> &nbsp;{{options?.intermediateText}} &nbsp; </strong>
+                                    <strong *ngIf="options?.selectItemNameBold" [style.color]="option.disabled?'gray':option.selected?'green':'#3d3d3d'" [innerHTML]="option[options?.selectItemNameBold]"></strong>
+
                                 </div>
                             </cdk-virtual-scroll-viewport>
                         </div>

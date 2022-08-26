@@ -76,18 +76,14 @@ export class SelectMultipleComponent implements OnInit {
   }
 
   mapSavedList(){
-    console.log("mapSavedList")
-    console.log(this.options.savedList.list);
     this.options.savedList.list.map(savedItem=>{
-      console.log(savedItem);
       let itemFinded = this.selectList.find(originalItem=>originalItem[this.options.selectItemId] == savedItem[this.options.savedList.selectItemId]);
-      console.log(itemFinded)
       if (savedItem?.active !== false) itemFinded?itemFinded.selected = true:null;;
       
       // console.log(itemFinded);
     });
     
-    console.log(this.selectList)
+    // console.log(this.selectList)
   
     
   }

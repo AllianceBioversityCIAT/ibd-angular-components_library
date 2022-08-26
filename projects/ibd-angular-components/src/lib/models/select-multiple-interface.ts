@@ -18,6 +18,8 @@ export interface SelectMultipleOptions{
     };
     selectList:any[];
     selectItemName:string;
+    intermediateText:string;
+    selectItemNameBold:string;
     selectItemId:string|number;
     
     toDisableList:[];

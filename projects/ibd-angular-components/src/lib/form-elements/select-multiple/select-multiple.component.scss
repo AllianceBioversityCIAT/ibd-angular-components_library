@@ -1,6 +1,8 @@
 // @import '~@angular/material/theming';
 @import '../../styles/styles.scss';
-
+.description_field{
+    margin-bottom: 10px;
+}
 .textFinded{
     font-weight: 700 !important;
     background-color: rgb(172, 255, 220) !important;
